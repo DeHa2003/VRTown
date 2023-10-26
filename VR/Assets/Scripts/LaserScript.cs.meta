@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3984878592941d842ad4709bc42050d1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pose: {instanceID: 0}
+  - holder: {instanceID: 0}
+  - pointer: {instanceID: 0}
+  - reference: {instanceID: 0}
+  - selectUI: {fileID: 8300000, guid: 9ff627289567dbb408efdabd01245aec, type: 3}
+  - clickUI: {fileID: 8300000, guid: f8635e0bd6792324e8ea541d88c6da41, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
