@@ -1,23 +1,23 @@
 Using pre-set license
-Built from '2021.3/staging' branch; Version is '2021.3.30f1 (b4360d7cdac4) revision 11810317'; Using compiler version '192829333'; Build Type 'Release'
+Built from '2021.3/staging' branch; Version is '2021.3.11f1 (0a5ca18544bf) revision 679073'; Using compiler version '192829333'; Build Type 'Release'
 OS: 'Windows 10  (10.0.19045) 64bit CoreSingleLanguage' Language: 'ru' Physical Memory: 16278 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2021.3.30f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker1
 -projectPath
-C:/Users/admin/VR Game/VR2/VR
+C:/Users/admin/Documents/GitHub/VRTown/VR
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-62271
-Successfully changed project path to: C:/Users/admin/VR Game/VR2/VR
-C:/Users/admin/VR Game/VR2/VR
+50715
+Successfully changed project path to: C:/Users/admin/Documents/GitHub/VRTown/VR
+C:/Users/admin/Documents/GitHub/VRTown/VR
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,16 +47,11 @@ C:/Users/admin/VR Game/VR2/VR
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [664] Host "[IP] 192.168.88.118 [Port] 0 [Flags] 2 [Guid] 71587980 [EditorId] 71587980 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6U5B76J) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
-
-Player connection [664] Host "[IP] 192.168.88.118 [Port] 0 [Flags] 2 [Guid] 71587980 [EditorId] 71587980 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-6U5B76J) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
-
-[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
-Refreshing native plugins compatible for Editor in 333.28 ms, found 15 plugins.
-Preloading 1 native plugins for Editor in 4.63 ms.
-Initialize engine version: 2021.3.30f1 (b4360d7cdac4)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/admin/VR Game/VR2/VR/Assets
+Refreshing native plugins compatible for Editor in 116.89 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.63 ms.
+Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/admin/Documents/GitHub/VRTown/VR/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -65,82 +60,65 @@ Direct3D:
     VRAM:     3949 MB
     Driver:   31.0.15.3623
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56744
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56968
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.30f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.011818 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007081 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Multiple ADB server instances found, the following ADB server instance have been terminated due to being run from another SDK. Process paths: 
-C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\AndroidPlayer\SDK\platform-tools\adb.exe
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:Log (object)
-UnityEditor.Android.AndroidDeploymentTargetsExtension:GetKnownTargets (UnityEditor.DeploymentTargets.IDeploymentTargetsMainThreadContext,UnityEditor.ProgressHandler)
-UnityEditor.Android.TargetScanWorker:ScanSync ()
-UnityEditor.Android.TargetExtension:OnUsbDevicesChanged (UnityEditor.Hardware.UsbDevice[])
-UnityEditor.Android.TargetExtension:OnLoad ()
-UnityEditor.Modules.ModuleManager:InitializePlatformSupportModules ()
-
-Android Extension - Scanning For ADB Devices 2547 ms
-Refreshing native plugins compatible for Editor in 102.71 ms, found 15 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
+Refreshing native plugins compatible for Editor in 108.31 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.382 seconds
+- Completed reload, in  0.652 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3383ms)
-		BeginReloadAssembly (182ms)
+	ReloadAssembly (652ms)
+		BeginReloadAssembly (64ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (3080ms)
-			LoadAssemblies (176ms)
+		EndReloadAssembly (485ms)
+			LoadAssemblies (62ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (131ms)
+			SetupTypeCache (108ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (2878ms)
+			RebuildScriptCaches (28ms)
+			SetupLoadedEditorAssemblies (301ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (2646ms)
+				InitializePlatformSupportModulesInManaged (51ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (103ms)
+				RefreshPlugins (109ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (85ms)
-				ProcessInitializeOnLoadMethodAttributes (43ms)
+				ProcessInitializeOnLoadAttributes (92ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010081 seconds.
+Registered in 0.008983 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 112.45 ms, found 15 plugins.
-Preloading 1 native plugins for Editor in 0.09 ms.
+Refreshing native plugins compatible for Editor in 105.26 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
 Package Manager log level set to [2]
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
 System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
-  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in C:\Users\admin\VR Game\VR2\VR\Library\PackageCache\com.unity.xr.oculus@3.3.0\Runtime\OculusLoader.cs:282 
-  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\admin\VR Game\VR2\VR\Library\PackageCache\com.unity.xr.oculus@3.3.0\Runtime\OculusLoader.cs:267 
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in C:\Users\admin\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:271 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\admin\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:256 
   at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <9d9536d9127f4a489d989c7a566aee1c>:0 
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
    --- End of inner exception stack trace ---
-  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <9d9536d9127f4a489d989c7a566aee1c>:0 
-  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <9d9536d9127f4a489d989c7a566aee1c>:0 
-  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4f41070b52224a70bdc90f923c6b37de>:0 
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4e64905d831f4883a53259ef37fb023b>:0 
 UnityEngine.StackTraceUtility:ExtractStackTrace ()
 UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
 UnityEngine.Logger:Log (UnityEngine.LogType,object)
@@ -148,182 +126,121 @@ UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
 
 Mono: successfully reloaded assembly
-- Completed reload, in  1.958 seconds
+- Completed reload, in  1.421 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1959ms)
-		BeginReloadAssembly (132ms)
+	ReloadAssembly (1422ms)
+		BeginReloadAssembly (220ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (19ms)
-		EndReloadAssembly (1708ms)
-			LoadAssemblies (231ms)
+			CreateAndSetChildDomain (132ms)
+		EndReloadAssembly (1086ms)
+			LoadAssemblies (77ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (372ms)
+			SetupTypeCache (304ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (73ms)
-			SetupLoadedEditorAssemblies (1003ms)
+			RebuildScriptCaches (72ms)
+			SetupLoadedEditorAssemblies (583ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (23ms)
+				InitializePlatformSupportModulesInManaged (12ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (113ms)
-				BeforeProcessingInitializeOnLoad (106ms)
-				ProcessInitializeOnLoadAttributes (699ms)
-				ProcessInitializeOnLoadMethodAttributes (54ms)
-				AfterProcessingInitializeOnLoad (7ms)
+				RefreshPlugins (105ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (340ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (6ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.14 ms, found 15 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.08 ms, found 14 plugins.
 Preloading 1 native plugins for Editor in 0.10 ms.
-Unloading 4406 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 68 unused Assets / (1.2 MB). Loaded Objects now: 4890.
-Memory consumption went from 182.4 MB to 181.1 MB.
-Total: 4.297200 ms (FindLiveObjects: 0.378000 ms CreateObjectMapping: 0.366100 ms MarkObjects: 3.288500 ms  DeleteObjects: 0.263800 ms)
+Unloading 4201 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 57 unused Assets / (1.3 MB). Loaded Objects now: 4664.
+Memory consumption went from 171.4 MB to 170.2 MB.
+Total: 3.399900 ms (FindLiveObjects: 0.349100 ms CreateObjectMapping: 0.252500 ms MarkObjects: 2.574200 ms  DeleteObjects: 0.223300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
-Received Import Request.
-  Time since last request: 702854.817112 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Props_Traffic Signal_small.fbx
-  artifactKey: Guid(fbe896a67df88784abb1f38733468a13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Props_Traffic Signal_small.fbx using Guid(fbe896a67df88784abb1f38733468a13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4330104e97520ccb64eb4ecbf0393ec') in 0.136389 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Container.fbx
-  artifactKey: Guid(af2166692e99625489131a7bf2114bd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Container.fbx using Guid(af2166692e99625489131a7bf2114bd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '572f53dff4ffd8055c682f51f114c10c') in 0.018005 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Intersection_01.fbx
-  artifactKey: Guid(dd3c656fc0e01f746b07825c92b09beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Intersection_01.fbx using Guid(dd3c656fc0e01f746b07825c92b09beb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b043a1497af7d457c6266b33fc105219') in 0.017654 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Split Line.fbx
-  artifactKey: Guid(63ec040e5e2c7354191119a82429932a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Split Line.fbx using Guid(63ec040e5e2c7354191119a82429932a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79256edc19a8757450a8b6bbff4acd7f') in 0.016023 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Taxi.fbx
-  artifactKey: Guid(a7419a75ac6929e48842c0470aa44718) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Taxi.fbx using Guid(a7419a75ac6929e48842c0470aa44718) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3883c0da17f22db0c3f175d2be3ffe5') in 0.016480 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Tile Small.fbx
-  artifactKey: Guid(c832ad2636f5fca47b8947e48a90fe48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Tile Small.fbx using Guid(c832ad2636f5fca47b8947e48a90fe48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '630cffcdc31422f93d41a662c001461d') in 0.016125 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Lane Bus Stop.fbx
-  artifactKey: Guid(b2e48a8553cc56243892a06271dc3c99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Lane Bus Stop.fbx using Guid(b2e48a8553cc56243892a06271dc3c99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22befc0d6c054e729b6e43c860ed78ab') in 0.015915 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Tile.fbx
-  artifactKey: Guid(7b654bd76adcefd44b4799d4290822fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Tile.fbx using Guid(7b654bd76adcefd44b4799d4290822fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfcf721d8248d86740a1f5378ee20cb5') in 0.016123 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_SUV.fbx
-  artifactKey: Guid(c887da5f6e3230f4aa38afe5e8e30387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_SUV.fbx using Guid(c887da5f6e3230f4aa38afe5e8e30387) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9c5d5315b2f8392c0483a88cf922cf6') in 0.018252 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Lane_02.fbx
-  artifactKey: Guid(11b7c9a58a603e74caec54e139efb58d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Road Lane_02.fbx using Guid(11b7c9a58a603e74caec54e139efb58d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea76c01832d636b7f61ac4884d055034') in 0.018115 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Props_Traffic Sign_stop.fbx
-  artifactKey: Guid(ffcc7ab27000f2a4dbcc4ff9f0526b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Props_Traffic Sign_stop.fbx using Guid(ffcc7ab27000f2a4dbcc4ff9f0526b4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bec9f1c9b9f57c078e8c6e7ab7a4d19d') in 0.016680 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Ambulance.fbx
-  artifactKey: Guid(ca65f40fba8c4d146800611d34e2e114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Ambulance.fbx using Guid(ca65f40fba8c4d146800611d34e2e114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90f4e42d720f5ad3e7857578c7539aa5') in 0.015613 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_SUV_separate.fbx
-  artifactKey: Guid(1592d15b209482a419d7871e61ae4e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_SUV_separate.fbx using Guid(1592d15b209482a419d7871e61ae4e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92c5b5a41e8cfa9b984c159edb2f13fa') in 0.048876 seconds 
-Number of asset objects unloaded after import = 31
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Police Car.fbx
-  artifactKey: Guid(c89ff10cad1be9a4e83cf49bf466e148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Police Car.fbx using Guid(c89ff10cad1be9a4e83cf49bf466e148) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b1f2e333533741f8374704e6bbdc6fa') in 0.017283 seconds 
-Number of asset objects unloaded after import = 9
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Bus_separate.fbx
-  artifactKey: Guid(bec0886ced73844469c2edf3ebb4b047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Bus_separate.fbx using Guid(bec0886ced73844469c2edf3ebb4b047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df923f15c004444f7f419ab4b26a5b10') in 0.048381 seconds 
-Number of asset objects unloaded after import = 31
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Truck_separate.fbx
-  artifactKey: Guid(4d73dd8cdf5db944da1cd14e579cee1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/CarAI/SimplePoly City - Low Poly Assets/Models/Vehicle_Truck_separate.fbx using Guid(4d73dd8cdf5db944da1cd14e579cee1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae337327de578d19849e7a37ef1b33af') in 0.060590 seconds 
-Number of asset objects unloaded after import = 41
-AssetImportWorkerClient::OnTransportError - code=10054 error=Удаленный хост принудительно разорвал существующее подключение.
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007975 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 0.99 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.10 ms.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in C:\Users\admin\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:271 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\admin\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:256 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4e64905d831f4883a53259ef37fb023b>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.099 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1100ms)
+		BeginReloadAssembly (129ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (38ms)
+		EndReloadAssembly (876ms)
+			LoadAssemblies (76ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (286ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (38ms)
+			SetupLoadedEditorAssemblies (425ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (22ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (66ms)
+				ProcessInitializeOnLoadAttributes (301ms)
+				ProcessInitializeOnLoadMethodAttributes (28ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 4.74 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.07 ms.
+Unloading 4117 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (1.2 MB). Loaded Objects now: 4668.
+Memory consumption went from 165.2 MB to 164.0 MB.
+Total: 4.590000 ms (FindLiveObjects: 0.408500 ms CreateObjectMapping: 0.316800 ms MarkObjects: 3.610100 ms  DeleteObjects: 0.253400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

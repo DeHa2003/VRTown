@@ -17,7 +17,8 @@ public class SpawnerCar : MonoBehaviour
 
     private void Spawner()
     {
-        Instantiate(cars[Random.Range(0, cars.Count)]).GetComponent<NavMeshAgent>();
+        //Instantiate(cars[Random.Range(0, cars.Count)]).GetComponent<NavMeshAgent>();
+        Instantiate(cars[Random.Range(0, cars.Count)]);
         Invoke(nameof(Spawner), Random.Range(min, max));
     }
 }

@@ -107,19 +107,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   features:
   - {fileID: 4963040286616351577}
-  - {fileID: -8687396518503375694}
   - {fileID: 4893829345954421791}
-  - {fileID: -892286851561223952}
-  - {fileID: 8860135389868800939}
-  - {fileID: 5022829280399589481}
   - {fileID: 2497339995422133549}
   - {fileID: -5941725581135416239}
-  - {fileID: 5430156467924271014}
   - {fileID: 1507748248788215057}
   - {fileID: 7413458854745118488}
   - {fileID: 4054846353496584751}
   - {fileID: 154189092879288027}
-  - {fileID: -8685890742046939127}
   - {fileID: 2316775424616146661}
   - {fileID: -5611916350011621528}
   m_renderMode: 1
@@ -470,7 +464,7 @@ MonoBehaviour:
   nameUi: Mock Runtime
   version: 0.0.2
   featureIdInternal: com.unity.openxr.feature.mockruntime
-  openxrExtensionStrings: XR_UNITY_null_gfx XR_UNITY_android_present
+  openxrExtensionStrings: XR_UNITY_null_gfx
   company: Unity
   priority: 0
   required: 0
@@ -648,8 +642,6 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
-  targetQuest: 1
-  targetQuest2: 1
 --- !u!114 &7825129232609827970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,18 +656,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   features:
   - {fileID: 6607277108788275951}
-  - {fileID: 5894360806612628674}
   - {fileID: -754135629983284387}
-  - {fileID: 8614721170088925068}
-  - {fileID: -7337966103778155445}
   - {fileID: 4009577029424028935}
-  - {fileID: -2552697076996772298}
-  - {fileID: -7091712617925883321}
   - {fileID: -5481099341430582339}
-  - {fileID: -5539155196733637648}
   - {fileID: 7574591901642637997}
   - {fileID: 2190642319358990238}
-  - {fileID: -930276103797468985}
   - {fileID: 8884916806787979926}
   m_renderMode: 1
   m_depthSubmissionMode: 0
