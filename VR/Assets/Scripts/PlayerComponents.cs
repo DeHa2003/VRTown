@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerComponents : MonoBehaviour
 {
+    public bool isVisiblePos;
     [SerializeField] private Transform posPlayerSpawn;
     private CharacterController controller;
     private GameObject player;
@@ -74,5 +75,14 @@ public class PlayerComponents : MonoBehaviour
     public void Vibration(float duration, float frequency, float amplitude)
     {
         vibrationDevice.Pulse(duration, frequency, amplitude, Valve.VR.SteamVR_Input_Sources.Any);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (isVisiblePos)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(posPlayerSpawn.position, 2f);
+        }
     }
 }

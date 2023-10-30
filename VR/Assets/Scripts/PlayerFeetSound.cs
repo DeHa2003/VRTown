@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSoundManager : MonoBehaviour
+public class PlayerFeetSound : MonoBehaviour
 {
     [SerializeField] private CharacterController characterController;
     [SerializeField] private AudioSource sourceFeet;
@@ -13,20 +13,27 @@ public class PlayerSoundManager : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        switch (hit.gameObject.layer)
+        if (characterController.isGrounded)
         {
-            case 10:
-                OnWalk(roomWalk, 2, 1.3f);
-                break;
-            case 11:
-                OnWalk(streetWalk, 2, 1.4f);
-                break;
-            case 12:
-                OnWalk(threeWalk, 2, 1.5f);
-                break;
-            default:
-                sourceFeet.clip = null;
-                break;
+            switch (hit.gameObject.layer)
+            {
+                case 10:
+                    OnWalk(roomWalk, 2, 1.3f);
+                    break;
+                case 11:
+                    OnWalk(streetWalk, 2, 1.4f);
+                    break;
+                case 12:
+                    OnWalk(threeWalk, 2, 1.5f);
+                    break;
+                default:
+                    sourceFeet.clip = null;
+                    break;
+            }
+        }
+        else
+        {
+            sourceFeet.clip = null;
         }
     }
 

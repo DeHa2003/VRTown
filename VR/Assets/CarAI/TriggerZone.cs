@@ -20,7 +20,7 @@ public class TriggerZone : MonoBehaviour
     {
         if (other.CompareTag("CarAI") || other.CompareTag("Player"))
         {
-            audioManager.PlaySound();
+            //audioManager.PlaySound();
             agent.speed = 0;
             agent.velocity *= 0.3f;
         }

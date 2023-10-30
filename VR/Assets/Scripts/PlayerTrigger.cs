@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,13 +6,14 @@ using UnityEngine.Events;
 
 public class PlayerTrigger : MonoBehaviour
 {
-    public UnityEvent OnTriggerToRoad;
-    public UnityEvent OnTriggerToZebra;
-    public UnityEvent OnTriggerFinish;
+    public static Action OnLoseGame;
+    public static Action OnCompletedGame;
 
     [SerializeField] private Transform posToSpawn;
     [SerializeField] private GameObject failedGameUI;
     [SerializeField] private GameObject completedGameUI;
+
+    private PanelFailed panelFailed;
 
     private string roadViolation = "Пешеходам запрещено пересекать проезжую часть вне пешеходного перехода";
     private string zebViolation = "Тест";
@@ -25,19 +27,20 @@ public class PlayerTrigger : MonoBehaviour
             if (other.CompareTag("Road"))
             {
                 failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(roadViolation);
-                OnTriggerToRoad?.Invoke();
             }
             else if(other.CompareTag("Zeb"))
             {
                 failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
-                OnTriggerToZebra?.Invoke();
             }
+            OnLoseGame?.Invoke();
+            AudioManager.instance.Play(Sound.TypeAudioSource.LoseGame);
             Time.timeScale = 0;
         }
         else if (other.CompareTag("Finish"))
         {
             Instantiate(completedGameUI, posToSpawn.position, posToSpawn.rotation);
-            OnTriggerFinish?.Invoke();
+            AudioManager.instance.Play(Sound.TypeAudioSource.CompletedGame);
+            OnCompletedGame?.Invoke();
             Time.timeScale = 0;
         }
     }

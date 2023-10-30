@@ -3,22 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class StartPanelMenu : MonoBehaviour
+public class StartPanelMenu : FinishPanel
 {
     [SerializeField] private List<BoxCollider> buttonsColliders;
-    [SerializeField] private TextMeshProUGUI textTask;
-    private GameObject sceneManager;
-    private PlayerComponents playerController;
-    private TaskManager taskManager;
-
-    private void Awake()
-    {
-        sceneManager = GameObject.FindWithTag("SceneManager");
-        playerController = sceneManager.GetComponent<PlayerComponents>();
-        taskManager = sceneManager.GetComponent<TaskManager>();
-        textTask.text = taskManager.GetTask();
-
-    }
 
     private void OnEnable()
     {
@@ -46,10 +33,5 @@ public class StartPanelMenu : MonoBehaviour
     {
         playerController.ActivateLaser(false);
         Destroy(gameObject.transform.parent.gameObject);
-    }
-
-    public void GoToHome()
-    {
-        playerController.LoadScene(0);
     }
 }

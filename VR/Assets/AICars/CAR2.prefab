@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 1211952679036440689}
   - component: {fileID: 1211952679036440654}
   - component: {fileID: 8357427663311301832}
-  - component: {fileID: 3810860552977690432}
   m_Layer: 0
   m_Name: Car front
   m_TagString: Untagged
@@ -130,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 195bf1cbfd65f28499363d65675e0e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioManager: {fileID: 3810860552977690432}
+  audioManager: {fileID: 0}
 --- !u!65 &1211952679036440654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -240,18 +239,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3810860552977690432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211952679036440655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0993a9a251ee507478db3451df1da44e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1211952679161751828
 GameObject:
   m_ObjectHideFlags: 0

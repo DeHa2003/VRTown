@@ -21,7 +21,6 @@ public class UIPanel : MonoBehaviour
 
     private void OnDisable()
     {
-        //Checked
         OnCloseUI?.Invoke();
     }
 

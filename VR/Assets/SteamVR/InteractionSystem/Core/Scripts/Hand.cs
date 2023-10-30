@@ -1688,6 +1688,7 @@ namespace Valve.VR.InteractionSystem
         public int GetDeviceIndex()
         {
             return trackedObject.GetDeviceIndex();
+            
         }
     }
 
