@@ -13,10 +13,8 @@ public class PlayerTrigger : MonoBehaviour
     [SerializeField] private GameObject failedGameUI;
     [SerializeField] private GameObject completedGameUI;
 
-    private PanelFailed panelFailed;
-
     private string roadViolation = "ѕешеходам запрещено пересекать проезжую часть вне пешеходного перехода";
-    private string zebViolation = "“ест";
+    private string zebViolation = "ѕешеходам запрещено переходить по пешеходному переходу на красный сигнал пешеходного светофора";
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Road") || other.CompareTag("Zeb"))
@@ -33,7 +31,6 @@ public class PlayerTrigger : MonoBehaviour
                 failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
             }
             OnLoseGame?.Invoke();
-            AudioManager.instance.Play(Sound.TypeAudioSource.LoseGame);
             Time.timeScale = 0;
         }
         else if (other.CompareTag("Finish"))
@@ -41,6 +38,7 @@ public class PlayerTrigger : MonoBehaviour
             Instantiate(completedGameUI, posToSpawn.position, posToSpawn.rotation);
             AudioManager.instance.Play(Sound.TypeAudioSource.CompletedGame);
             OnCompletedGame?.Invoke();
+
             Time.timeScale = 0;
         }
     }

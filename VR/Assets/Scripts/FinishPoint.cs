@@ -7,8 +7,7 @@ public class FinishPoint : MonoBehaviour
     [SerializeField] private Material material;
     [SerializeField] private GameObject LookAtJoint;
     [SerializeField] private Vector3 vectorRotate;
-    [SerializeField] private Vector3 vectorTranslateUp;
-    [SerializeField] private Vector3 vectorTranslateDown;
+    [SerializeField] private Vector3 vectorTranslate;
     [SerializeField] private float speed;
     [SerializeField] private float timeTranslate;
     public float time;
@@ -16,6 +15,7 @@ public class FinishPoint : MonoBehaviour
     private void Start()
     {
         material.SetColor("_TintColor", GetRandomColor());
+        time = timeTranslate;
     }
 
     private void OnEnable()
@@ -37,9 +37,9 @@ public class FinishPoint : MonoBehaviour
     {
         LookAtJoint.transform.Rotate(vectorRotate * Time.deltaTime * speed);
         if (isUp)
-            LookAtJoint.transform.Translate(vectorTranslateUp * Time.deltaTime);
+            LookAtJoint.transform.Translate(vectorTranslate * Time.deltaTime);
         else
-            LookAtJoint.transform.Translate(vectorTranslateDown * Time.deltaTime);
+            LookAtJoint.transform.Translate(-vectorTranslate * Time.deltaTime);
 
 
         time -= Time.deltaTime;

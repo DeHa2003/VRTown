@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerComponents : MonoBehaviour
 {
-    public bool isVisiblePos;
+    [Header("Pos spawn")]
+    [SerializeField] private bool isVisiblePos;
+    [SerializeField] private Color color;
     [SerializeField] private Transform posPlayerSpawn;
+
     private CharacterController controller;
     private GameObject player;
     private LaserController laserController;
@@ -43,8 +46,6 @@ public class PlayerComponents : MonoBehaviour
             { 
                 laserController.RemoveLaserPointer(); 
             }
-
-            //UPD.
         }
     }
 
@@ -81,7 +82,7 @@ public class PlayerComponents : MonoBehaviour
     {
         if (isVisiblePos)
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = color;
             Gizmos.DrawSphere(posPlayerSpawn.position, 2f);
         }
     }

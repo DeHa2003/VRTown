@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class PeshehodGame : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class PeshehodGame : MonoBehaviour
     [SerializeField] private List<Sprite> imagesTown;
 
     [SerializeField] private List<BoxCollider> buttonsColliders;
+    [SerializeField] private LevelVideo levelVideo;
 
     private int sceneNumber;
 
@@ -38,13 +40,18 @@ public class PeshehodGame : MonoBehaviour
         }
     }
 
+    public void NameLevel(string nameLevel)
+    {
+        textMeshPro.text = nameLevel;
+    }
+
     public void ViborGame(int level)
     {
         if(!plaingPanel.activeSelf)
             plaingPanel.SetActive(true);
-        image.sprite = imagesTown[level-1];
-        textMeshPro.text = numberLevel[level-1];
+
         sceneNumber = level;
+        levelVideo.PlayClip(level-1);
     }
 
     public void OpenStartPanel(GameObject panel)

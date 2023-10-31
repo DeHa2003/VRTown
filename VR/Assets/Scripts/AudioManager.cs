@@ -77,6 +77,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void PlayLoseGameSound()
+    {
+
+    }
+
     public void Play(string nameAudio)
     {
         Sound s = Array.Find(sounds.ToArray(), sound => sound.nameSound == nameAudio);

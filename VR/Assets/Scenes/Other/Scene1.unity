@@ -515,12 +515,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 510c6e0b8b5c948458c2b4bc3de5a637, type: 2}
   LookAtJoint: {fileID: 574330783}
-  vectorRotate: {x: 0, y: 25, z: 0}
-  vectorTranslateUp: {x: 0, y: 1, z: 0}
-  vectorTranslateDown: {x: 0, y: -1, z: 0}
+  vectorRotate: {x: 0, y: 70, z: 0}
+  vectorTranslate: {x: 0, y: 1, z: 0}
   speed: 2
-  timeTranslate: 0.5
-  time: 1
+  timeTranslate: 1
+  time: 0
 --- !u!135 &138071478
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3824,7 +3823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d2ac71042746a3419e110d67203e562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisiblePos: 1
+  isVisiblePos: 0
+  color: {r: 0, g: 0, b: 0, a: 1}
   posPlayerSpawn: {fileID: 1641945160}
 --- !u!114 &1040234226
 MonoBehaviour:
@@ -3921,7 +3921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052616334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 110.1, y: 0.41, z: 12.55}
+  m_LocalPosition: {x: 111.63, y: 0.41, z: 12.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6695,8 +6695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76bcd3506e209441893b202ca9c13a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: 3
-  max: 15
+  min: 15
+  max: 20
   cars:
   - {fileID: 6311228767600922078, guid: 9646c0fd56ea6c644b1dc94a1b259dcb, type: 3}
   - {fileID: 1211952679218817033, guid: 8d050c4e0b6def34699da9271c9bc1e6, type: 3}
