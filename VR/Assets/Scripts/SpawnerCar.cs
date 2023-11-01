@@ -8,17 +8,45 @@ using Random = UnityEngine.Random;
 
 public class SpawnerCar : MonoBehaviour
 {
-    public float min;
-    public float max;
-    [SerializeField] private List<GameObject> cars;
+    [SerializeField] private CinemachineVirtualCamera camera;
+    [SerializeField] private float min;
+    [SerializeField] private float max;
+    [SerializeField] private int limit;
+    public List<GameObject> carsPref;
+    public List<NavMeshAgent> agents;
     void Start()
     {
-        Spawner();
+        CarSpawner();
     }
 
-    private void Spawner()
+    private IEnumerator Spawner()
     {
-        Instantiate(cars[Random.Range(0, cars.Count)]);
-        Invoke(nameof(Spawner), Random.Range(min, max));
+        foreach (var s in agents)
+        {
+            if (s == null)
+            {
+                agents.Remove(s);
+            }
+        }
+
+        if (agents.Count < limit)
+        {
+            agents.Add(Instantiate(carsPref[Random.Range(0, carsPref.Count)]).GetComponent<NavMeshAgent>());
+        }
+
+        yield return new WaitForSeconds(Random.Range(min, max));
+
+        StartCoroutine(nameof(Spawner));
     }
+
+    private void CarSpawner()
+    {
+        Instantiate(carsPref[Random.Range(0, carsPref.Count)]);
+        Invoke(nameof(CarSpawner), Random.Range(min, max));
+    }
+
+    //public void RemoveFromList(NavMeshAgent meshAgent)
+    //{
+    //    agents.Remove(meshAgent);
+    //}
 }

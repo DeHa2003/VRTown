@@ -31,6 +31,8 @@ public class PlayerTrigger : MonoBehaviour
                 failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
             }
             OnLoseGame?.Invoke();
+            AudioManager.instance.Play(Sound.TypeAudioSource.LoseGame);
+
             Time.timeScale = 0;
         }
         else if (other.CompareTag("Finish"))

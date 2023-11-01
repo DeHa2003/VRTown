@@ -13,7 +13,7 @@ public class Sound
     public bool isLoop = false;
     [Range(0f, 1f)] public float volume = 1;
     [Range(-1f, 1f)] public float pitch = 1;
-    [Range(0f, 1f)] public float spatialBlend = 1;
+    [Range(0f, 1f)] public float spatialBlend = 0;
     public TypeAudioSource typeAudio;
 
     public enum TypeAudioSource
