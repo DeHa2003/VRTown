@@ -10,11 +10,11 @@ TagManager:
   - CarAI
   - Road
   - Zeb
-  - SceneManager
   - VR Item
   - Interaction
   - projectile
   - FxTemporaire
+  - PlayerControls
   layers:
   - Default
   - TransparentFX

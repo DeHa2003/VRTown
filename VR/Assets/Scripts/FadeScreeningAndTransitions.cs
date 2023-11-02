@@ -8,15 +8,11 @@ using Valve.VR;
 
 public class FadeScreeningAndTransitions : MonoBehaviour
 {
-    public Color startColor;
-    public Color endColor;
-    public float duration;
+    [SerializeField] private Color startColor;
+    [SerializeField] private Color endColor;
+    [SerializeField] private float duration;
 
-    public void LoadScene(int sceneNumber)
-    {
-        StartCoroutine(Fade(sceneNumber));
-    }
-    private IEnumerator Fade(int sceneNumber)
+    public IEnumerator LoadSceneCoroutine(int sceneNumber)
     {
         Time.timeScale = 1.0f;
         SteamVR_Fade.Start(startColor, duration);

@@ -798,10 +798,6 @@ MonoBehaviour:
   OnCloseUI:
     m_PersistentCalls:
       m_Calls: []
-  device: {fileID: 0}
-  duration: 0
-  frequency: 0
-  amplitude: 0
 --- !u!1 &8140393285634058150
 GameObject:
   m_ObjectHideFlags: 0

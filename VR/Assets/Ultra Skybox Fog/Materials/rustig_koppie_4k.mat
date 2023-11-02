@@ -10,8 +10,7 @@ Material:
   m_Name: rustig_koppie_4k
   m_Shader: {fileID: 4800000, guid: 5e444cd13928b274babcaedb447ba3ef, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _FOGBOTTOM_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -33,13 +32,13 @@ Material:
     m_Floats:
     - <noninit>: 0
     - _Exposure: 1.12
-    - _FogBottom: 1
-    - _FogEnd: 0.289
+    - _FogBottom: 0
+    - _FogEnd: 0.551
     - _FogIntens: 1
     - _FogStart: 0
     - _MieIntens: 0
     - _MieSize: 1
-    - _Rotation: 309
+    - _Rotation: 312
     - _SunDir: 55
     m_Colors:
     - <noninit>: {r: 0, g: 2.0182498, b: 1e-45, a: 1.2904559e-15}

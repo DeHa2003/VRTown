@@ -8,45 +8,32 @@ using Valve.VR.InteractionSystem;
 
 public class MenuPanel : MonoBehaviour
 {
-    [SerializeField] private SteamVR_Action_Boolean menuAction;
-
     [SerializeField] private GameObject menuPref;
     [SerializeField] private Transform posSpawn;
 
-    private LaserController laserController;
-    private FadeScreeningAndTransitions transitions;
-
-    private GameObject menu;
-    
-    private void Awake()
+    private GameObject menu = null;
+    private void OnEnable()
     {
-        laserController = GetComponent<LaserController>();
-        transitions = GetComponent<FadeScreeningAndTransitions>();
+        Laser.OnActivateLaser += InstantiateMenuPanel;
+        Laser.OnDiactivateLaser += DeleteMenuPanel;
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        if(menuAction.GetStateDown(SteamVR_Input_Sources.Any) && menu == null)
-        {
-            if(Time.deltaTime > 0)
-            {
-                menu = Instantiate(menuPref, posSpawn.position, posSpawn.rotation);
-                laserController.AddLaserPointer();
-            }
-        }
-        else if(menuAction.GetStateDown(SteamVR_Input_Sources.Any) && menu != null)
-        {
-            if (Time.deltaTime > 0)
-            {
-                Destroy(menu);
-                laserController.RemoveLaserPointer();
-            }
-        }
+        Laser.OnActivateLaser -= InstantiateMenuPanel;
+        Laser.OnDiactivateLaser -= DeleteMenuPanel;
     }
 
-    public void PlayScene(int sceneNum)
+    private void InstantiateMenuPanel()
     {
-        transitions.LoadScene(sceneNum);
+        if(Time.deltaTime > 0)
+        menu = Instantiate(menuPref, posSpawn.position, posSpawn.rotation);
+    }
+
+    private void DeleteMenuPanel()
+    {
+        if(Time.deltaTime > 0)
+        Destroy(menu);
     }
 
     public void ActivateDeactivate(bool isActive)

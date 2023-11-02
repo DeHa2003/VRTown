@@ -31,7 +31,7 @@ public class StartPanelMenu : FinishPanel
     
     public void CloseMenu()
     {
-        playerController.ActivateLaser(false);
+        LaserControl.ActivateComponent(false);
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

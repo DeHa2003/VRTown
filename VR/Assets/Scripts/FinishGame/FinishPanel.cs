@@ -8,22 +8,24 @@ public class FinishPanel : MonoBehaviour
 {
     [SerializeField] protected TextMeshProUGUI task;
     [SerializeField] protected TextMeshProUGUI typeOfViolationText;
-    protected GameObject sceneManager;
-    protected PlayerComponents playerController;
-    protected TaskManager taskManager;
 
-    protected void Awake()
+    protected GameObject PlayerControls { get; private set; }
+    protected LaserControl LaserControl { get; private set; }
+    protected GetTaskScene TaskManager { get; private set; }
+    protected SceneTransitionControl TransitionControl { get; private set; }
+
+    private void Awake()
     {
-        sceneManager = GameObject.FindWithTag("SceneManager");
-        playerController = sceneManager.GetComponent<PlayerComponents>();
-        taskManager = sceneManager.GetComponent<TaskManager>();
+        PlayerControls = GameObject.FindGameObjectWithTag("PlayerControls");
+        LaserControl = PlayerControls.GetComponent<LaserControl>();
+        TaskManager = PlayerControls.GetComponent<GetTaskScene>();
+        TransitionControl = PlayerControls.GetComponent<SceneTransitionControl>();
     }
+
     protected void Start()
     {
-        task.text = taskManager.GetTask();
-
-        playerController.AddLaserController(true);
-        playerController.ActivateLaser(true);
+        task.text = TaskManager.GetTask();
+        LaserControl.ActivateComponent(true);
     }
     public void SetTypeOfViolation(string typeViolation)
     {
@@ -32,11 +34,11 @@ public class FinishPanel : MonoBehaviour
 
     public void Restart()
     {
-        playerController.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        TransitionControl.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToHome()
     {
-        playerController.LoadScene(0);
+        TransitionControl.LoadScene(0);
     }
 }

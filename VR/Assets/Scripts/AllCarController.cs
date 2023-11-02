@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class AllCarController : MonoBehaviour
 {
-    [SerializeField] List<SvetoforController> potok1;
-    [SerializeField] List<GameObject> zebs1;
-    [SerializeField] List<SvetoforController> potok2;
-    [SerializeField] List<GameObject> zebs2;
+    [SerializeField] private List<SvetoforController> potok1;
+    [SerializeField] private List<GameObject> zebs1;
+    [SerializeField] private List<SvetoforController> potok2;
+    [SerializeField] private List<GameObject> zebs2;
 
     private void Start()
     {

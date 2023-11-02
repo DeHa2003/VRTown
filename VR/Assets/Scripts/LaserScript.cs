@@ -10,7 +10,7 @@ using Valve.VR.Extras;
 using Valve.VR.InteractionSystem;
 public class LaserScript : SteamVR_LaserPointer
 {
-    private VibrationDevice vibration;
+    private VibrationDeviceControl vibration;
 
     private Hand hand;
 
@@ -21,7 +21,7 @@ public class LaserScript : SteamVR_LaserPointer
     {
         color = SettingsScript.colorLaserDefault;
         clickColor = SettingsScript.colorLaserClick;
-        vibration = GameObject.FindWithTag("SceneManager").GetComponent<VibrationDevice>();
+        vibration = GameObject.FindWithTag("PlayerControls").GetComponent<VibrationDeviceControl>();
         hand = GetComponent<Hand>();
     }
     public override void OnPointerIn(PointerEventArgs e)
@@ -30,11 +30,11 @@ public class LaserScript : SteamVR_LaserPointer
         if (e.target.CompareTag("UI"))
         {
             e.target.GetComponent<UIButton>().Select();
-            vibration.Pulse(0, 20, 0.1F, GetComponent<Hand>().handType);
+            vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
         if (e.target.CompareTag("VR Item"))
         {
-            vibration.Pulse(0, 20, 0.1F, GetComponent<Hand>().handType);
+            vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
             grabbingObj = e.target.gameObject;
             isGrabbing = true;
         }
@@ -71,7 +71,7 @@ public class LaserScript : SteamVR_LaserPointer
         if (e.target.CompareTag("UI"))
         {
             e.target.GetComponent<UIButton>().UnSelect();
-            vibration.Pulse(0, 20, 0.1F, GetComponent<Hand>().handType);
+            vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
         if (e.target.CompareTag("VR Item"))
         {

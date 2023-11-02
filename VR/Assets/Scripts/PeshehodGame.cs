@@ -9,7 +9,7 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 public class PeshehodGame : MonoBehaviour
 {
-    [SerializeField] private PlayerComponents playerComponents;
+    [SerializeField] private SceneTransitionControl sceneTransitionControl;
 
     [SerializeField] private GameObject plaingPanel;
 
@@ -64,7 +64,7 @@ public class PeshehodGame : MonoBehaviour
     {
         if(sceneNumber != 0)
         {
-            playerComponents.LoadScene(sceneNumber);
+            sceneTransitionControl.LoadScene(sceneNumber);
         }
     }
 }

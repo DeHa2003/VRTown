@@ -8881,9 +8881,9 @@ MonoBehaviour:
   OnOpenUI:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 982834870}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: ActivateLaser
+      - m_Target: {fileID: 982834874}
+        m_TargetAssemblyTypeName: LaserControl, Assembly-CSharp
+        m_MethodName: ActivateComponent
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8908,10 +8908,6 @@ MonoBehaviour:
   OnCloseUI:
     m_PersistentCalls:
       m_Calls: []
-  device: {fileID: 0}
-  duration: 0.2
-  frequency: 300
-  amplitude: 0.2
 --- !u!82 &407995512
 AudioSource:
   m_ObjectHideFlags: 0
@@ -12366,37 +12362,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 929956547}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &935627614
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 935627615}
-  m_Layer: 0
-  m_Name: PositionToSpawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &935627615
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 935627614}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.58, y: 0.522, z: 0.94}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 982834868}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &977366499 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 2d5fb229ae2945742b900a405a5e7a0b,
@@ -12413,13 +12378,15 @@ GameObject:
   m_Component:
   - component: {fileID: 982834868}
   - component: {fileID: 982834869}
-  - component: {fileID: 982834870}
-  - component: {fileID: 982834871}
-  - component: {fileID: 982834872}
-  - component: {fileID: 982834873}
+  - component: {fileID: 982834880}
+  - component: {fileID: 982834874}
+  - component: {fileID: 982834875}
+  - component: {fileID: 982834876}
+  - component: {fileID: 982834877}
+  - component: {fileID: 982834879}
   m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: SceneManager
+  m_Name: PlayerControls
+  m_TagString: PlayerControls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12436,7 +12403,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 935627615}
+  - {fileID: 1503950473}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -12455,21 +12422,9 @@ MonoBehaviour:
   EventOnOpenScene:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 982834870}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: AddLaserController
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 982834870}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: ActivateLaser
+      - m_Target: {fileID: 982834875}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: ActivateComponent
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12481,32 +12436,8 @@ MonoBehaviour:
         m_CallState: 2
   EventOnCloseScene:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 982834870}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: ActivateLaser
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 982834870}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: AddLaserController
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &982834870
+      m_Calls: []
+--- !u!114 &982834874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12515,13 +12446,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 982834867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d2ac71042746a3419e110d67203e562, type: 3}
+  m_Script: {fileID: 11500000, guid: 23aaef1446ab0504aa05af1bb71eee48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisiblePos: 0
-  color: {r: 0, g: 0, b: 0, a: 0}
-  posPlayerSpawn: {fileID: 935627615}
---- !u!114 &982834871
+  getPlayer: {fileID: 982834880}
+--- !u!114 &982834875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12530,13 +12459,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 982834867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff56082d739014946917ab83cf30b065, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ea2f6376cfa10242a494cfb4677c2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiObjs:
-  - {fileID: 407995504}
-  - {fileID: 1462310738}
---- !u!114 &982834872
+  getPlayer: {fileID: 982834880}
+--- !u!114 &982834876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12545,19 +12472,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 982834867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f996ee8e4e8ec7d439957b0d4e1c099e, type: 3}
+  m_Script: {fileID: 11500000, guid: 311926368ccae4f4899d2864442d0bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vibration:
-    actionPath: /actions/default/out/Haptic
-    needsReinit: 0
-  test:
-    actionPath: /actions/default/in/Laser
-    needsReinit: 0
-  duration: 0.1
-  frequency: 250
-  amplitude: 0.1
---- !u!114 &982834873
+  getPlayer: {fileID: 982834880}
+--- !u!114 &982834877
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12566,7 +12485,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 982834867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e39053346317b444ba2f9941640abd41, type: 3}
+  m_Script: {fileID: 11500000, guid: 6088d479dd63889408660f3b74476b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPlayer: {fileID: 982834880}
+--- !u!114 &982834879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982834867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4169b8921bca4004393ce055591a21a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPlayer: {fileID: 982834880}
+  isVisiblePos: 1
+  sizeGizmos: 0.48
+  color: {r: 1, g: 0, b: 0, a: 1}
+  posPlayerSpawn: {fileID: 1503950473}
+--- !u!114 &982834880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982834867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfac2475d835974989964cb2811ec46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &995989512 stripped
@@ -16910,9 +16859,9 @@ MonoBehaviour:
   OnOpenUI:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 982834870}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: ActivateLaser
+      - m_Target: {fileID: 982834874}
+        m_TargetAssemblyTypeName: LaserControl, Assembly-CSharp
+        m_MethodName: ActivateComponent
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16937,10 +16886,6 @@ MonoBehaviour:
   OnCloseUI:
     m_PersistentCalls:
       m_Calls: []
-  device: {fileID: 0}
-  duration: 0.2
-  frequency: 300
-  amplitude: 0.2
 --- !u!82 &1462310746
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17417,6 +17362,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &1503950472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1503950473}
+  m_Layer: 0
+  m_Name: PosToSpawnPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1503950473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503950472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.33, y: 0.513, z: 2.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 982834868}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1509694405
 GameObject:
   m_ObjectHideFlags: 0
@@ -17463,7 +17439,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff56082d739014946917ab83cf30b065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiObjs: []
 --- !u!1 &1527081035
 GameObject:
   m_ObjectHideFlags: 0
@@ -23435,7 +23410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2968e46d0f6a74fbf4aa3ff5abeda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerComponents: {fileID: 982834870}
+  sceneTransitionControl: {fileID: 982834876}
   plaingPanel: {fileID: 2054144436}
   image: {fileID: 1632716939}
   textMeshPro: {fileID: 429263123}
@@ -26479,17 +26454,17 @@ MonoBehaviour:
   onHandHoverBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 982834871}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OpenUI
-        m_Mode: 2
+      - m_Target: {fileID: 407995504}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 407995504}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   onHandHoverEnd:
     m_PersistentCalls:
@@ -29833,17 +29808,17 @@ MonoBehaviour:
   onHandHoverBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 982834871}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: OpenUI
-        m_Mode: 2
+      - m_Target: {fileID: 1462310738}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
-          m_ObjectArgument: {fileID: 1462310738}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
   onHandHoverEnd:
     m_PersistentCalls:

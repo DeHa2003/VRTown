@@ -1515,7 +1515,7 @@ Transform:
   - {fileID: 1152595280}
   - {fileID: 1339513150}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397170811
 GameObject:
@@ -1822,7 +1822,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &420348912
 AudioSource:
@@ -3189,7 +3189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628944241}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.76, y: 0.7, z: -35.96}
+  m_LocalPosition: {x: 6.76, y: 0.7, z: -38.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4206,7 +4206,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20.214, y: -57.575, z: -38.711}
 --- !u!1 &711913403 stripped
 GameObject:
@@ -4472,7 +4472,7 @@ Transform:
   - {fileID: 1954294893}
   - {fileID: 1909534610}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &857257937
 PrefabInstance:
@@ -6081,38 +6081,21 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1004903084}
-  - component: {fileID: 1004903086}
-  - component: {fileID: 1004903083}
-  - component: {fileID: 1004903081}
+  - component: {fileID: 1004903090}
   - component: {fileID: 1004903085}
+  - component: {fileID: 1004903083}
+  - component: {fileID: 1004903087}
+  - component: {fileID: 1004903086}
+  - component: {fileID: 1004903088}
+  - component: {fileID: 1004903089}
+  - component: {fileID: 1004903091}
   m_Layer: 0
-  m_Name: SceneManager
-  m_TagString: SceneManager
+  m_Name: PlayerControls
+  m_TagString: PlayerControls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1004903081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004903080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f996ee8e4e8ec7d439957b0d4e1c099e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vibration:
-    actionPath: /actions/default/out/Haptic
-    needsReinit: 0
-  test:
-    actionPath: /actions/default/in/Menu
-    needsReinit: 0
-  duration: 0.1
-  frequency: 250
-  amplitude: 0.1
 --- !u!114 &1004903083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6128,9 +6111,21 @@ MonoBehaviour:
   EventOnOpenScene:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: AddMenuController
+      - m_Target: {fileID: 1004903087}
+        m_TargetAssemblyTypeName: LaserControl, Assembly-CSharp
+        m_MethodName: ActivateComponent
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1004903086}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: ActivateComponent
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6140,37 +6135,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: ActivateLaser
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   EventOnCloseScene:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerComponents, Assembly-CSharp
-        m_MethodName: AddMenuController
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1454019984}
         m_TargetAssemblyTypeName: InteractionsObjs, Assembly-CSharp
         m_MethodName: Parent
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1004903086}
+        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+        m_MethodName: ActivateComponent
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6194,7 +6177,7 @@ Transform:
   - {fileID: 628944242}
   - {fileID: 130917028}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1004903085
 MonoBehaviour:
@@ -6218,11 +6201,77 @@ MonoBehaviour:
   m_GameObject: {fileID: 1004903080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d2ac71042746a3419e110d67203e562, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ea2f6376cfa10242a494cfb4677c2c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisiblePos: 0
-  color: {r: 0, g: 0, b: 0, a: 0}
+  getPlayer: {fileID: 1004903090}
+--- !u!114 &1004903087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004903080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23aaef1446ab0504aa05af1bb71eee48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPlayer: {fileID: 1004903090}
+--- !u!114 &1004903088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004903080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311926368ccae4f4899d2864442d0bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPlayer: {fileID: 1004903090}
+--- !u!114 &1004903089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004903080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6088d479dd63889408660f3b74476b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPlayer: {fileID: 1004903090}
+--- !u!114 &1004903090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004903080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cfac2475d835974989964cb2811ec46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1004903091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004903080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4169b8921bca4004393ce055591a21a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  getPlayer: {fileID: 1004903090}
+  isVisiblePos: 1
+  sizeGizmos: 0.77
+  color: {r: 0, g: 0, b: 0, a: 1}
   posPlayerSpawn: {fileID: 628944242}
 --- !u!1001 &1006514402
 PrefabInstance:
@@ -8562,7 +8611,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1462904673
 GameObject:
@@ -10539,7 +10588,7 @@ Transform:
   - {fileID: 104801473}
   - {fileID: 928765346}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1749184729
 GameObject:
@@ -11693,7 +11742,7 @@ Transform:
   - {fileID: 1880984795}
   - {fileID: 1749184730}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1954294892
 PrefabInstance:
@@ -12460,7 +12509,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2080771035}
-  - component: {fileID: 2080771034}
   - component: {fileID: 2080771036}
   m_Layer: 0
   m_Name: WheelsCar
@@ -12469,51 +12517,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2080771034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080771033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8547824d4dc69b48a3b67eb5bdd8c39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowGizmos: 0
-  wheel1:
-  - {fileID: 1202070988}
-  - {fileID: 63272639}
-  - {fileID: 672491139}
-  - {fileID: 1394954513}
-  posSpawn1: {fileID: 1462904674}
-  wheel2:
-  - {fileID: 1640283258}
-  posSpawn2: {fileID: 56943939}
-  wheel3:
-  - {fileID: 323938131}
-  - {fileID: 1254841284}
-  - {fileID: 1306740975}
-  - {fileID: 1488200208}
-  posSpawn3: {fileID: 1962053624}
-  wheel4:
-  - {fileID: 1394954513}
-  posSpawn4: {fileID: 1962053624}
-  wheel5:
-  - {fileID: 397170812}
-  - {fileID: 392578833}
-  - {fileID: 739610198}
-  - {fileID: 1306740975}
-  - {fileID: 1488200208}
-  posSpawn5: {fileID: 56943939}
-  wheel6:
-  - {fileID: 1202070988}
-  - {fileID: 385138843}
-  - {fileID: 1755047932}
-  - {fileID: 1401852209}
-  - {fileID: 1640283258}
-  posSpawn6: {fileID: 1462904674}
 --- !u!4 &2080771035
 Transform:
   m_ObjectHideFlags: 0
