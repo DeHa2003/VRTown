@@ -7223,17 +7223,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76bcd3506e209441893b202ca9c13a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  virtualCamera: {fileID: 0}
   min: 15
   max: 20
-  limit: 10
   carsPref:
   - {fileID: 6311228767600922078, guid: 9646c0fd56ea6c644b1dc94a1b259dcb, type: 3}
   - {fileID: 1211952679218817033, guid: 8d050c4e0b6def34699da9271c9bc1e6, type: 3}
   - {fileID: 4711840121393376725, guid: 640e9631e2bebfd438eed66787e2013b, type: 3}
   - {fileID: 3478662686406250927, guid: ffc51e8696f20324b809fcd9a0b19d3a, type: 3}
   - {fileID: 2665400483957314446, guid: 83a5ea075a72f8045b04ba098c26d674, type: 3}
-  agents: []
 --- !u!4 &1909437603
 Transform:
   m_ObjectHideFlags: 0

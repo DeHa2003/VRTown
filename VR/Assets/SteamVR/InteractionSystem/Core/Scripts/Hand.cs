@@ -1681,6 +1681,7 @@ namespace Valve.VR.InteractionSystem
 
         public void SetHoverRenderModel(RenderModel hoverRenderModel)
         {
+            Debug.Log("Check" + applicationLostFocusObject.name + "версия");
             hoverhighlightRenderModel = hoverRenderModel;
             renderModels.Add(hoverRenderModel);
         }
