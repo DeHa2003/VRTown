@@ -10,7 +10,7 @@ public class VibrationDeviceControl : PlayerComponentControl
     private void Awake()
     {
         Debug.Log("Дочерний класс");
-        vibrationDevice = getPlayer.player.GetComponent<VibrationDevice>();
+        vibrationDevice = getPlayer.player.GetComponentInChildren<VibrationDevice>();
     }
 
     public void Vibration(float duration, float frequency, float amplitude, Valve.VR.SteamVR_Input_Sources input_Sources)

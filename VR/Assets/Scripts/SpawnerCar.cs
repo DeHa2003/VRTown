@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class SpawnerCar : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
     [SerializeField] private float min;
     [SerializeField] private float max;
     [SerializeField] private List<GameObject> carsPref;
@@ -16,7 +15,7 @@ public class SpawnerCar : MonoBehaviour
 
     private void CarSpawner()
     {
-        virtualCamera.LookAt = Instantiate(carsPref[Random.Range(0, carsPref.Count)]).transform;
+        Instantiate(carsPref[Random.Range(0, carsPref.Count)]);
         Invoke(nameof(CarSpawner), Random.Range(min, max));
     }
 }

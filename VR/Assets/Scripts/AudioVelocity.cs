@@ -11,13 +11,13 @@ public class AudioVelocity : MonoBehaviour
     [SerializeField] private List<AudioClip> clips;
     [SerializeField] private float dependenceVolume;
 
-    private AudioSource audio;
+    private AudioSource audioS;
     private Rigidbody rb;
     private void Awake()
     {
-        audio = GetComponent<AudioSource>();
-        audio.playOnAwake = false;
-        audio.spatialBlend = 0.9f;
+        audioS = GetComponent<AudioSource>();
+        audioS.playOnAwake = false;
+        audioS.spatialBlend = 0.9f;
         rb = GetComponent<Rigidbody>();
     }
     private void OnCollisionEnter(Collision collision)
@@ -32,8 +32,8 @@ public class AudioVelocity : MonoBehaviour
 
     private void PlaySound(AudioClip audioClip, float volume)
     {
-        audio.clip = audioClip;
-        audio.volume = volume;
-        audio.Play();
+        audioS.clip = audioClip;
+        audioS.volume = volume;
+        audioS.Play();
     }
 }

@@ -9,7 +9,7 @@ public class SceneTransitionControl : PlayerComponentControl
     private void Awake()
     {
         Debug.Log("Дочерний класс");
-        transitions = getPlayer.player.GetComponent<FadeScreeningAndTransitions>();
+        transitions = getPlayer.player.GetComponentInChildren<FadeScreeningAndTransitions>();
     }
 
     public void LoadScene(int sceneNumber)

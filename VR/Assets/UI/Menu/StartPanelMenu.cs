@@ -31,7 +31,6 @@ public class StartPanelMenu : FinishPanel
     
     public void CloseMenu()
     {
-        LaserControl.ActivateComponent(false);
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

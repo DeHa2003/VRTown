@@ -9,7 +9,7 @@ public class MenuControl : PlayerComponentControl
     private void Awake()
     {
         Debug.Log("Дочерний класс");
-        menuPanel = getPlayer.player.GetComponent<MenuPanel>();
+        menuPanel = getPlayer.player.GetComponentInChildren<MenuPanel>();
     }
 
     public void ActivateComponent(bool isActive)

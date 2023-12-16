@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(PlayerSpawnerControl))]
 [RequireComponent(typeof(MenuControl))]
-[RequireComponent(typeof(LaserControl))]
 [RequireComponent(typeof(SceneTransitionControl))]
 [RequireComponent(typeof(VibrationDeviceControl))]
 public class GetPlayer : MonoBehaviour
@@ -13,6 +13,6 @@ public class GetPlayer : MonoBehaviour
     private void Awake()
     {
         Debug.Log("Базовый класс");
-        player = GameObject.FindWithTag("Player");
+        player = Player.instance.gameObject; ;
     } 
 }

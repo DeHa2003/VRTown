@@ -10,14 +10,12 @@ public class FinishPanel : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI typeOfViolationText;
 
     protected GameObject PlayerControls { get; private set; }
-    protected LaserControl LaserControl { get; private set; }
     protected GetTaskScene TaskManager { get; private set; }
     protected SceneTransitionControl TransitionControl { get; private set; }
 
     private void Awake()
     {
         PlayerControls = GameObject.FindGameObjectWithTag("PlayerControls");
-        LaserControl = PlayerControls.GetComponent<LaserControl>();
         TaskManager = PlayerControls.GetComponent<GetTaskScene>();
         TransitionControl = PlayerControls.GetComponent<SceneTransitionControl>();
     }
@@ -25,7 +23,6 @@ public class FinishPanel : MonoBehaviour
     protected void Start()
     {
         task.text = TaskManager.GetTask();
-        LaserControl.ActivateComponent(true);
     }
     public void SetTypeOfViolation(string typeViolation)
     {

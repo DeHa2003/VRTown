@@ -1,12 +1,19 @@
 using UnityEngine;
-using System;
+using DG.Tweening;
 
 public class MenuPanel : MonoBehaviour
 {
     [SerializeField] private GameObject menuPref;
-    [SerializeField] private Transform posSpawn;
+
+    [Header("Positions")]
+    [SerializeField] private Transform posMenu;
+
+    [Header("Time to spawn/delete menu")]
+    [SerializeField] private float time;
 
     private GameObject menu = null;
+    private Tween tween;
+
     private void OnEnable()
     {
         HandButtons.OnClickRightHandMenu += CheckMenuPanel;
@@ -16,16 +23,6 @@ public class MenuPanel : MonoBehaviour
     {
         HandButtons.OnClickRightHandMenu -= CheckMenuPanel;
     }
-
-    //private void InstantiateMenuPanel()
-    //{
-    //    menu = Instantiate(menuPref, posSpawn.position, posSpawn.rotation);
-    //}
-
-    //private void DeleteMenuPanel()
-    //{
-    //    Destroy(menu);
-    //}
 
     public void ActivateDeactivate(bool isActive)
     {
@@ -41,24 +38,16 @@ public class MenuPanel : MonoBehaviour
 
     public void InstantiateMenuPanel()
     {
-        AudioManager.instance.Play("OpenMenu");
+        if(tween != null) { tween.Kill(); }
 
-        menu = Instantiate(menuPref, posSpawn.position, posSpawn.rotation);
-        //    menu.transform.DOMove(posMenu.position, timeSpawn);
-        //    menu.transform.DOScale(0.01f, timeSpawn);
-        //}
+        menu = Instantiate(menuPref, posMenu.position, posMenu.rotation);
+        tween = menu.transform.DOScale(0.01f, time);
     }
     public void DeleteMenuPanel()
     {
-        AudioManager.instance.Play("CloseMenu");
+        if (tween != null) { tween.Kill(); }
 
-        //menu.transform.DOScale(0f, timeSpawn);
-        //menu.transform.
-        //    DOMove(posDelete.position, timeSpawn).
-        //    OnComplete(() => {
-        //        Destroy(menu);
-        //    });
-        Destroy(menu);
+        menu.transform.DOScale(0f, time).OnComplete(() => Destroy(menu));
     }
 
     private void CheckMenuPanel()
