@@ -11,9 +11,11 @@ public class UIButton : MonoBehaviour
     public bool isChangeSize = true;
     private Vector3 size;
     private AudioSource audioSource;
+    private Button button;
 
     private void Awake()
     {
+        button = GetComponent<Button>();
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
         audioSource.playOnAwake = false;
@@ -38,6 +40,7 @@ public class UIButton : MonoBehaviour
 
     public void Click()
     {
+        button.onClick.Invoke();
         PlaySound(clickUISound);
     }
 

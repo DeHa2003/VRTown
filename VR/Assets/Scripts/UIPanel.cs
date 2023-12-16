@@ -7,12 +7,14 @@ public class UIPanel : MonoBehaviour
 {
     public UnityEvent OnOpenUI;
     public UnityEvent OnCloseUI;
-    private void OnEnable()
+
+    public void OpenPanel()
     {
+
         OnOpenUI?.Invoke();
     }
 
-    private void OnDisable()
+    public void ClosePanel()
     {
         OnCloseUI?.Invoke();
     }

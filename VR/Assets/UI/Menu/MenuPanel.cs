@@ -1,10 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Valve.VR;
-using Valve.VR.Extras;
-using Valve.VR.InteractionSystem;
+using System;
 
 public class MenuPanel : MonoBehaviour
 {
@@ -14,27 +9,23 @@ public class MenuPanel : MonoBehaviour
     private GameObject menu = null;
     private void OnEnable()
     {
-        Laser.OnActivateLaser += InstantiateMenuPanel;
-        Laser.OnDiactivateLaser += DeleteMenuPanel;
+        HandButtons.OnClickRightHandMenu += CheckMenuPanel;
     }
 
     private void OnDisable()
     {
-        Laser.OnActivateLaser -= InstantiateMenuPanel;
-        Laser.OnDiactivateLaser -= DeleteMenuPanel;
+        HandButtons.OnClickRightHandMenu -= CheckMenuPanel;
     }
 
-    private void InstantiateMenuPanel()
-    {
-        if(Time.deltaTime > 0)
-        menu = Instantiate(menuPref, posSpawn.position, posSpawn.rotation);
-    }
+    //private void InstantiateMenuPanel()
+    //{
+    //    menu = Instantiate(menuPref, posSpawn.position, posSpawn.rotation);
+    //}
 
-    private void DeleteMenuPanel()
-    {
-        if(Time.deltaTime > 0)
-        Destroy(menu);
-    }
+    //private void DeleteMenuPanel()
+    //{
+    //    Destroy(menu);
+    //}
 
     public void ActivateDeactivate(bool isActive)
     {
@@ -45,6 +36,40 @@ public class MenuPanel : MonoBehaviour
         else
         {
             gameObject.GetComponent<MenuPanel>().enabled = false;
+        }
+    }
+
+    public void InstantiateMenuPanel()
+    {
+        AudioManager.instance.Play("OpenMenu");
+
+        menu = Instantiate(menuPref, posSpawn.position, posSpawn.rotation);
+        //    menu.transform.DOMove(posMenu.position, timeSpawn);
+        //    menu.transform.DOScale(0.01f, timeSpawn);
+        //}
+    }
+    public void DeleteMenuPanel()
+    {
+        AudioManager.instance.Play("CloseMenu");
+
+        //menu.transform.DOScale(0f, timeSpawn);
+        //menu.transform.
+        //    DOMove(posDelete.position, timeSpawn).
+        //    OnComplete(() => {
+        //        Destroy(menu);
+        //    });
+        Destroy(menu);
+    }
+
+    private void CheckMenuPanel()
+    {
+        if(menu != null)
+        {
+            DeleteMenuPanel();
+        }
+        else
+        {
+            InstantiateMenuPanel();
         }
     }
 }

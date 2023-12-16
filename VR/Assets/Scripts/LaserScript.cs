@@ -14,8 +14,7 @@ public class LaserScript : SteamVR_LaserPointer
 
     private Hand hand;
 
-    public GameObject grabbingObj;
-    public bool isGrabbing = false;
+    private LaserGrab laserGrab;
 
     private void Awake()
     {
@@ -23,62 +22,68 @@ public class LaserScript : SteamVR_LaserPointer
         clickColor = SettingsScript.colorLaserClick;
         vibration = GameObject.FindWithTag("PlayerControls").GetComponent<VibrationDeviceControl>();
         hand = GetComponent<Hand>();
+        laserGrab = GetComponent<LaserGrab>();
     }
+
     public override void OnPointerIn(PointerEventArgs e)
     {
         base.OnPointerIn(e);
-        if (e.target.CompareTag("UI"))
+
+        if (e.target.TryGetComponent(out UIButton iButton))
         {
-            e.target.GetComponent<UIButton>().Select();
+            iButton.Select();
             vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
-        if (e.target.CompareTag("VR Item"))
+        if (e.target.TryGetComponent(out Interactable interactable))
         {
+            interactable.OnHandHoverBegin(hand);
+
             vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
-            grabbingObj = e.target.gameObject;
-            isGrabbing = true;
         }
     }
-    private void FixedUpdate()
-    {
-        if(isGrabbing)
-        {
-            var a = grabbingObj.GetComponent<Rigidbody>();
-            if(hand.grabPinchAction.GetStateDown(hand.handType))
-            {
-                //a.isKinematic = true;
-                a.AddForce(40000 * Time.deltaTime * -transform.forward + new Vector3(0, 0.7f, 0));
-            }
-        }
-    }
+
     public override void OnPointerClick(PointerEventArgs e)
     {
         base.OnPointerClick(e);
-        if (e.target.CompareTag("UI"))
+
+        if (e.target.TryGetComponent(out UIButton iButton))
         {
-            e.target.GetComponent<UIButton>().Click();
-            e.target.GetComponent<Button>().onClick.Invoke();
+            iButton.Click();
         }
-        else if (e.target.CompareTag("Interaction"))
+        else if (e.target.TryGetComponent(out Interactable interactable))
         {
-            e.target.GetComponent<InteractableHoverEvents>().onHandHoverBegin.Invoke();
+            interactable.OnHandHoverEnd(hand);
+
+            if(interactable.TryGetComponent(out InteractableHoverEvents interactableHoverEvents))
+            {
+                interactableHoverEvents.onHandHoverBegin.Invoke();
+            }
+
+            if(interactable.TryGetComponent(out Throwable throwable))
+            {
+                laserGrab.GrabObject(throwable.gameObject);
+            }
         }
     }
 
     public override void OnPointerOut(PointerEventArgs e)
     {
         base.OnPointerOut(e);
-        if (e.target.CompareTag("UI"))
+
+        if (e.target.TryGetComponent(out UIButton iButton))
         {
-            e.target.GetComponent<UIButton>().UnSelect();
+            iButton.UnSelect();
+
             vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
-        if (e.target.CompareTag("VR Item"))
+        else if(e.target.TryGetComponent(out Interactable interactable))
         {
-            grabbingObj = null;
-            isGrabbing = false;
+            interactable.OnHandHoverEnd(hand);
+
+            vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
     }
+
     private void OnDestroy()
     {
         Destroy(holder);

@@ -5,22 +5,22 @@ using Valve.VR.InteractionSystem;
 
 public class LaserControl : PlayerComponentControl
 {
-    private Laser laser;
+    private HandButtons laser;
 
     private void Awake()
     {
         Debug.Log("Дочерний класс");
-        laser = getPlayer.player.GetComponent<Laser>();
+        laser = getPlayer.player.GetComponent<HandButtons>();
     }
     public void ActivateComponent(bool isActive)
     {
-        if (isActive)
-        {
-            laser.AddLaserPointer();
-        }
-        else
-        {
-            laser.RemoveLaserPointer();
-        }
+        //if (isActive)
+        //{
+        //    laser.AddLaserPointer();
+        //}
+        //else
+        //{
+        //    laser.RemoveLaserPointer();
+        //}
     }
 }

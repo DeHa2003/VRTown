@@ -20,7 +20,7 @@ public class OnOffLight : MonoBehaviour
         source.volume = 0.8f;
         source.playOnAwake = false;
     }
-    public void OnActivate()
+    public void SwitchActivating()
     {
         if (light.activeSelf)
         {

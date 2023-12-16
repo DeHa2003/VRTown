@@ -1,21 +1,23 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Valve.VR;
 
 public class Laser : MonoBehaviour
 {
-    public static Action OnActivateLaser;
-    public static Action OnDiactivateLaser;
-
-    [SerializeField] SteamVR_Action_Boolean steamLaser;
     [SerializeField] private List<GameObject> hands;
 
     private bool isActiveLaser = false;
 
-    public void AddLaserPointer()
+    private void OnEnable()
+    {
+        HandButtons.OnClickLeftHandMenu += CheckLaserPointer;
+    }
+
+    private void OnDisable()
+    {
+        HandButtons.OnClickLeftHandMenu -= CheckLaserPointer;
+    }
+
+    private void AddLaserPointer()
     {
         isActiveLaser = true;
 
@@ -28,7 +30,7 @@ public class Laser : MonoBehaviour
         }
     }
 
-    public void RemoveLaserPointer()
+    private void RemoveLaserPointer()
     {
         isActiveLaser = false;
 
@@ -41,17 +43,15 @@ public class Laser : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void CheckLaserPointer()
     {
-        if (steamLaser.GetStateDown(SteamVR_Input_Sources.Any) && !isActiveLaser)
+        if (isActiveLaser)
         {
-            OnActivateLaser?.Invoke();
-            AddLaserPointer();
-        }
-        else if(steamLaser.GetStateDown(SteamVR_Input_Sources.Any) && isActiveLaser)
-        {
-            OnDiactivateLaser?.Invoke();
             RemoveLaserPointer();
+        }
+        else
+        {
+            AddLaserPointer();
         }
     }
 }

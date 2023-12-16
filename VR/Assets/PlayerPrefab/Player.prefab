@@ -299,11 +299,11 @@ GameObject:
   - component: {fileID: 1305394998167355698}
   - component: {fileID: 1305394998178001945}
   - component: {fileID: 1305394998178001946}
-  - component: {fileID: 1305394998178002404}
   - component: {fileID: 1305394998178001942}
   - component: {fileID: 1305394998178001947}
   - component: {fileID: 6212949720917797401}
   - component: {fileID: 638837616373957292}
+  - component: {fileID: 1196281098407371078}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -318,7 +318,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305394998178025542}
-  m_LocalRotation: {x: -0, y: 0.627558, z: -0, w: 0.7785699}
+  m_LocalRotation: {x: 0, y: 0.62755543, z: 0, w: 0.7785719}
   m_LocalPosition: {x: 0.833, y: 1.002, z: 0.246}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
@@ -402,24 +402,6 @@ MonoBehaviour:
   jump:
     actionPath: /actions/default/in/Jump
     needsReinit: 0
---- !u!114 &1305394998178002404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1305394998178025542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2427cf8f2e85e9042900b252e3a401fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  steamLaser:
-    actionPath: 
-    needsReinit: 0
-  hands:
-  - {fileID: 1305394998178121354}
-  - {fileID: 1305394998178137784}
 --- !u!114 &1305394998178001942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +419,9 @@ MonoBehaviour:
   roomWalk: {fileID: 8300000, guid: 7ab11577d4c8e7e4db12cb9f9ffb8aab, type: 3}
   streetWalk: {fileID: 8300000, guid: 89cba3d1fa236074e9e83476a999560b, type: 3}
   threeWalk: {fileID: 8300000, guid: 95c8f764f35ead44d98c33b7adea7589, type: 3}
+  roomWalkPitch: 0
+  streetWalkPitch: 0
+  threeWalkPitch: 0
 --- !u!114 &1305394998178001947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +467,24 @@ MonoBehaviour:
   vibration:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
+--- !u!114 &1196281098407371078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305394998178025542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3197163c15c0684eadac6895771497d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menu:
+    actionPath: /actions/default/in/Menu
+    needsReinit: 0
+  hands:
+  - {fileID: 1305394998178121354}
+  - {fileID: 1305394998178137784}
 --- !u!1 &1305394998178027048
 GameObject:
   m_ObjectHideFlags: 0

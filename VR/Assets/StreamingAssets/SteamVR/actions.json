@@ -62,10 +62,6 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/Laser",
-      "type": "boolean"
-    },
-    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
