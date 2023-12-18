@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 8140393285586595617}
   - component: {fileID: 8140393285586595618}
   - component: {fileID: 8140393285586595619}
-  - component: {fileID: 4247725104098073250}
+  - component: {fileID: 5590328738350434449}
   m_Layer: 5
   m_Name: UI Completed
   m_TagString: Untagged
@@ -668,7 +668,7 @@ RectTransform:
   m_LocalRotation: {x: 0.036857232, y: 0.098147735, z: 0.003635076, w: 0.9944825}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8140393285014613866}
   - {fileID: 5898286634655128464}
@@ -724,7 +724,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8140393285586595617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -780,7 +780,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4247725104098073250
+--- !u!114 &5590328738350434449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -789,7 +789,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8140393285586595621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7d7d1991738e948a6344f6c3753c37, type: 3}
+  m_Script: {fileID: 11500000, guid: bd8f0540ad096de43bec99a258592160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnOpenUI:
@@ -798,6 +798,8 @@ MonoBehaviour:
   OnCloseUI:
     m_PersistentCalls:
       m_Calls: []
+  panel: {fileID: 8140393285586595621}
+  timeScale: 0.3
 --- !u!1 &8140393285634058150
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,6 +927,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5590328738350434449}
+        m_TargetAssemblyTypeName: StopTimePanel, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2138119411}
         m_TargetAssemblyTypeName: PanelCompleted, Assembly-CSharp
         m_MethodName: GoToHome
@@ -1031,7 +1045,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHandClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5590328738350434449}
+        m_TargetAssemblyTypeName: StopTimePanel, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2138119411}
+        m_TargetAssemblyTypeName: FinishPanel, Assembly-CSharp
+        m_MethodName: GoToHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &7635847231858622274
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1255,6 +1293,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5590328738350434449}
+        m_TargetAssemblyTypeName: StopTimePanel, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2138119411}
         m_TargetAssemblyTypeName: FinishPanel, Assembly-CSharp
         m_MethodName: Restart
@@ -1361,7 +1411,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHandClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5590328738350434449}
+        m_TargetAssemblyTypeName: StopTimePanel, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2138119411}
+        m_TargetAssemblyTypeName: FinishPanel, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &3430705770987486775
 AudioSource:
   m_ObjectHideFlags: 0

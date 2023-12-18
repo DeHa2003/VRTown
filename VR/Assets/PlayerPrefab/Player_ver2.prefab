@@ -1733,9 +1733,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posToSpawn: {fileID: 401571110364629891}
-  failedGameUI: {fileID: 2994177470728794659, guid: 4a88268361dfc0f49973891c26c78a3f,
+  failedGameUI: {fileID: 3799908631277992583, guid: 4a88268361dfc0f49973891c26c78a3f,
     type: 3}
-  completedGameUI: {fileID: 8140393285586595621, guid: 4f07a74718bfcca49ae1b988b1777cb3,
+  completedGameUI: {fileID: 5590328738350434449, guid: 4f07a74718bfcca49ae1b988b1777cb3,
     type: 3}
 --- !u!1 &401571110536643749
 GameObject:

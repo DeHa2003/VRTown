@@ -7197,7 +7197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76bcd3506e209441893b202ca9c13a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualCamera: {fileID: 0}
   min: 15
   max: 20
   carsPref:

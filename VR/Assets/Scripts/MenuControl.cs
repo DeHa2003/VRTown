@@ -14,6 +14,7 @@ public class MenuControl : PlayerComponentControl
 
     public void ActivateComponent(bool isActive)
     {
+        if(menuPanel == null) { return; }
         menuPanel.enabled = isActive;
     }
 

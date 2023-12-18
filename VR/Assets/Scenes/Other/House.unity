@@ -9349,10 +9349,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   panel: {fileID: 407995504}
+  timeScale: 0.1
   from: {fileID: 1349806637}
   to: {fileID: 1892621668}
   timeMove: 0.1
-  timeScale: 0.1
 --- !u!82 &407995512
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18858,10 +18858,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   panel: {fileID: 1462310738}
+  timeScale: 0.1
   from: {fileID: 902132666}
   to: {fileID: 1443812005}
   timeMove: 0.1
-  timeScale: 0.1
 --- !u!82 &1462310746
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19522,7 +19522,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509694406}
-  - component: {fileID: 1509694407}
   m_Layer: 0
   m_Name: UI
   m_TagString: Untagged
@@ -19547,18 +19546,6 @@ Transform:
   m_Father: {fileID: 635841349}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1509694407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509694405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff56082d739014946917ab83cf30b065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1527081035
 GameObject:
   m_ObjectHideFlags: 0

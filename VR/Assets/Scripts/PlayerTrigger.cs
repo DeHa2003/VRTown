@@ -10,8 +10,8 @@ public class PlayerTrigger : MonoBehaviour
     public static Action OnCompletedGame;
 
     [SerializeField] private Transform posToSpawn;
-    [SerializeField] private GameObject failedGameUI;
-    [SerializeField] private GameObject completedGameUI;
+    [SerializeField] private Panel failedGameUI;
+    [SerializeField] private Panel completedGameUI;
 
     private string roadViolation = "Пешеходам запрещено пересекать проезжую часть вне пешеходного перехода";
     private string zebViolation = "Пешеходам запрещено переходить по пешеходному переходу на красный сигнал пешеходного светофора";
@@ -19,8 +19,10 @@ public class PlayerTrigger : MonoBehaviour
     {
         if (other.CompareTag("Road") || other.CompareTag("Zeb"))
         {
+            OnLoseGame?.Invoke();
 
-            GameObject failedPanel = Instantiate(failedGameUI, posToSpawn.position, posToSpawn.rotation);
+            Panel failedPanel = Instantiate(failedGameUI, posToSpawn.position, posToSpawn.rotation);
+            failedPanel.OpenPanel();
 
             if (other.CompareTag("Road"))
             {
@@ -30,18 +32,15 @@ public class PlayerTrigger : MonoBehaviour
             {
                 failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
             }
-            OnLoseGame?.Invoke();
-            AudioManager.instance.Play(Sound.TypeAudioSource.LoseGame);
 
-            Time.timeScale = 0;
+            AudioManager.instance.Play(Sound.TypeAudioSource.LoseGame);
         }
         else if (other.CompareTag("Finish"))
         {
-            Instantiate(completedGameUI, posToSpawn.position, posToSpawn.rotation);
-            AudioManager.instance.Play(Sound.TypeAudioSource.CompletedGame);
             OnCompletedGame?.Invoke();
-
-            Time.timeScale = 0;
+            Panel completedPanel = Instantiate(completedGameUI, posToSpawn.position, posToSpawn.rotation);
+            completedPanel.OpenPanel();
+            AudioManager.instance.Play(Sound.TypeAudioSource.CompletedGame);
         }
     }
 }
