@@ -13,6 +13,7 @@ public class InteractionsObjs : MonoBehaviour
 
     public void Parent()
     {
+        if(interactions.Length == 0) { return; }
         for (int i = 0; i < interactions.Length; i++)
         {
            Destroy(interactions[i]);

@@ -123,6 +123,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!82 &1564167953 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1564167953, guid: 4d709225399d3ff478038956f0ca4d74,
+    type: 3}
+  m_PrefabInstance: {fileID: 1697605382058363909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2050007173
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +180,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1564167953, guid: 4d709225399d3ff478038956f0ca4d74, type: 3}
+      propertyPath: m_Volume
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564167953, guid: 4d709225399d3ff478038956f0ca4d74, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1564167953, guid: 4d709225399d3ff478038956f0ca4d74, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401571110536811113, guid: 4d709225399d3ff478038956f0ca4d74,
         type: 3}
       propertyPath: m_Name
@@ -234,5 +252,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4735481969709213745, guid: 4d709225399d3ff478038956f0ca4d74,
+        type: 3}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 1564167953}
+    - target: {fileID: 4735481969709213745, guid: 4d709225399d3ff478038956f0ca4d74,
+        type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a97f7cefb5bf7b04ea516e9b449e691f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d709225399d3ff478038956f0ca4d74, type: 3}

@@ -4,8 +4,14 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     [SerializeField] private List<GameObject> hands;
+    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private AudioSource audio;
 
     private bool isActiveLaser = false;
+    private void Awake()
+    {
+        audio.clip = audioClip;
+    }
 
     private void OnEnable()
     {
@@ -45,6 +51,8 @@ public class Laser : MonoBehaviour
 
     private void CheckLaserPointer()
     {
+        audio.Play();
+
         if (isActiveLaser)
         {
             RemoveLaserPointer();

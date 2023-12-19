@@ -422,6 +422,7 @@ namespace Valve.VR.InteractionSystem
 		public void PlayerShotSelf()
 		{
 			//Do something appropriate here
+			Debug.Log("Check update:" + audioListener.gameObject.name);
 		}
 
 	}

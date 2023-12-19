@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
@@ -40,7 +38,9 @@ public class UIButton : MonoBehaviour
 
     public void Click()
     {
-        button.onClick.Invoke();
+        if(button != null)
+           button.onClick.Invoke();
+
         PlaySound(clickUISound);
     }
 

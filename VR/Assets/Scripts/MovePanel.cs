@@ -15,7 +15,7 @@ public class MovePanel : Panel
     {
         base.OpenPanel();
 
-        if (tweenMove != null) { tweenScale.Kill(); }
+        if (tweenMove != null) { tweenMove.Kill(); }
         tweenMove = transform.DOMove(to.position, timeMove);
     }
 
@@ -23,7 +23,7 @@ public class MovePanel : Panel
     {
         base.ClosePanel();
 
-        if (tweenMove != null) { tweenScale.Kill(); }
+        if (tweenMove != null) { tweenMove.Kill(); }
         tweenMove = transform.DOMove(from.position, timeMove);
     }
 

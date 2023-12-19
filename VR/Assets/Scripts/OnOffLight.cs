@@ -6,7 +6,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(AudioSource))]
 public class OnOffLight : MonoBehaviour
 {
-    [SerializeField] private GameObject lighthing;
+    [SerializeField] private Light lighthing;
     [SerializeField] private AudioClip onClip;
     [SerializeField] private AudioClip offClip;
 
@@ -22,7 +22,7 @@ public class OnOffLight : MonoBehaviour
     }
     public void SwitchActivating()
     {
-        if (lighthing.activeSelf)
+        if (lighthing.enabled)
         {
             OnLighting(source, offClip, false);
             OnDeactivateLight.Invoke();
@@ -42,7 +42,7 @@ public class OnOffLight : MonoBehaviour
 
     private void Light(bool isActivate)
     {
-        lighthing.SetActive(isActivate);
+        lighthing.enabled = isActivate;
     }
 
     private void PlaySound(AudioSource audioSource, AudioClip audioClip)

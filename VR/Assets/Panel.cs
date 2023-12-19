@@ -14,6 +14,7 @@ public class Panel : MonoBehaviour
 
     protected Vector3 defaultScale;
     protected Tween tweenScale;
+
     protected virtual void Awake()
     {
         defaultScale = panel.transform.localScale;
@@ -24,9 +25,9 @@ public class Panel : MonoBehaviour
     {
         if (tweenScale != null) { tweenScale.Kill(); }
 
-        OnOpenUI?.Invoke();
         panel.SetActive(true);
-        tweenScale = transform.DOScale(defaultScale, timeScale);
+        OnOpenUI?.Invoke();
+        tweenScale = transform.DOScale(defaultScale, timeScale).SetUpdate(true);
     }
 
     public virtual void ClosePanel()
@@ -34,7 +35,7 @@ public class Panel : MonoBehaviour
         if (tweenScale != null) { tweenScale.Kill(); }
 
         OnCloseUI?.Invoke();
-        tweenScale = transform.DOScale(Vector3.zero, timeScale).OnComplete(() =>
+        tweenScale = transform.DOScale(Vector3.zero, timeScale).SetUpdate(true).OnComplete(() =>
         {
             panel.SetActive(false);
         });
