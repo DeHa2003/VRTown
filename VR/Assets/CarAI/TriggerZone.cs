@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class TriggerZone : MonoBehaviour
 {
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private AudioManager_del audioManager;
 
     private GameObject car;
     private NavMeshAgent agent;

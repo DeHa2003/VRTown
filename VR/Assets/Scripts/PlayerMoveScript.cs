@@ -17,10 +17,12 @@ public class PlayerMoveScript : MonoBehaviour
 
     private Vector3 vectorToJump;
     private CharacterController characterController;
-    private void Awake()
+
+    public void Initialize()
     {
         characterController = GetComponent<CharacterController>();
     }
+
     private void Update()
     {
         Vector3 vector = Player.instance.hmdTransform.TransformDirection(new Vector3(touchpad.axis.x, 0, touchpad.axis.y));

@@ -10,8 +10,8 @@ public class PlayerTrigger : MonoBehaviour
     public static Action OnCompletedGame;
 
     [SerializeField] private Transform posToSpawn;
-    [SerializeField] private Panel failedGameUI;
-    [SerializeField] private Panel completedGameUI;
+    [SerializeField] private UIPanel failedGameUI;
+    [SerializeField] private UIPanel completedGameUI;
 
     private string roadViolation = "Пешеходам запрещено пересекать проезжую часть вне пешеходного перехода";
     private string zebViolation = "Пешеходам запрещено переходить по пешеходному переходу на красный сигнал пешеходного светофора";
@@ -21,7 +21,7 @@ public class PlayerTrigger : MonoBehaviour
         {
             OnLoseGame?.Invoke();
 
-            Panel failedPanel = Instantiate(failedGameUI, posToSpawn.position, posToSpawn.rotation);
+            UIPanel failedPanel = Instantiate(failedGameUI, posToSpawn.position, posToSpawn.rotation);
             failedPanel.OpenPanel();
 
             if (other.CompareTag("Road"))
@@ -33,14 +33,14 @@ public class PlayerTrigger : MonoBehaviour
                 failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
             }
 
-            AudioManager.instance.Play(Sound.TypeAudioSource.LoseGame);
+            AudioManager_del.instance.Play(Sound.TypeAudioSource.LoseGame);
         }
         else if (other.CompareTag("Finish"))
         {
             OnCompletedGame?.Invoke();
-            Panel completedPanel = Instantiate(completedGameUI, posToSpawn.position, posToSpawn.rotation);
+            UIPanel completedPanel = Instantiate(completedGameUI, posToSpawn.position, posToSpawn.rotation);
             completedPanel.OpenPanel();
-            AudioManager.instance.Play(Sound.TypeAudioSource.CompletedGame);
+            AudioManager_del.instance.Play(Sound.TypeAudioSource.CompletedGame);
         }
     }
 }

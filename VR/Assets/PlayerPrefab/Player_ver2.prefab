@@ -2812,8 +2812,8 @@ MonoBehaviour:
   hands:
   - {fileID: 401571110536643749}
   - {fileID: 401571110536660119}
-  audioClip: {fileID: 0}
-  audio: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: a97f7cefb5bf7b04ea516e9b449e691f, type: 3}
+  audio: {fileID: 1564167953}
 --- !u!82 &1564167953
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2825,8 +2825,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.48
   m_Pitch: 1
   Loop: 0
   Mute: 0

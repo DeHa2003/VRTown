@@ -10,7 +10,7 @@ using Valve.VR.Extras;
 using Valve.VR.InteractionSystem;
 public class LaserScript : SteamVR_LaserPointer
 {
-    private VibrationDeviceControl vibration;
+    //private VibrationDeviceControl vibration;
 
     private Hand hand;
 
@@ -20,7 +20,7 @@ public class LaserScript : SteamVR_LaserPointer
     {
         color = SettingsScript.colorLaserDefault;
         clickColor = SettingsScript.colorLaserClick;
-        vibration = GameObject.FindWithTag("PlayerControls").GetComponent<VibrationDeviceControl>();
+        //vibration = GameObject.FindWithTag("PlayerControls").GetComponent<VibrationDeviceControl>();
         hand = GetComponent<Hand>();
         laserGrab = GetComponent<LaserGrab>();
     }
@@ -32,13 +32,12 @@ public class LaserScript : SteamVR_LaserPointer
         if (e.target.TryGetComponent(out UIButton iButton))
         {
             iButton.Select();
-            vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
+            //vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
         if (e.target.TryGetComponent(out Interactable interactable))
         {
             interactable.OnHandHoverBegin(hand);
-
-            vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
+            //vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
     }
 
@@ -73,14 +72,12 @@ public class LaserScript : SteamVR_LaserPointer
         if (e.target.TryGetComponent(out UIButton iButton))
         {
             iButton.UnSelect();
-
-            vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
+            //vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
         else if(e.target.TryGetComponent(out Interactable interactable))
         {
             interactable.OnHandHoverEnd(hand);
-
-            vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
+            //vibration.Vibration(0, 20, 0.1F, GetComponent<Hand>().handType);
         }
     }
 

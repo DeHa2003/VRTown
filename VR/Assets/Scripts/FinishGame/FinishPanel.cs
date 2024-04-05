@@ -36,6 +36,6 @@ public class FinishPanel : MonoBehaviour
 
     public void GoToHome()
     {
-        TransitionControl.LoadScene(0);
+        TransitionControl.LoadScene(1);
     }
 }
