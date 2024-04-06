@@ -1375,8 +1375,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85961895fa6a4884a979ac4446e73436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPref: {fileID: 8266295423039231052, guid: e5f8b59af1df7194daa7073aa2373fdf,
-    type: 3}
   posMenu: {fileID: 1485919736481026029}
   time: 0.1
 --- !u!1 &1485919736108493659
@@ -1878,7 +1876,7 @@ MonoBehaviour:
   - {fileID: 1485919736108597451}
   - {fileID: 1485919736108581113}
   audioClip: {fileID: 8300000, guid: a97f7cefb5bf7b04ea516e9b449e691f, type: 3}
-  audio: {fileID: 1228821809875192703}
+  audioSource: {fileID: 1228821809875192703}
 --- !u!82 &1228821809875192703
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1987,9 +1985,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d1242448a3e6949861f069c1e4f236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handButtons: {fileID: 1592223296996353799}
   moveScript: {fileID: 1485919736108479067}
   feetScript: {fileID: 1485919736108479063}
   laserController: {fileID: 5817077522309753951}
+  menuControl: {fileID: 3299964580454575275}
+  handDevice: {fileID: 1035588875200021741}
 --- !u!1 &1485919736108505551
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,10 +13,7 @@ namespace Lessons.Architecture
         private const string PLAYER_PREFAB_PATH = "Prefabs/GamePlayer";
         public Player GamePlayer { get; private set; }
 
-        public override void OnCreate()
-        {
-            base.OnCreate();
-        }
+        private CharacterController characterController;
 
         public override void Initialize()
         {
@@ -24,33 +21,22 @@ namespace Lessons.Architecture
             SceneManager.sceneUnloaded += OnSceneUnloaded;
         }
 
-        private void OnSceneUnloaded(UnityEngine.SceneManagement.Scene arg0)
+        public void CreatePlayer()
         {
-            DestroyPlayer();
-        }
-
-        public override void OnStart()
-        {
-            base.OnStart();
-
-            CreatePlayer();
-        }
-
-        private void CreatePlayer()
-        {
-            if(GamePlayer != null)
+            if (GamePlayer != null)
             {
                 DestroyPlayer();
             }
             Debug.Log("Создание игрока");
 
             GamePlayer = Coroutines.Instantiate(Resources.Load<Player>(PLAYER_PREFAB_PATH));
+            characterController = GamePlayer.GetComponent<CharacterController>();
             GamePlayer.GetComponent<PlayerComponents>().Initialize();
         }
 
-        private void DestroyPlayer()
+        public void DestroyPlayer()
         {
-            if(GamePlayer == null)
+            if (GamePlayer == null)
             {
                 Debug.LogWarning("Вы пытаетесь удалить пустого игрока");
                 return;
@@ -59,5 +45,21 @@ namespace Lessons.Architecture
             Coroutines.Destroy(GamePlayer.gameObject);
             SceneManager.sceneUnloaded -= OnSceneUnloaded;
         }
+
+        public void PlayerToPosition(Vector3 vector)
+        {
+            characterController.enabled = false;
+            characterController.transform.position = vector;
+            characterController.enabled = true;
+        }
+
+        #region Events
+
+        private void OnSceneUnloaded(UnityEngine.SceneManagement.Scene arg0)
+        {
+            DestroyPlayer();
+        }
+
+        #endregion
     }
 }

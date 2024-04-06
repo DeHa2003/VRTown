@@ -1,68 +1,28 @@
+using Lessons.Architecture;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartMenuPanel : Panel
+public class StartMenuPanel : ColliderPanel
 {
-    [SerializeField] private List<BoxCollider> buttonsColliders;
+    private FadeScreenInteractor fadeScreenInteractor;
 
     public override void Initialize()
     {
         base.Initialize();
-    }
-
-    public override void OpenPanel()
-    {
-        base.OpenPanel();
-
-        for (int i = 0; i < buttonsColliders.Count; i++)
-        {
-            buttonsColliders[i].enabled = true;
-        }
-    }
-
-    public override void ClosePanel()
-    {
-        base.ClosePanel();
-
-        for (int i = 0; i < buttonsColliders.Count; i++)
-        {
-            buttonsColliders[i].enabled = false;
-        }
+        Debug.Log("666");
+        fadeScreenInteractor = Game.GetInteractor<FadeScreenInteractor>();
     }
 
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
-
-        //AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(1);
-        //while (!asyncOperation.isDone)
-        //{
-        //    yield return null;
-        //}
+        fadeScreenInteractor.StartFadeToTransition(1, 1);
     }
 
     public void ExitGame()
     {
         Application.Quit();
     }
-
-
-    //private void OnEnable()
-    //{
-    //    for (int i = 0; i < buttonsColliders.Count; i++)
-    //    {
-    //        buttonsColliders[i].enabled = true;
-    //    }
-    //}
-
-    //private void OnDisable()
-    //{
-    //    for (int i = 0; i < buttonsColliders.Count; i++)
-    //    {
-    //        buttonsColliders[i].enabled = false;
-    //    }
-    //}
 }

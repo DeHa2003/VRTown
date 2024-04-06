@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-[RequireComponent(typeof(PlayerSpawnerControl))]
+[RequireComponent(typeof(PlayerSpawnerPosition))]
 [RequireComponent(typeof(MenuControl))]
 [RequireComponent(typeof(SceneTransitionControl))]
 [RequireComponent(typeof(VibrationDeviceControl))]

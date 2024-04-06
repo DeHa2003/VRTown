@@ -6,7 +6,7 @@ public class Notification : MovePanel
 {
     [SerializeField] private TextMeshProUGUI textHand;
     [SerializeField] private TextMeshProUGUI textDescription;
-    public void Initialize()
+    public override void Initialize()
     {
         base.Initialize();
         from = gameObject.transform.localPosition;

@@ -5,12 +5,12 @@ using Valve.VR.InteractionSystem;
 
 public class VibrationDeviceControl : PlayerComponentControl
 {
-    private VibrationDevice vibrationDevice;
+    private PlayerVibrationHandDevice vibrationDevice;
 
     private void Awake()
     {
         Debug.Log("Дочерний класс");
-        vibrationDevice = getPlayer.player.GetComponentInChildren<VibrationDevice>();
+        vibrationDevice = getPlayer.player.GetComponentInChildren<PlayerVibrationHandDevice>();
     }
 
     public void Vibration(float duration, float frequency, float amplitude, Valve.VR.SteamVR_Input_Sources input_Sources)

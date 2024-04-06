@@ -4,8 +4,8 @@ using Valve.VR;
 
 public class HandButtons : MonoBehaviour
 {
-    public static event Action OnClickRightHandMenu;
-    public static event Action OnClickLeftHandMenu;
+    public event Action OnClickRightHandMenu;
+    public event Action OnClickLeftHandMenu;
 
     [SerializeField] SteamVR_Action_Boolean menu;
 
@@ -19,5 +19,25 @@ public class HandButtons : MonoBehaviour
         {
             OnClickRightHandMenu?.Invoke();
         }
+    }
+
+    public void AddActionToLeftHand(Action action)
+    {
+        OnClickLeftHandMenu += action;
+    }
+
+    public void RemoveActionToLeftHand(Action action)
+    {
+        OnClickLeftHandMenu -= action;
+    }
+
+    public void AddActionToRightHand(Action action)
+    {
+        OnClickRightHandMenu += action;
+    }
+
+    public void RemoveActionToRightHand(Action action)
+    {
+        OnClickRightHandMenu -= action;
     }
 }

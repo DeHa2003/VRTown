@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MenuControl : PlayerComponentControl
 {
-    private MenuPanel menuPanel;
+    private PlayerMenuControl menuPanel;
 
     private void Awake()
     {
         Debug.Log("Дочерний класс");
-        menuPanel = getPlayer.player.GetComponentInChildren<MenuPanel>();
+        menuPanel = getPlayer.player.GetComponentInChildren<PlayerMenuControl>();
     }
 
     public void ActivateComponent(bool isActive)
