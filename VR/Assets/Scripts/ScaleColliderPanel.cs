@@ -4,30 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class UIPanel : MonoBehaviour
+public class ScaleColliderPanel : ColliderPanel
 {
     public UnityEvent OnOpenUI;
     public UnityEvent OnCloseUI;
 
-    [SerializeField] protected GameObject panel;
     [SerializeField] protected float timeScale;
 
     protected Vector3 defaultScale;
     protected Tween tweenScale;
     protected bool isOpen = false;
 
-    protected virtual void Awake()
+    public override void Initialize()
     {
         defaultScale = panel.transform.localScale;
         panel.transform.localScale = Vector3.zero;
     }
 
-    public virtual void OpenPanel()
+    public override void OpenPanel()
     {
         if (isOpen == false) 
         {
             Debug.Log("Открытие панели");
-            panel.SetActive(true);
+            base.OpenPanel();
             OnOpenUI?.Invoke();
 
             tweenScale?.Kill();
@@ -36,7 +35,7 @@ public class UIPanel : MonoBehaviour
         isOpen = true;
     }
 
-    public virtual void ClosePanel()
+    public override void ClosePanel()
     {
         if (isOpen == true) 
         {
@@ -46,7 +45,7 @@ public class UIPanel : MonoBehaviour
             tweenScale?.Kill();
             tweenScale = transform.DOScale(Vector3.zero, timeScale).SetUpdate(true).OnComplete(() =>
             {
-                panel.SetActive(false);
+                base.ClosePanel();
             });
         }
         isOpen = false;

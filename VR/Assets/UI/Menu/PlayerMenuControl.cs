@@ -10,36 +10,14 @@ public class PlayerMenuControl : MonoBehaviour
     [SerializeField] private float time;
 
     private HandButtons handButtons;
-    private GameObject menuPref;
-    private GameObject currentMenu = null;
+    private PanelsControl menuPref;
+    private PanelsControl currentMenu = null;
     private Tween tween;
 
     public void Initialize(HandButtons handButtons)
     {
         this.handButtons = handButtons;
     }
-
-    //private void OnEnable()
-    //{
-    //    HandButtons.OnClickRightHandMenu += CheckMenuPanel;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    HandButtons.OnClickRightHandMenu -= CheckMenuPanel;
-    //}
-
-    //public void ActivateDeactivate(bool isActive)
-    //{
-    //    if(isActive)
-    //    {
-    //        gameObject.GetComponent<MenuPanel>().enabled = true;
-    //    }
-    //    else
-    //    {
-    //        gameObject.GetComponent<MenuPanel>().enabled = false;
-    //    }
-    //}
 
     private void CheckMenuPanel()
     {
@@ -57,15 +35,17 @@ public class PlayerMenuControl : MonoBehaviour
     {
         tween?.Kill();
         currentMenu = Instantiate(menuPref, posMenu.position, posMenu.rotation);
+        currentMenu.Initialize();
         tween = currentMenu.transform.DOScale(0.01f, time);
     }
+
     public void DeleteMenuPanel()
     {
         tween?.Kill();
-        currentMenu.transform.DOScale(0f, time).OnComplete(() => Destroy(currentMenu));
+        currentMenu.transform.DOScale(0f, time).OnComplete(() => Destroy(currentMenu.gameObject));
     }
 
-    public void ActivateMenuControl(GameObject menuPref)
+    public void ActivateMenuControl(PanelsControl menuPref)
     {
         this.menuPref = menuPref;
         handButtons.AddActionToRightHand(CheckMenuPanel);

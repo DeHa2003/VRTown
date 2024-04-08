@@ -1,12 +1,10 @@
 using Lessons.Architecture;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class HouseSceneConfig : SceneConfig
+public class LevelOneSceneConfig : SceneConfig
 {
-    public const string SCENE_NAME = "HouseScene";
+    public const string SCENE_NAME = "Level1_Scene";
     public override string sceneName => SCENE_NAME;
 
     public override Dictionary<Type, Interactor> CreateAllInteractors()

@@ -21,7 +21,7 @@ public class PlayerComponents : MonoBehaviour
         menuControl.Initialize(handButtons);
     }
 
-    public void ActivateMenuControl(GameObject menuPref)
+    public void ActivateMenuControl(PanelsControl menuPref)
     {
         menuControl.ActivateMenuControl(menuPref);
     }

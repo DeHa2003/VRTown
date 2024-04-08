@@ -1,0 +1,32 @@
+using DG.Tweening;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public abstract class UIObject : MonoBehaviour
+{
+    [SerializeField] private protected GameObject obj;
+    [SerializeField] private PanelsControl[] panelsControls;
+
+    public UnityEvent OnOpenUI;
+    public UnityEvent OnCloseUI;
+
+    public virtual void Initialize() 
+    {
+        for (int i = 0; i < panelsControls.Length; i++)
+        {
+            panelsControls[i].Initialize();
+        }
+    }
+    public virtual void Activate() 
+    { 
+        obj.SetActive(true);
+        OnOpenUI?.Invoke();
+    }
+    public virtual void Deactivate() 
+    {
+        OnCloseUI?.Invoke();
+        obj.SetActive(false); 
+    }
+}

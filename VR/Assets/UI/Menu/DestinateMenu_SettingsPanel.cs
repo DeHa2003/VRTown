@@ -1,28 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class SettingsMenu : MonoBehaviour
+public class DestinateMenu_SettingsPanel : ScaleColliderPanel
 {
-    [SerializeField] private List<BoxCollider> buttonsColliders;
-
-    private void OnEnable()
-    {
-        for (int i = 0; i < buttonsColliders.Count; i++)
-        {
-            buttonsColliders[i].enabled = true;
-        }
-    }
-
-    private void OnDisable()
-    {
-        for (int i = 0; i < buttonsColliders.Count; i++)
-        {
-            buttonsColliders[i].enabled = false;
-        }
-    }
-
     public void ChangeColorDefaultLaser(int number)
     {
         switch (number)
@@ -53,11 +34,5 @@ public class SettingsMenu : MonoBehaviour
                 SettingsScript.colorLaserClick = Color.blue;
                 break;
         }
-    }
-
-    public void OpenStartPanel(GameObject panel)
-    {
-        gameObject.SetActive(false);
-        panel.SetActive(true);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Handler : MonoBehaviour
 {
     [SerializeField] private InputData inputData;
-    [SerializeField] private PanelsControl[] panelsControls;
+    [SerializeField] private UIObject[] UIObjects;
     private protected virtual void Awake()
     {
         Game.OnGameInitializedEvent += OnGameInitialized;
@@ -14,9 +14,9 @@ public abstract class Handler : MonoBehaviour
     private protected virtual void OnGameInitialized()
     {
         inputData.Initialize();
-        for (int i = 0; i < panelsControls.Length; i++)
+        for (int i = 0; i < UIObjects.Length; i++)
         {
-            panelsControls[i].Initialize();
+            UIObjects[i].Initialize();
         }
         Game.OnGameInitializedEvent -= OnGameInitialized;
     }

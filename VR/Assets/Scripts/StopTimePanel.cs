@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StopTimePanel : UIPanel
+public class StopTimePanel : ScaleColliderPanel
 {
     public override void OpenPanel()
     {

@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HouseSceneInputData : InputData
+public class LevelOneSceneInputData : InputData
 {
+    [SerializeField] private PanelsControl menu;
     [SerializeField] private PlayerSpawnerPosition playerSpawn;
 
     private PlayerInteractor playerInteractor;
@@ -15,5 +16,6 @@ public class HouseSceneInputData : InputData
         playerInteractor.CreatePlayer();
         playerInteractor.PlayerToPosition(playerSpawn.PosPlayerSpawn.position);
         playerInteractor.PlayerComponents.ActivateLaserControl();
+        playerInteractor.PlayerComponents.ActivateMenuControl(menu);
     }
 }

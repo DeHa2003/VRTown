@@ -969,7 +969,6 @@ namespace Valve.VR.InteractionSystem
                     closestDistance = distance;
                     closestInteractable = contacting;
                     foundCloser = true;
-                    Debug.Log("Checked");
                 }
                 iActualColliderCount++;
             }

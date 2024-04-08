@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.000018930461, g: 0.000000036171485, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.00001893043, g: 0.000000036171485, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2119,7 +2119,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &203123534
 MonoBehaviour:
@@ -2134,9 +2134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputData: {fileID: 694831367}
-  panelsControls:
+  UIObjects:
+  - {fileID: 1042043936}
   - {fileID: 1320325922}
-  - {fileID: 1462310747}
   interactionsObjectsControl: {fileID: 1511227901}
 --- !u!1 &203212735
 GameObject:
@@ -2782,7 +2782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &236631213
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2825,6 +2825,13 @@ MonoBehaviour:
   - {fileID: 2079817124}
   - {fileID: 1960847711}
   - {fileID: 1073254736}
+  OnOpenUI:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCloseUI:
+    m_PersistentCalls:
+      m_Calls: []
+  timeScale: 1
 --- !u!1 &240113979 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 2d5fb229ae2945742b900a405a5e7a0b,
@@ -9283,9 +9290,8 @@ GameObject:
   - component: {fileID: 407995509}
   - component: {fileID: 407995508}
   - component: {fileID: 407995507}
-  - component: {fileID: 407995511}
   - component: {fileID: 407995512}
-  - component: {fileID: 407995513}
+  - component: {fileID: 407995514}
   m_Layer: 5
   m_Name: UI TV
   m_TagString: Untagged
@@ -9383,23 +9389,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &407995511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 407995504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7d7d1991738e948a6344f6c3753c37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 407995504}
-  buttonsColliders: []
-  from: {fileID: 1349806637}
-  to: {fileID: 1892621668}
-  timeMove: 0.1
 --- !u!82 &407995512
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9496,7 +9485,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &407995513
+--- !u!114 &407995514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9505,9 +9494,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 407995504}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e86f924f2c67243a2566a7254e714f, type: 3}
+  m_Script: {fileID: 11500000, guid: f39f0c5d967057746bf2cac8934d6db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panels:
+  - {fileID: 1447136022}
 --- !u!1 &417956754
 GameObject:
   m_ObjectHideFlags: 0
@@ -11752,7 +11743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &503185379
 Transform:
   m_ObjectHideFlags: 0
@@ -12458,7 +12449,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694831366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.597644, y: 2.4793942, z: -2.0188367}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13750,7 +13741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4169b8921bca4004393ce055591a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getPlayer: {fileID: 0}
   isVisiblePos: 0
   sizeGizmos: 0
   color: {r: 0, g: 0, b: 0, a: 0}
@@ -14160,6 +14150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1042043935}
+  - component: {fileID: 1042043936}
   m_Layer: 0
   m_Name: MainUI
   m_TagString: Untagged
@@ -14185,6 +14176,31 @@ Transform:
   m_Father: {fileID: 503185379}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1042043936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042043934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7db5bd5e2d818d42897cec3a8e12266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 1462310738}
+  panelsControls:
+  - {fileID: 1462310747}
+  OnOpenUI:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCloseUI:
+    m_PersistentCalls:
+      m_Calls: []
+  moveFrom: {fileID: 902132666}
+  moveTo: {fileID: 1443812005}
+  timeMove: 1
+  timeScale: 1
 --- !u!1 &1061651704
 GameObject:
   m_ObjectHideFlags: 0
@@ -14483,9 +14499,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462310745}
-        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 1042043936}
+        m_TargetAssemblyTypeName: MoveScaleUIObject, Assembly-CSharp
+        m_MethodName: Deactivate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14576,9 +14592,9 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462310745}
-        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 1042043936}
+        m_TargetAssemblyTypeName: MoveScaleUIObject, Assembly-CSharp
+        m_MethodName: Deactivate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16628,8 +16644,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1580607455}
   m_HandleRect: {fileID: 1580607454}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.18333334
+  m_Value: 1.0000002
+  m_Size: 0.18333335
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -17522,11 +17538,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1320325920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f39f0c5d967057746bf2cac8934d6db8, type: 3}
+  m_Script: {fileID: 11500000, guid: b7db5bd5e2d818d42897cec3a8e12266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panels:
-  - {fileID: 1447136022}
+  obj: {fileID: 407995504}
+  panelsControls:
+  - {fileID: 407995514}
+  OnOpenUI:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCloseUI:
+    m_PersistentCalls:
+      m_Calls: []
+  moveFrom: {fileID: 1349806637}
+  moveTo: {fileID: 1892621668}
+  timeMove: 1
+  timeScale: 1
 --- !u!1 &1321087300
 GameObject:
   m_ObjectHideFlags: 0
@@ -18840,7 +18867,6 @@ GameObject:
   - component: {fileID: 1462310741}
   - component: {fileID: 1462310740}
   - component: {fileID: 1462310744}
-  - component: {fileID: 1462310745}
   - component: {fileID: 1462310746}
   - component: {fileID: 1462310747}
   m_Layer: 5
@@ -18849,7 +18875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1462310739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18972,23 +18998,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1462310745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462310738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a7d7d1991738e948a6344f6c3753c37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 1462310738}
-  buttonsColliders: []
-  from: {fileID: 902132666}
-  to: {fileID: 1443812005}
-  timeMove: 0.1
 --- !u!82 &1462310746
 AudioSource:
   m_ObjectHideFlags: 0
@@ -19578,7 +19587,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1503950474
 MonoBehaviour:
@@ -19592,7 +19601,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4169b8921bca4004393ce055591a21a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  getPlayer: {fileID: 982834880}
   isVisiblePos: 1
   sizeGizmos: 0.38
   color: {r: 0.12667322, g: 0, b: 1, a: 1}
@@ -19719,7 +19727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1511227900
 Transform:
   m_ObjectHideFlags: 0
@@ -21249,7 +21257,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1610889585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1462310747}
+        m_TargetAssemblyTypeName: PanelsControl, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 236631214}
+          m_ObjectArgumentAssemblyTypeName: Panel, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1610889585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21331,13 +21351,13 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2137229716}
-        m_TargetAssemblyTypeName: PeshehodGame, Assembly-CSharp
-        m_MethodName: OpenStartPanel
+      - m_Target: {fileID: 1462310747}
+        m_TargetAssemblyTypeName: PanelsControl, Assembly-CSharp
+        m_MethodName: OpenPanel
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 236631212}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 236631214}
+          m_ObjectArgumentAssemblyTypeName: Panel, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -22944,9 +22964,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 407995511}
-        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 1320325922}
+        m_TargetAssemblyTypeName: MoveScaleUIObject, Assembly-CSharp
+        m_MethodName: Deactivate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23022,9 +23042,9 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 407995511}
-        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
-        m_MethodName: ClosePanel
+      - m_Target: {fileID: 1320325922}
+        m_TargetAssemblyTypeName: MoveScaleUIObject, Assembly-CSharp
+        m_MethodName: Deactivate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25551,7 +25571,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2054144437}
-  - component: {fileID: 2054144438}
   m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
@@ -25583,22 +25602,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 7}
   m_SizeDelta: {x: 70, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2054144438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2054144436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2db5af3baced09c498be5406a7b90c22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 1908805881}
-  videoClips:
-  - {fileID: 32900000, guid: f6ce0bead5ab8194aae8f25b63231079, type: 3}
-  - {fileID: 32900000, guid: a90f74e0a85fd7d4f87fdf8c4c9095af, type: 3}
 --- !u!1 &2055802741
 GameObject:
   m_ObjectHideFlags: 0
@@ -25883,7 +25886,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2079817122}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1462310747}
+        m_TargetAssemblyTypeName: PanelsControl, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2137229716}
+          m_ObjectArgumentAssemblyTypeName: Panel, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2079817122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25965,7 +25980,7 @@ MonoBehaviour:
   onHandClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1462310747}
         m_TargetAssemblyTypeName: PanelsControl, Assembly-CSharp
         m_MethodName: OpenPanel
         m_Mode: 2
@@ -26411,6 +26426,7 @@ GameObject:
   - component: {fileID: 2137229715}
   - component: {fileID: 2137229714}
   - component: {fileID: 2137229716}
+  - component: {fileID: 2137229717}
   m_Layer: 5
   m_Name: PeshehodGameModePanel
   m_TagString: Untagged
@@ -26493,23 +26509,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2968e46d0f6a74fbf4aa3ff5abeda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
+  panel: {fileID: 2137229712}
   buttonsColliders:
   - {fileID: 1176298763}
   - {fileID: 374390636}
   - {fileID: 452836610}
   - {fileID: 1610889587}
-  sceneTransitionControl: {fileID: 982834876}
+  OnOpenUI:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCloseUI:
+    m_PersistentCalls:
+      m_Calls: []
+  timeScale: 1
   plaingPanel: {fileID: 2054144436}
-  image: {fileID: 1632716939}
-  textMeshPro: {fileID: 429263123}
-  numberLevel:
-  - "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 1"
-  - "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 2"
-  imagesTown:
-  - {fileID: 21300000, guid: f025275669bcc824fa11a88666bc2d51, type: 3}
-  - {fileID: 21300000, guid: a0328bdca9c272c47afd25b47233deb9, type: 3}
-  levelVideo: {fileID: 2054144438}
+  nameLevel: {fileID: 429263123}
+  levelVideo: {fileID: 2137229717}
+--- !u!114 &2137229717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137229712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2db5af3baced09c498be5406a7b90c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1908805881}
+  videoClips:
+  - {fileID: 32900000, guid: f6ce0bead5ab8194aae8f25b63231079, type: 3}
+  - {fileID: 32900000, guid: a90f74e0a85fd7d4f87fdf8c4c9095af, type: 3}
 --- !u!23 &23226584949756938
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27242,9 +27273,9 @@ MonoBehaviour:
   onHandHoverBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1462310745}
-        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 1042043936}
+        m_TargetAssemblyTypeName: MoveScaleUIObject, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29661,9 +29692,9 @@ MonoBehaviour:
   onHandHoverBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 407995511}
-        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
-        m_MethodName: OpenPanel
+      - m_Target: {fileID: 1320325922}
+        m_TargetAssemblyTypeName: MoveScaleUIObject, Assembly-CSharp
+        m_MethodName: Activate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

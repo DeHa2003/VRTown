@@ -1,3 +1,4 @@
+using Lessons.Architecture;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,41 +7,31 @@ using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PeshehodGameModePanel : ColliderPanel
+public class PeshehodGameModePanel : ScaleColliderPanel
 {
-    [SerializeField] private SceneTransitionControl sceneTransitionControl;
-
     [SerializeField] private GameObject plaingPanel;
 
-    [SerializeField] private Image image;
-    [SerializeField] private TextMeshProUGUI textMeshPro;
+    //[SerializeField] private Image image;
+    [SerializeField] private TextMeshProUGUI nameLevel;
 
-    [SerializeField] private List<string> numberLevel;
-    [SerializeField] private List<Sprite> imagesTown;
+    //[SerializeField] private List<string> numberLevel;
+    //[SerializeField] private List<Sprite> imagesTown;
 
     [SerializeField] private LevelVideo levelVideo;
 
     private int sceneNumber;
+    private FadeScreenInteractor fadeScreenInteractor;
 
-    //private void OnEnable()
-    //{
-    //    for (int i = 0; i < buttonsColliders.Count; i++)
-    //    {
-    //        buttonsColliders[i].enabled = true;
-    //    }
-    //}
+    public override void Initialize()
+    {
+        base.Initialize();
 
-    //private void OnDisable()
-    //{
-    //    for (int i = 0; i < buttonsColliders.Count; i++)
-    //    {
-    //        buttonsColliders[i].enabled = false;
-    //    }
-    //}
+        fadeScreenInteractor = Game.GetInteractor<FadeScreenInteractor>();
+    }
 
     public void NameLevel(string nameLevel)
     {
-        textMeshPro.text = nameLevel;
+        this.nameLevel.text = nameLevel;
     }
 
     public void ViborGame(int level)
@@ -52,17 +43,11 @@ public class PeshehodGameModePanel : ColliderPanel
         levelVideo.PlayClip(level-2);
     }
 
-    public void OpenStartPanel(GameObject panel)
-    {
-        gameObject.SetActive(false);
-        panel.SetActive(true);
-    }
-
     public void PlayGame()
     {
         if(sceneNumber != 0)
         {
-            sceneTransitionControl.LoadScene(sceneNumber);
+            fadeScreenInteractor.StartFadeToTransition(1, sceneNumber);
         }
     }
 }

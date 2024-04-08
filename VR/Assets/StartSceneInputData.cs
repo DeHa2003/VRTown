@@ -16,5 +16,6 @@ public class StartSceneInputData : InputData
 
         playerInteractor.CreatePlayer();
         playerInteractor.PlayerToPosition(spawnerPosition.PosPlayerSpawn.position);
+        playerInteractor.PlayerComponents.ActivateLaserControl();
     }
 }

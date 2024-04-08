@@ -11,6 +11,7 @@ namespace Lessons.Architecture
     public class PlayerInteractor : Interactor
     {
         private const string PLAYER_PREFAB_PATH = "Prefabs/GamePlayer";
+        public PlayerComponents PlayerComponents { get; private set; }
         public Player GamePlayer { get; private set; }
 
         private CharacterController characterController;
@@ -30,6 +31,7 @@ namespace Lessons.Architecture
             Debug.Log("Создание игрока");
 
             GamePlayer = Coroutines.Instantiate(Resources.Load<Player>(PLAYER_PREFAB_PATH));
+            PlayerComponents = GamePlayer.GetComponent<PlayerComponents>();
             characterController = GamePlayer.GetComponent<CharacterController>();
             GamePlayer.GetComponent<PlayerComponents>().Initialize();
         }

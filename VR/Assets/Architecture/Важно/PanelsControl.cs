@@ -7,7 +7,7 @@ public class PanelsControl : MonoBehaviour
 {
     [SerializeField] private protected Panel[] panels;
 
-    protected Panel panel;
+    protected Panel currentPanel;
 
     public virtual void Initialize()
     {
@@ -15,18 +15,20 @@ public class PanelsControl : MonoBehaviour
         {
             panels[i].Initialize();
         }
+
+        OpenPanel(panels[0]);
     }
 
     public void OpenPanel(Panel panel)
     {
-        if (this.panel != null)
+        if (this.currentPanel != null)
         {
-            this.panel.ClosePanel(); 
-            this.panel = null;
+            this.currentPanel.ClosePanel(); 
+            this.currentPanel = null;
         }
 
-        this.panel = panel;
-        this.panel.OpenPanel();
+        this.currentPanel = panel;
+        this.currentPanel.OpenPanel();
     }
 
     public void OpenOtherPanel(Panel panel)

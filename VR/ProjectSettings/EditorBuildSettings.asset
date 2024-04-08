@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Other/HouseScene.unity
     guid: c7a47249acbed794591dcc643a5a8f9c
   - enabled: 1
-    path: Assets/Scenes/Other/Scene1.unity
+    path: Assets/Scenes/Other/Level1_Scene.unity
     guid: 379b50ec116b12840a461a9925e2aa8f
   - enabled: 1
     path: Assets/Scenes/Other/Scene2.unity
