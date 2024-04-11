@@ -17,16 +17,6 @@ public class PlayerLaserController : MonoBehaviour
         audioSource.clip = audioClip;
     }
 
-    //private void OnEnable()
-    //{
-    //    HandButtons.OnClickLeftHandMenu += CheckLaserPointer;
-    //}
-
-    //private void OnDisable()
-    //{
-    //    HandButtons.OnClickLeftHandMenu -= CheckLaserPointer;
-    //}
-
     private void AddLaserPointer()
     {
         isActiveLaser = true;

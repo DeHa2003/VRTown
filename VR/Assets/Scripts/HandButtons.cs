@@ -9,54 +9,56 @@ public class HandButtons : MonoBehaviour
     public bool isNoneVR = false;
 
     //
-    public event Action OnClickRightHandMenu;
-    public event Action OnClickLeftHandMenu;
+    public event Action OnClickUpperRightHandMenu;
+    public event Action OnClickUpperLeftHandMenu;
 
-    [SerializeField] SteamVR_Action_Boolean menu;
+    [SerializeField] SteamVR_Action_Boolean UPPER_BUTTON;
 
     private void Update()
     {
+
         if (isNoneVR)
         {
             if (Input.GetKeyDown(KeyCode.L))
             {
-                OnClickLeftHandMenu?.Invoke();
+                OnClickUpperLeftHandMenu?.Invoke();
             }
             else if (Input.GetKeyDown(KeyCode.R))
             {
-                OnClickRightHandMenu?.Invoke();
+                OnClickUpperRightHandMenu?.Invoke();
             }
         }
         else
         {
-            if (menu.GetStateDown(SteamVR_Input_Sources.LeftHand))
+            
+            if (UPPER_BUTTON.GetStateDown(SteamVR_Input_Sources.LeftHand))
             {
-                OnClickLeftHandMenu?.Invoke();
+                OnClickUpperLeftHandMenu?.Invoke();
             }
-            else if (menu.GetStateDown(SteamVR_Input_Sources.RightHand))
+            else if (UPPER_BUTTON.GetStateDown(SteamVR_Input_Sources.RightHand))
             {
-                OnClickRightHandMenu?.Invoke();
+                OnClickUpperRightHandMenu?.Invoke();
             }
         }
     }
 
     public void AddActionToLeftHand(Action action)
     {
-        OnClickLeftHandMenu += action;
+        OnClickUpperLeftHandMenu += action;
     }
 
     public void RemoveActionToLeftHand(Action action)
     {
-        OnClickLeftHandMenu -= action;
+        OnClickUpperLeftHandMenu -= action;
     }
 
     public void AddActionToRightHand(Action action)
     {
-        OnClickRightHandMenu += action;
+        OnClickUpperRightHandMenu += action;
     }
 
     public void RemoveActionToRightHand(Action action)
     {
-        OnClickRightHandMenu -= action;
+        OnClickUpperRightHandMenu -= action;
     }
 }

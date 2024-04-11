@@ -16,6 +16,6 @@ public class LevelOneSceneInputData : InputData
         playerInteractor.CreatePlayer();
         playerInteractor.PlayerToPosition(playerSpawn.PosPlayerSpawn.position);
         playerInteractor.PlayerComponents.ActivateLaserControl();
-        playerInteractor.PlayerComponents.ActivateMenuControl(menu);
+        //playerInteractor.PlayerComponents.ActivateMenuControl(menu);
     }
 }

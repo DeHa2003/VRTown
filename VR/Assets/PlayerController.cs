@@ -6,28 +6,50 @@ using UnityEngine;
 
 public class PlayerController : Controller
 {
-    [SerializeField] private PlayerSpawnerPosition playerSpawn;
-    private Dictionary<Type, IPlayerState> playerStates;
-    private IPlayerState playerCurrentState;
+    [SerializeField] protected PlayerSpawnerPosition playerSpawn;
+    protected Dictionary<Type, IPlayerState> playerStates;
+    protected IPlayerState playerCurrentState;
 
-    private PlayerInteractor playerInteractor;
+    protected PlayerInteractor playerInteractor;
 
     public override void InitializeController()
     {
         playerInteractor = Game.GetInteractor<PlayerInteractor>();
-        playerInteractor.CreatePlayer();
-        playerInteractor.PlayerToPosition(playerSpawn.PosPlayerSpawn.position);
-
         InitializeStates();
-        SetPlayerActiveLaserState();
+
+        StartPlayer();
+        SetStartState();
     }
 
-    private void InitializeStates()
+    public virtual void StartPlayer()
+    {
+        playerInteractor.CreatePlayer();
+        playerInteractor.PlayerToPosition(playerSpawn.PosPlayerSpawn.position);
+    }
+
+    public override void OnDestroyController()
+    {
+        if (playerCurrentState != null)
+            playerCurrentState.ExitState();
+    }
+
+    protected virtual void InitializeStates()
     {
         playerStates = new Dictionary<Type, IPlayerState>();
 
         playerStates[typeof(PlayerDefaultState)] = new PlayerDefaultState();
         playerStates[typeof(PlayerActiveLaserState)] = new PlayerActiveLaserState();
+        playerStates[typeof(PlayerFailedState)] = new PlayerFailedState();
+    }
+
+    protected virtual void SetStartState()
+    {
+        SetPlayerActiveLaserState();
+    }
+
+    public void SetPlayerFailedState()
+    {
+        SetState(GetState<PlayerFailedState>());
     }
 
     public void SetPlayerDefaultState()
@@ -40,7 +62,7 @@ public class PlayerController : Controller
         SetState(GetState<PlayerActiveLaserState>());
     }
 
-    private void SetState(IPlayerState playerState)
+    protected void SetState(IPlayerState playerState)
     {
         if (playerCurrentState != null)
             playerCurrentState.ExitState();
@@ -49,7 +71,7 @@ public class PlayerController : Controller
         playerCurrentState.EnterState();
     }
 
-    private IPlayerState GetState<T>() where T : IPlayerState
+    protected IPlayerState GetState<T>() where T : IPlayerState
     {
         return playerStates[typeof(T)];
     }

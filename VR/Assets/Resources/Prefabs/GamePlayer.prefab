@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isNoneVR: 1
-  menu:
+  UPPER_BUTTON:
     actionPath: /actions/default/in/Menu
     needsReinit: 0
 --- !u!114 &5817077522309753951
@@ -1989,9 +1989,9 @@ MonoBehaviour:
   handButtons: {fileID: 1592223296996353799}
   moveScript: {fileID: 1485919736108479067}
   feetScript: {fileID: 1485919736108479063}
-  laserController: {fileID: 5817077522309753951}
-  menuControl: {fileID: 3299964580454575275}
-  handDevice: {fileID: 1035588875200021741}
+  laserControllerScript: {fileID: 5817077522309753951}
+  menuControlScript: {fileID: 3299964580454575275}
+  handDeviceScript: {fileID: 1035588875200021741}
 --- !u!1 &1485919736108505551
 GameObject:
   m_ObjectHideFlags: 0

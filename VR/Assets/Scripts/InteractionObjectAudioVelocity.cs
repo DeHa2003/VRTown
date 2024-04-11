@@ -22,6 +22,7 @@ public class InteractionObjectAudioVelocity : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if(rb == null) { return; }
         PlaySound(clips[Random.Range(0, clips.Count)], rb.velocity.magnitude / dependenceVolume);
     }
 
@@ -32,8 +33,7 @@ public class InteractionObjectAudioVelocity : MonoBehaviour
 
     private void PlaySound(AudioClip audioClip, float volume)
     {
-        audioS.clip = audioClip;
         audioS.volume = volume;
-        audioS.Play();
+        audioS.PlayOneShot(audioClip);
     }
 }

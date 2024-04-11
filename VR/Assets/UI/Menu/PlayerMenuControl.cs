@@ -3,15 +3,16 @@ using DG.Tweening;
 
 public class PlayerMenuControl : MonoBehaviour
 {
-    [Header("Positions")]
+    //[SerializeField] private PanelsControl menuPrefDefault;
+    //[SerializeField] private PanelsControl menuPrefFailed;
+    //[SerializeField] private PanelsControl menuPrefSuccess;
     [SerializeField] private Transform posMenu;
-
-    [Header("Time to spawn/delete menu")]
     [SerializeField] private float time;
 
     private HandButtons handButtons;
-    private PanelsControl menuPref;
-    private PanelsControl currentMenu = null;
+    private UIObject currentMenuPref;
+    private UIObject currentMenu = null;
+    //private TypeMenu typeMenu;
     private Tween tween;
 
     public void Initialize(HandButtons handButtons)
@@ -34,20 +35,23 @@ public class PlayerMenuControl : MonoBehaviour
     public void InstantiateMenuPanel()
     {
         tween?.Kill();
-        currentMenu = Instantiate(menuPref, posMenu.position, posMenu.rotation);
+        currentMenu = Instantiate(currentMenuPref, posMenu.position, posMenu.rotation);
         currentMenu.Initialize();
-        tween = currentMenu.transform.DOScale(0.01f, time);
+        currentMenu.Activate();
     }
 
     public void DeleteMenuPanel()
     {
-        tween?.Kill();
-        currentMenu.transform.DOScale(0f, time).OnComplete(() => Destroy(currentMenu.gameObject));
+        currentMenu.Deactivate();
     }
 
-    public void ActivateMenuControl(PanelsControl menuPref)
+    public void SetMenuPrefab(TypeMenu typeMenu)
     {
-        this.menuPref = menuPref;
+
+    }
+
+    public void ActivateMenuControl()
+    {
         handButtons.AddActionToRightHand(CheckMenuPanel);
     }
 
@@ -55,4 +59,9 @@ public class PlayerMenuControl : MonoBehaviour
     {
         handButtons.RemoveActionToRightHand(CheckMenuPanel);
     }
+}
+
+public enum TypeMenu
+{
+    Default, Failed, Successed 
 }

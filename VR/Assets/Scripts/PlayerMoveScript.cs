@@ -17,10 +17,27 @@ public class PlayerMoveScript : MonoBehaviour
 
     private Vector3 vectorToJump;
     private CharacterController characterController;
+    private float defaultSpeed;
 
     public void Initialize()
     {
+        defaultSpeed = speed;
         characterController = GetComponent<CharacterController>();
+    }
+
+    public void SetDefaultSpeedMove()
+    {
+        SetSpeedMove(defaultSpeed);
+    }
+
+    public void SetSpeedMove(float speed)
+    {
+        if(speed < 0)
+        {
+            Debug.Log("Ошибка установки скорости");
+            return;
+        }
+        this.speed = speed;
     }
 
     private void Update()

@@ -13,6 +13,8 @@ public sealed class ScaleUIObject : UIObject
 
     public override void Initialize()
     {
+        base.Initialize();
+
         defaultScale = obj.transform.localScale;
         obj.transform.localScale = Vector3.zero;
     }

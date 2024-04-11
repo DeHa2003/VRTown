@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class UIObject : MonoBehaviour
+public class UIObject : MonoBehaviour
 {
     [SerializeField] private protected GameObject obj;
     [SerializeField] private PanelsControl[] panelsControls;

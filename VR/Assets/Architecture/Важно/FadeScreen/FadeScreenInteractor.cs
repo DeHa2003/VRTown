@@ -9,8 +9,8 @@ namespace Lessons.Architecture
 {
     public class FadeScreenInteractor : Interactor
     {
-        //[SerializeField] private Color startColor;
-        //[SerializeField] private Color endColor;
+        private Color startColor = new Color(0, 0, 0, 0);
+        private Color toColor = Color.black;
         //[SerializeField] private float duration;
 
         //public IEnumerator LoadSceneCoroutine(int sceneNumber)
@@ -25,14 +25,14 @@ namespace Lessons.Architecture
         //    SteamVR_Fade.Start(endColor, duration);
         //}
 
-        public void StartFade(float time, Color to, Action actionToFinish = null)
+        public void StartFade(float time, Color color, Action actionToFinish = null)
         {
-            Coroutines.StartRoutine(StartFade_Coroutine(time, to, actionToFinish));
+            Coroutines.StartRoutine(StartFade_Coroutine(time, color, actionToFinish));
         }
 
         public void StartFadeToTransition(float time, int sceneNumber)
         {
-            Coroutines.StartRoutine(StartFade_Coroutine(time, Color.black,() =>
+            Coroutines.StartRoutine(StartFade_Coroutine(time, toColor,() =>
             {
                 SceneManager.LoadScene(sceneNumber);
             }));
@@ -43,10 +43,9 @@ namespace Lessons.Architecture
         {
             Time.timeScale = 1.0f;
             SteamVR_Fade.Start(ToColor, duration);
-
-            yield return new WaitForSeconds(duration);
-
+            yield return Coroutines.StartRoutine(SteamVR_Fade.Start(ToColor, duration));
             action?.Invoke();
+            SteamVR_Fade.Start(startColor, duration);
         }
     }
 }

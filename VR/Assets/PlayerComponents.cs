@@ -8,41 +8,51 @@ public class PlayerComponents : MonoBehaviour
     [SerializeField] private HandButtons handButtons;
     [SerializeField] private PlayerMoveScript moveScript;
     [SerializeField] private PlayerFeetScript feetScript;
-    [SerializeField] private PlayerLaserController laserController;
-    [SerializeField] private PlayerMenuControl menuControl;
-    [SerializeField] private PlayerVibrationHandDevice handDevice;
+    [SerializeField] private PlayerLaserController laserControllerScript;
+    [SerializeField] private PlayerMenuControl menuControlScript;
+    [SerializeField] private PlayerVibrationHandDevice handDeviceScript;
 
     public void Initialize()
     {
         moveScript.Initialize();
         feetScript.Initialize();
-        handDevice.Initialize();
-        laserController.Initialize(handButtons);
-        menuControl.Initialize(handButtons);
+        handDeviceScript.Initialize();
+        laserControllerScript.Initialize(handButtons);
+        menuControlScript.Initialize(handButtons);
     }
 
-    public void ActivateMenuControl(PanelsControl menuPref)
-    {
-        menuControl.ActivateMenuControl(menuPref);
-    }
+    //public void ActivateMenuControl(PanelsControl menuPref)
+    //{
+    //    menuControlScript.ActivateMenuControl(menuPref);
+    //}
 
     public void DiactivateMenuControl()
     {
-        menuControl.DiactivateMenuControl();
+        menuControlScript.DiactivateMenuControl();
     }
 
     public void ActivateLaserControl()
     {
-        laserController.ActivateLaserController();
+        laserControllerScript.ActivateLaserController();
     }
 
     public void DeactivateLaserControl()
     {
-        laserController.DeactivateLaserController();
+        laserControllerScript.DeactivateLaserController();
+    }
+
+    public void SetSpeedMove(int speed)
+    {
+        moveScript.SetSpeedMove(speed);
+    }
+
+    public void SetDefaultSpeedMove()
+    {
+        moveScript.SetDefaultSpeedMove();
     }
 
     public void ActivateVibration(float duration, float frequency, float amplitude, SteamVR_Input_Sources source)
     {
-        handDevice.Pulse(duration, frequency, amplitude, source);
+        handDeviceScript.Pulse(duration, frequency, amplitude, source);
     }
 }

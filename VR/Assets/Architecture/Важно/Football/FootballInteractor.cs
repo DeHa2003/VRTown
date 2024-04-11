@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Lessons.Architecture
 {
     public delegate void OnChangedScore(int value);
-    public class FootballInteractor : Interactor, IDataFootballInteractor
+    public class FootballInteractor : Interactor, IDataFootballInteractor, ISetDataFootballInteractor
     {
         public event OnChangedScore OnChangedScoreCommandA;
         public event OnChangedScore OnChangedScoreCommandB;
@@ -59,6 +59,11 @@ public interface IDataFootballInteractor
 
     int ScoreCommandA { get; }
     int ScoreCommandB { get; }
+}
+
+public interface ISetDataFootballInteractor
+{
+    void SetData(IFootballGoal goalA, IFootballGoal goalB);
 }
 
 public interface IFootballGoal

@@ -1,3 +1,4 @@
+using Lessons.Architecture;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,12 @@ public class Teleport : MonoBehaviour
     [SerializeField] private Color endColor;
     [SerializeField] private float duration;
 
-    private Transform player;
+    //private Transform player;
+    private PlayerInteractor playerInteractor;
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerInteractor = Game.GetInteractor<PlayerInteractor>();
+        //player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     private IEnumerator Teleporting()
     {
@@ -24,7 +27,7 @@ public class Teleport : MonoBehaviour
         yield return new WaitForSeconds(duration);
         gameObject.SetActive(false);
         otherTeleport.SetActive(true);
-        player.position = posToTeleport.position;
+        //player.position = posToTeleport.position;
 
         SteamVR_Fade.Start(endColor, duration);
     }

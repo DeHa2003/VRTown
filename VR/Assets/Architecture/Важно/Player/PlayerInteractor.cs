@@ -11,8 +11,9 @@ namespace Lessons.Architecture
     public class PlayerInteractor : Interactor
     {
         private const string PLAYER_PREFAB_PATH = "Prefabs/GamePlayer";
+        //public Player GamePlayer { get; private set; }
         public PlayerComponents PlayerComponents { get; private set; }
-        public Player GamePlayer { get; private set; }
+
 
         private CharacterController characterController;
 
@@ -24,29 +25,38 @@ namespace Lessons.Architecture
 
         public void CreatePlayer()
         {
-            if (GamePlayer != null)
-            {
-                DestroyPlayer();
-            }
-            Debug.Log("Создание игрока");
+            //if (GamePlayer != null)
+            //{
+            //    DestroyPlayer();
+            //}
+            //Debug.Log("Создание игрока");
 
-            GamePlayer = Coroutines.Instantiate(Resources.Load<Player>(PLAYER_PREFAB_PATH));
-            PlayerComponents = GamePlayer.GetComponent<PlayerComponents>();
-            characterController = GamePlayer.GetComponent<CharacterController>();
-            GamePlayer.GetComponent<PlayerComponents>().Initialize();
-        }
-
-        public void DestroyPlayer()
-        {
-            if (GamePlayer == null)
+            if(Player.instance == null)
             {
-                Debug.LogWarning("Вы пытаетесь удалить пустого игрока");
-                return;
+                 Coroutines.DontDestroyOnLoad(Coroutines.Instantiate(Resources.Load<Player>(PLAYER_PREFAB_PATH)));
             }
 
-            Coroutines.Destroy(GamePlayer.gameObject);
-            SceneManager.sceneUnloaded -= OnSceneUnloaded;
+            PlayerComponents = Player.instance.GetComponent<PlayerComponents>();
+            characterController = Player.instance.GetComponent<CharacterController>();
+            Player.instance.GetComponent<PlayerComponents>().Initialize();
+
+            //GamePlayer = Coroutines.Instantiate(Resources.Load<Player>(PLAYER_PREFAB_PATH));
+            //PlayerComponents = GamePlayer.GetComponent<PlayerComponents>();
+            //characterController = GamePlayer.GetComponent<CharacterController>();
+            //GamePlayer.GetComponent<PlayerComponents>().Initialize();
         }
+
+        //public void DestroyPlayer()
+        //{
+        //    if (GamePlayer == null)
+        //    {
+        //        Debug.LogWarning("Вы пытаетесь удалить пустого игрока");
+        //        return;
+        //    }
+
+        //    Coroutines.Destroy(GamePlayer.gameObject);
+        //    SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        //}
 
         public void PlayerToPosition(Vector3 vector)
         {
@@ -59,7 +69,7 @@ namespace Lessons.Architecture
 
         private void OnSceneUnloaded(UnityEngine.SceneManagement.Scene arg0)
         {
-            DestroyPlayer();
+            //DestroyPlayer();
         }
 
         #endregion

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,4 +10,6 @@ public class LevelTwoGameHandler : Handler
         base.Awake();
         Game.Run(new LevelTwoSceneManager());
     }
+
+
 }
