@@ -30,4 +30,9 @@ public class Game
     {
         return sceneManager.GetRepository<T>();
     }
+
+    public static IInterface GetInterface<IInterface, T>() where T : Interactor
+    {
+        return sceneManager.GetInterface<IInterface, T>();
+    }
 }

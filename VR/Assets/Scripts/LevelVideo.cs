@@ -7,11 +7,13 @@ public class LevelVideo : MonoBehaviour
 {
     [SerializeField] private VideoPlayer videoPlayer;
 
-    [SerializeField] private VideoClip[] videoClips;
-
-    public void PlayClip(int numberClip)
+    public void SetVideoClip(VideoClip videoClip)
     {
-        videoPlayer.clip = videoClips[numberClip];
+        videoPlayer.clip = videoClip;
+    }
+
+    public void Play()
+    {
         videoPlayer.Play();
     }
 }

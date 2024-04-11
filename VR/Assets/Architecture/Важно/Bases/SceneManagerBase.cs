@@ -91,4 +91,9 @@ public abstract class SceneManagerBase
     {
         return this.scene.GetInteractor<T>();
     }
+
+    public IInterface GetInterface<IInterface, T>() where T : Interactor
+    {
+        return this.scene.GetInterface<IInterface, T>();
+    }
 }

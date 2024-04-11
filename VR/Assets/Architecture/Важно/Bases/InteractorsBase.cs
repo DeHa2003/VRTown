@@ -27,6 +27,12 @@ namespace Lessons.Architecture
             return (T)interactorsMap[type];
         }
 
+        public IInterface GetInterface<IInterface, T>() where T : Interactor
+        {
+            var type = typeof(T);
+            return (IInterface)(object)interactorsMap[type];
+        }
+
 
 
 
@@ -62,4 +68,9 @@ namespace Lessons.Architecture
             }
         }
     }
+}
+
+public interface IInterface
+{
+
 }

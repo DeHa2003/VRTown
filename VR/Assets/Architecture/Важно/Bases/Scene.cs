@@ -55,4 +55,10 @@ public class Scene
         var type = typeof(T);
         return interactorsBase.GetInteractor<T>();
     }
+
+    public IInterface GetInterface<IInterface, T>() where T : Interactor
+    {
+        var type = typeof(T);
+        return interactorsBase.GetInterface<IInterface, T>();
+    }
 }

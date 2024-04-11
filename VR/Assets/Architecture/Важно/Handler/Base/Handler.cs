@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Handler : MonoBehaviour
 {
     [SerializeField] private InputData inputData;
-    [SerializeField] private UIObject[] UIObjects;
+    [SerializeField] private Controller[] controllers;
     private protected virtual void Awake()
     {
         Game.OnGameInitializedEvent += OnGameInitialized;
@@ -14,11 +14,19 @@ public abstract class Handler : MonoBehaviour
     private protected virtual void OnGameInitialized()
     {
         inputData.Initialize();
-        for (int i = 0; i < UIObjects.Length; i++)
+        for (int i = 0; i < controllers.Length; i++)
         {
-            UIObjects[i].Initialize();
+            controllers[i].InitializeController();
         }
         Game.OnGameInitializedEvent -= OnGameInitialized;
+    }
+
+    private void OnDestroy()
+    {
+        for (int i = 0; i < controllers.Length; i++)
+        {
+            controllers[i].OnDestroyController();
+        }
     }
 }
 
