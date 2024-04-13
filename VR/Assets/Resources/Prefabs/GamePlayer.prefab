@@ -1827,9 +1827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d73c178463164094cbf543450c597caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startColor: {r: 0, g: 0, b: 0, a: 1}
-  endColor: {r: 0, g: 0, b: 0, a: 0}
-  duration: 1
+  startColor: {r: 0, g: 0, b: 0, a: 0}
+  toColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &1035588875200021741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1992,6 +1991,7 @@ MonoBehaviour:
   laserControllerScript: {fileID: 5817077522309753951}
   menuControlScript: {fileID: 3299964580454575275}
   handDeviceScript: {fileID: 1035588875200021741}
+  playerFadeScreenScript: {fileID: 1485919736108479066}
 --- !u!1 &1485919736108505551
 GameObject:
   m_ObjectHideFlags: 0

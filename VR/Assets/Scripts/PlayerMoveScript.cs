@@ -40,6 +40,14 @@ public class PlayerMoveScript : MonoBehaviour
         this.speed = speed;
     }
 
+    public void TeleportToPosition(Vector3 vector)
+    {
+        Debug.Log("Телепортация");
+        characterController.enabled = false;
+        characterController.transform.position = vector;
+        characterController.enabled = true;
+    }
+
     private void Update()
     {
         Vector3 vector = Player.instance.hmdTransform.TransformDirection(new Vector3(touchpad.axis.x, 0, touchpad.axis.y));

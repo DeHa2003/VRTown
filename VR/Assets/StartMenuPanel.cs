@@ -6,19 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuPanel : ColliderPanel
 {
-    private FadeScreenInteractor fadeScreenInteractor;
+    private TransitionInteractor fadeScreenInteractor;
 
     public override void Initialize()
     {
         base.Initialize();
         Debug.Log("666");
-        fadeScreenInteractor = Game.GetInteractor<FadeScreenInteractor>();
+        fadeScreenInteractor = Game.GetInteractor<TransitionInteractor>();
     }
 
 
     public void StartGame()
     {
-        fadeScreenInteractor.StartFadeToTransition(1, 1);
+        fadeScreenInteractor.TransitionToScene(1);
     }
 
     public void ExitGame()

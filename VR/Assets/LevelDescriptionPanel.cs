@@ -13,12 +13,12 @@ public class LevelDescriptionPanel : ScaleColliderPanel
     [SerializeField] private LevelVideo levelVideo;
 
     private int scenePlay;
-    private FadeScreenInteractor fadeScreenInteractor;
+    private TransitionInteractor fadeScreenInteractor;
 
     public override void Initialize()
     {
         base.Initialize();
-        fadeScreenInteractor = Game.GetInteractor<FadeScreenInteractor>();
+        fadeScreenInteractor = Game.GetInteractor<TransitionInteractor>();
     }
 
     public void SetData(LevelDescriptionScriptableObject levelDescription)
@@ -34,6 +34,6 @@ public class LevelDescriptionPanel : ScaleColliderPanel
 
     public void PlayGame()
     {
-        fadeScreenInteractor.StartFadeToTransition(1, scenePlay);
+        fadeScreenInteractor.TransitionToScene(scenePlay);
     }
 }

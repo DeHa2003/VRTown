@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelOneSceneInputData : InputData
+public class StartSceneInputData : InputData
 {
-    IPlayerEvents playerEvents;
-    IPlayerTransitionInteractorProvider_SetData setDataTransitionInteractor;
+    private IPlayerEvents playerEvents;
+    private IPlayerTransitionInteractorProvider_SetData setDataTransitionInteractor;
+
     public override void Initialize()
     {
         playerEvents = Game.GetInterface<IPlayerEvents, PlayerInteractor>();

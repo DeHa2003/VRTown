@@ -7,11 +7,11 @@ public class FootballScoreVisualize : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textScoreCommandA;
     [SerializeField] private TextMeshProUGUI textScoreCommandB;
 
-    private IDataFootballInteractor footballInteractor;
+    private IFootballInteractorProvider_Data footballInteractor;
 
     public void Initalize()
     {
-        footballInteractor = Game.GetInterface<IDataFootballInteractor, FootballInteractor>();
+        footballInteractor = Game.GetInterface<IFootballInteractorProvider_Data, FootballInteractor>();
     }
 
     public void Activate()

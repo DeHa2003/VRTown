@@ -14,7 +14,7 @@ public class HouseSceneConfig : SceneConfig
         var interactorsMap = new Dictionary<Type, Interactor>();
 
         CreateInteractor<PlayerInteractor>(interactorsMap);
-        CreateInteractor<FadeScreenInteractor>(interactorsMap);
+        CreateInteractor<TransitionInteractor>(interactorsMap);
 
         //CreateInteractor<SettingsInteractor>(interactorsMap);
         //CreateInteractor<AudioInteractor>(interactorsMap);

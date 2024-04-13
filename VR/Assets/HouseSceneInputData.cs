@@ -8,12 +8,14 @@ public class HouseSceneInputData : InputData
     [SerializeField] private PlayerSpawnerPosition playerSpawn;
 
     private PlayerInteractor playerInteractor;
+    private TransitionInteractor fadeScreenInteractor;
     public override void Initialize()
     {
         playerInteractor = Game.GetInteractor<PlayerInteractor>();
 
         playerInteractor.CreatePlayer();
-        playerInteractor.PlayerToPosition(playerSpawn.PosPlayerSpawn.position);
-        playerInteractor.PlayerComponents.ActivateLaserControl();
+        fadeScreenInteractor.TransitionToPosition(playerSpawn.PosPlayerSpawn.position);
+        //playerInteractor.PlayerToPosition(playerSpawn.PosPlayerSpawn.position);
+        playerInteractor.GamePlayer.ActivateLaserController();
     }
 }

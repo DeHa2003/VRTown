@@ -8,13 +8,17 @@ public class LevelTwoSceneInputData : InputData
     [SerializeField] private FootballGoal goalA;
     [SerializeField] private FootballGoal goalB;
 
-    //private FootballInteractor footballInteractor;
+    private IPlayerEvents playerEvents;
 
-    private ISetDataFootballInteractor setDataFootballInteractor;
+    private IPlayerTransitionInteractorProvider_SetData playerTransitionInteractorProvider_SetData;
+    private IFootballInteractorProvider_SetData footballInteractorProvider_SetData;
     public override void Initialize()
     {
-        setDataFootballInteractor = Game.GetInterface<ISetDataFootballInteractor, FootballInteractor>();
-        setDataFootballInteractor.SetData(goalA, goalB);
-        //footballInteractor.Activate();
+        playerEvents = Game.GetInterface<IPlayerEvents, PlayerInteractor>();
+        playerTransitionInteractorProvider_SetData = Game.GetInterface<IPlayerTransitionInteractorProvider_SetData, TransitionInteractor>();
+        footballInteractorProvider_SetData = Game.GetInterface<IFootballInteractorProvider_SetData, FootballInteractor>();
+
+        playerTransitionInteractorProvider_SetData.SetData(playerEvents);
+        footballInteractorProvider_SetData.SetData(goalA, goalB);
     }
 }

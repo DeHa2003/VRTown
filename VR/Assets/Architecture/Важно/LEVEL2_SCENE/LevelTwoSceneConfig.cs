@@ -14,7 +14,7 @@ public class LevelTwoSceneConfig : SceneConfig
         var interactorsMap = new Dictionary<Type, Interactor>();
 
         CreateInteractor<PlayerInteractor>(interactorsMap);
-        CreateInteractor<FadeScreenInteractor>(interactorsMap);
+        CreateInteractor<TransitionInteractor>(interactorsMap);
         CreateInteractor<FootballInteractor>(interactorsMap);
 
         //CreateInteractor<SettingsInteractor>(interactorsMap);

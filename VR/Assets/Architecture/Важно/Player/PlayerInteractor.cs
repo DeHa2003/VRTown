@@ -1,77 +1,59 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Valve.VR.InteractionSystem;
 
 namespace Lessons.Architecture
 {
-    public class PlayerInteractor : Interactor
+    public class PlayerInteractor : Interactor, IPlayerInteractorProvider , IPlayerEvents
     {
+        public GamePlayer GamePlayer { get; private set; }
+
+        public event Action<GamePlayer> OnCreatePlayer;
+        public event Action OnDestroyPlayer;
+
         private const string PLAYER_PREFAB_PATH = "Prefabs/GamePlayer";
-        //public Player GamePlayer { get; private set; }
-        public PlayerComponents PlayerComponents { get; private set; }
-
-
-        private CharacterController characterController;
-
-        public override void Initialize()
-        {
-            base.Initialize();
-            SceneManager.sceneUnloaded += OnSceneUnloaded;
-        }
 
         public void CreatePlayer()
         {
-            //if (GamePlayer != null)
-            //{
-            //    DestroyPlayer();
-            //}
-            //Debug.Log("Создание игрока");
+            if (GamePlayer != null)
+            {
+                DestroyPlayer();
+            }
+            Debug.Log("Создание игрока");
 
-            if(Player.instance == null)
+            if (Player.instance == null)
             {
                  Coroutines.DontDestroyOnLoad(Coroutines.Instantiate(Resources.Load<Player>(PLAYER_PREFAB_PATH)));
             }
 
-            PlayerComponents = Player.instance.GetComponent<PlayerComponents>();
-            characterController = Player.instance.GetComponent<CharacterController>();
-            Player.instance.GetComponent<PlayerComponents>().Initialize();
+            GamePlayer = Player.instance.GetComponent<GamePlayer>();
+            GamePlayer.Initialize();
 
-            //GamePlayer = Coroutines.Instantiate(Resources.Load<Player>(PLAYER_PREFAB_PATH));
-            //PlayerComponents = GamePlayer.GetComponent<PlayerComponents>();
-            //characterController = GamePlayer.GetComponent<CharacterController>();
-            //GamePlayer.GetComponent<PlayerComponents>().Initialize();
+            OnCreatePlayer?.Invoke(GamePlayer);
         }
 
-        //public void DestroyPlayer()
-        //{
-        //    if (GamePlayer == null)
-        //    {
-        //        Debug.LogWarning("Вы пытаетесь удалить пустого игрока");
-        //        return;
-        //    }
-
-        //    Coroutines.Destroy(GamePlayer.gameObject);
-        //    SceneManager.sceneUnloaded -= OnSceneUnloaded;
-        //}
-
-        public void PlayerToPosition(Vector3 vector)
+        public void DestroyPlayer()
         {
-            characterController.enabled = false;
-            characterController.transform.position = vector;
-            characterController.enabled = true;
+            if (GamePlayer == null)
+            {
+                Debug.LogWarning("Вы пытаетесь удалить пустого игрока");
+                return;
+            }
+
+            Coroutines.Destroy(GamePlayer.gameObject);
+            OnDestroyPlayer?.Invoke();
         }
-
-        #region Events
-
-        private void OnSceneUnloaded(UnityEngine.SceneManagement.Scene arg0)
-        {
-            //DestroyPlayer();
-        }
-
-        #endregion
     }
+}
+
+public interface IPlayerInteractorProvider : IInterface
+{
+    void CreatePlayer();
+    void DestroyPlayer();
+}
+
+public interface IPlayerEvents : IInterface
+{
+    event Action<GamePlayer> OnCreatePlayer;
+    event Action OnDestroyPlayer;
 }

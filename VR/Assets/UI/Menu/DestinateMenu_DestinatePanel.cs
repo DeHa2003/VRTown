@@ -14,13 +14,13 @@ public class DestinateMenu_DestinatePanel : ScaleColliderPanel
     protected GetTaskScene TaskManager { get; private set; }
     protected SceneTransitionControl TransitionControl { get; private set; }
 
-    private FadeScreenInteractor screenInteractor;
+    private TransitionInteractor screenInteractor;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        screenInteractor = Game.GetInteractor<FadeScreenInteractor>();
+        screenInteractor = Game.GetInteractor<TransitionInteractor>();
         PlayerControls = GameObject.FindGameObjectWithTag("PlayerControls");
         TaskManager = PlayerControls.GetComponent<GetTaskScene>();
         TransitionControl = PlayerControls.GetComponent<SceneTransitionControl>();
@@ -39,11 +39,11 @@ public class DestinateMenu_DestinatePanel : ScaleColliderPanel
 
     public void Restart()
     {
-        screenInteractor.StartFadeToTransition(1, SceneManager.GetActiveScene().buildIndex);
+        screenInteractor.TransitionToScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToHome()
     {
-        screenInteractor.StartFadeToTransition(1, 1);
+        screenInteractor.TransitionToScene(1);
     }
 }

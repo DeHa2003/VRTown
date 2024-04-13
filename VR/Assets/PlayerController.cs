@@ -10,11 +10,14 @@ public class PlayerController : Controller
     protected Dictionary<Type, IPlayerState> playerStates;
     protected IPlayerState playerCurrentState;
 
-    protected PlayerInteractor playerInteractor;
+    protected IPlayerInteractorProvider playerInteractor;
+    protected IPlayerTransitionInteractorProvider playerTransitionInteractorProvider;
 
     public override void InitializeController()
     {
-        playerInteractor = Game.GetInteractor<PlayerInteractor>();
+        playerInteractor = Game.GetInterface<IPlayerInteractorProvider, PlayerInteractor>();
+        playerTransitionInteractorProvider = Game.GetInterface<IPlayerTransitionInteractorProvider, TransitionInteractor>();
+
         InitializeStates();
 
         StartPlayer();
@@ -24,7 +27,7 @@ public class PlayerController : Controller
     public virtual void StartPlayer()
     {
         playerInteractor.CreatePlayer();
-        playerInteractor.PlayerToPosition(playerSpawn.PosPlayerSpawn.position);
+        playerTransitionInteractorProvider.TransitionToPosition(playerSpawn.PosPlayerSpawn.position);
     }
 
     public override void OnDestroyController()

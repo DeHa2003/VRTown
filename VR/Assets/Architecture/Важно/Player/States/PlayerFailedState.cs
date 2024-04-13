@@ -14,7 +14,7 @@ public class PlayerFailedState : IPlayerState
     public void EnterState()
     {
         Debug.Log("Активация состояния - Проигрыш");
-        playerInteractor.PlayerComponents.SetSpeedMove(0);
+        playerInteractor.GamePlayer.SetSpeedMove(0);
     }
 
     public void UpdateState()
@@ -24,7 +24,7 @@ public class PlayerFailedState : IPlayerState
 
     public void ExitState()
     {
-        playerInteractor.PlayerComponents.SetDefaultSpeedMove();
+        playerInteractor.GamePlayer.SetDefaultSpeedMove();
         Debug.Log("Деактивация состояния - Проигрыш");
     }
 }

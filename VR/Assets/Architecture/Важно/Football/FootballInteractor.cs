@@ -7,7 +7,7 @@ using UnityEngine;
 namespace Lessons.Architecture
 {
     public delegate void OnChangedScore(int value);
-    public class FootballInteractor : Interactor, IDataFootballInteractor, ISetDataFootballInteractor
+    public class FootballInteractor : Interactor, IFootballInteractorProvider, IFootballInteractorProvider_Data, IFootballInteractorProvider_SetData
     {
         public event OnChangedScore OnChangedScoreCommandA;
         public event OnChangedScore OnChangedScoreCommandB;
@@ -16,7 +16,6 @@ namespace Lessons.Architecture
 
         private IFootballGoal goalA;
         private IFootballGoal goalB;
-        private IDataFootballInteractor dataFootballInteractor;
 
         public void SetData(IFootballGoal goalA, IFootballGoal goalB)
         {
@@ -24,13 +23,13 @@ namespace Lessons.Architecture
             this.goalB = goalB;
         }
 
-        public void Activate()
+        public void ActivateGame()
         {
             goalA.AddAction(AddScoreCommandA);
             goalB.AddAction(AddScoreCommandB);
         }
 
-        public void Deactivate()
+        public void DeactivateGame()
         {
             goalA.RemoveAction(AddScoreCommandA);
             goalB.RemoveAction(AddScoreCommandB);
@@ -52,7 +51,13 @@ namespace Lessons.Architecture
     }
 }
 
-public interface IDataFootballInteractor
+public interface IFootballInteractorProvider : IInterface
+{
+    void ActivateGame();
+    void DeactivateGame();
+}
+
+public interface IFootballInteractorProvider_Data : IInterface
 {
     event OnChangedScore OnChangedScoreCommandA;
     event OnChangedScore OnChangedScoreCommandB;
@@ -61,7 +66,7 @@ public interface IDataFootballInteractor
     int ScoreCommandB { get; }
 }
 
-public interface ISetDataFootballInteractor
+public interface IFootballInteractorProvider_SetData : IInterface
 {
     void SetData(IFootballGoal goalA, IFootballGoal goalB);
 }

@@ -15,7 +15,7 @@ public class PlayerActiveLaserState : IPlayerState
     public void EnterState()
     {
         Debug.Log("Активация состояние - активный лазер");
-        playerInteractor.PlayerComponents.ActivateLaserControl();
+        playerInteractor.GamePlayer.ActivateLaserController();
     }
 
     public void UpdateState()
@@ -26,6 +26,6 @@ public class PlayerActiveLaserState : IPlayerState
     public void ExitState()
     {
         Debug.Log("Деактивация состояние - активный лазер");
-        playerInteractor.PlayerComponents.DeactivateLaserControl();
+        playerInteractor.GamePlayer.DeactivateLaserController();
     }
 }
