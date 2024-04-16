@@ -34,6 +34,6 @@ public class LevelDescriptionPanel : ScaleColliderPanel
 
     public void PlayGame()
     {
-        fadeScreenInteractor.TransitionToScene(scenePlay);
+        fadeScreenInteractor.TransitionToScene_Fade(scenePlay);
     }
 }

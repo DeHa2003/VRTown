@@ -5,17 +5,14 @@ using UnityEngine;
 
 public class HouseSceneInputData : InputData
 {
-    [SerializeField] private PlayerSpawnerPosition playerSpawn;
+    private IPlayerEvents playerEvents;
+    private IPlayerTransitionInteractorProvider_SetData setDataTransitionInteractor;
 
-    private PlayerInteractor playerInteractor;
-    private TransitionInteractor fadeScreenInteractor;
     public override void Initialize()
     {
-        playerInteractor = Game.GetInteractor<PlayerInteractor>();
+        playerEvents = Game.GetInterface<IPlayerEvents, PlayerInteractor>();
+        setDataTransitionInteractor = Game.GetInterface<IPlayerTransitionInteractorProvider_SetData, TransitionInteractor>();
 
-        playerInteractor.CreatePlayer();
-        fadeScreenInteractor.TransitionToPosition(playerSpawn.PosPlayerSpawn.position);
-        //playerInteractor.PlayerToPosition(playerSpawn.PosPlayerSpawn.position);
-        playerInteractor.GamePlayer.ActivateLaserController();
+        setDataTransitionInteractor.SetData(playerEvents);
     }
 }

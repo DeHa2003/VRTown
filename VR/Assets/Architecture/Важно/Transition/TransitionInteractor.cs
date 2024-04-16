@@ -15,6 +15,9 @@ namespace Lessons.Architecture
         private Vector3 posToMove;
         private int sceneTransition;
 
+        private Color startColor = new Color(0, 0, 0, 0);
+        private Color toColor = Color.black;
+
         public void SetData(IPlayerEvents playerEvents)
         {
             this.playerEvents = playerEvents;
@@ -25,28 +28,41 @@ namespace Lessons.Architecture
         {
             playerFadeScreen = player;
             playerMove = player;
+            FadeScreen(0, Color.black);
         }
 
         public void TransitionToScene(int sceneNumber)
         {
             sceneTransition = sceneNumber;
-            FadeScreen(1, LoadScene);
+            LoadScene();
+        }
+
+        public void TransitionToScene_Fade(int sceneNumber)
+        {
+            sceneTransition = sceneNumber;
+            FadeScreen(0.5f, toColor, LoadScene);
         }
 
         public void TransitionToPosition(Vector3 vector)
         {
             posToMove = vector;
-            FadeScreen(1, Teleport);
+            Teleport();
         }
 
-        public void FadeScreen(float duration, Action OnFinish = null)
+        public void TransitionToPosition_Fade(Vector3 vector)
+        {
+            posToMove = vector;
+            FadeScreen(0.5f, toColor, Teleport);
+        }
+
+        public void FadeScreen(float duration, Color color, Action OnFinish = null)
         {
             if(playerFadeScreen == null)
             {
                 Debug.Log("Игрок не найден - " + this.ToString());
             }
 
-            playerFadeScreen.Fade(duration, OnFinish);
+            playerFadeScreen.Fade(duration, color, OnFinish);
         }
 
         private void LoadScene()
@@ -57,15 +73,18 @@ namespace Lessons.Architecture
         private void Teleport()
         {
             playerMove.TeleportToPosition(posToMove);
+            FadeScreen(0.5f, startColor);
         }
     }
 }
 
 public interface IPlayerTransitionInteractorProvider : IInterface
 {
-    void FadeScreen(float duration, Action OnFinish = null);
+    void FadeScreen(float duration, Color color, Action OnFinish = null);
     void TransitionToScene(int sceneNumber);
     void TransitionToPosition(Vector3 vector);
+    void TransitionToScene_Fade(int sceneNumber);
+    void TransitionToPosition_Fade(Vector3 vector);
 }
 
 public interface IPlayerTransitionInteractorProvider_SetData : IInterface

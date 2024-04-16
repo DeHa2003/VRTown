@@ -1748,13 +1748,13 @@ MonoBehaviour:
   - {fileID: 1485919736113988859}
   - {fileID: 1485919736114158675}
   headCollider: {fileID: 1485919736111985609}
-  rigSteamVR: {fileID: 1485919736108502433}
-  rig2DFallback: {fileID: 1485919736108509397}
+  rigSteamVR: {fileID: 0}
+  rig2DFallback: {fileID: 0}
   audioListener: {fileID: 1485919736108400903}
   headsetOnHead:
     actionPath: /actions/default/in/HeadsetOnHead
     needsReinit: 0
-  allowToggleTo2D: 1
+  allowToggleTo2D: 0
 --- !u!143 &1485919736108479064
 CharacterController:
   m_ObjectHideFlags: 0

@@ -39,11 +39,11 @@ public class DestinateMenu_DestinatePanel : ScaleColliderPanel
 
     public void Restart()
     {
-        screenInteractor.TransitionToScene(SceneManager.GetActiveScene().buildIndex);
+        screenInteractor.TransitionToScene_Fade(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void GoToHome()
     {
-        screenInteractor.TransitionToScene(1);
+        screenInteractor.TransitionToScene_Fade(1);
     }
 }

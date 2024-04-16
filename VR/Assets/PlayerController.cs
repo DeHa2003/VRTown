@@ -27,6 +27,7 @@ public class PlayerController : Controller
     public virtual void StartPlayer()
     {
         playerInteractor.CreatePlayer();
+        playerTransitionInteractorProvider.FadeScreen(0.5f, new Color(0, 0, 0, 0));
         playerTransitionInteractorProvider.TransitionToPosition(playerSpawn.PosPlayerSpawn.position);
     }
 

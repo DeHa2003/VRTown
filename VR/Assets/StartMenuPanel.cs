@@ -18,7 +18,7 @@ public class StartMenuPanel : ColliderPanel
 
     public void StartGame()
     {
-        fadeScreenInteractor.TransitionToScene(1);
+        fadeScreenInteractor.TransitionToScene_Fade(1);
     }
 
     public void ExitGame()

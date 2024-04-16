@@ -65,9 +65,9 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         handDeviceScript.Pulse(duration, frequency, amplitude, source);
     }
 
-    public void Fade(float duration, Action actionToFinish = null)
+    public void Fade(float duration, Color color , Action actionToFinish = null)
     {
-        playerFadeScreenScript.StartFade(duration, actionToFinish);
+        playerFadeScreenScript.Fade(duration, color, actionToFinish);
     }
 
     public void TeleportToPosition(Vector3 vector)
@@ -97,7 +97,7 @@ public interface IPlayerVibrationHand
 
 public interface IPlayerFadeScreen
 {
-    void Fade(float duration, Action actionToFinish = null);
+    void Fade(float duration, Color color, Action actionToFinish = null);
 }
 
 public interface IPlayerMenu

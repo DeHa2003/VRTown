@@ -7,13 +7,11 @@ public class PlayerMenuControl : MonoBehaviour
     //[SerializeField] private PanelsControl menuPrefFailed;
     //[SerializeField] private PanelsControl menuPrefSuccess;
     [SerializeField] private Transform posMenu;
-    [SerializeField] private float time;
 
     private HandButtons handButtons;
     private UIObject currentMenuPref;
     private UIObject currentMenu = null;
     //private TypeMenu typeMenu;
-    private Tween tween;
 
     public void Initialize(HandButtons handButtons)
     {
@@ -34,7 +32,6 @@ public class PlayerMenuControl : MonoBehaviour
 
     public void InstantiateMenuPanel()
     {
-        tween?.Kill();
         currentMenu = Instantiate(currentMenuPref, posMenu.position, posMenu.rotation);
         currentMenu.Initialize();
         currentMenu.Activate();

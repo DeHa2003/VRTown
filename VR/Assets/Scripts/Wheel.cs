@@ -11,7 +11,7 @@ public class WheelRoads
     public Color colorGizmos;
 }
 
-public class Wheel : MonoBehaviour
+public class Wheel : MonoBehaviour, IWheel
 {
     [SerializeField] private List<WheelRoads> wheelRoads;
 
@@ -23,11 +23,19 @@ public class Wheel : MonoBehaviour
         instance = this;
     }
 
-    public void StartPlay(out List<Transform> wheel, out Transform posStart)
+    //public void StartPlay(out List<Transform> wheel, out Transform posStart)
+    //{
+    //    int a = Random.Range(0, wheelRoads.Count);
+    //    wheel = wheelRoads[a].wheel;
+    //    posStart = wheelRoads[a].posSpawn;
+
+    //}
+
+    public void GetRandomPath(out List<Transform> transforms, out Transform posSpawn)
     {
         int a = Random.Range(0, wheelRoads.Count);
-        wheel = wheelRoads[a].wheel;
-        posStart = wheelRoads[a].posSpawn;
+        transforms = wheelRoads[a].wheel;
+        posSpawn = wheelRoads[a].posSpawn;
 
     }
 
@@ -49,4 +57,9 @@ public class Wheel : MonoBehaviour
             }
         }
     }
+}
+
+public interface IWheel
+{
+    void GetRandomPath(out List<Transform> transforms, out Transform posSpawn);
 }

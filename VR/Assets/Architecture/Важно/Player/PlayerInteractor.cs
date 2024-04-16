@@ -25,7 +25,6 @@ namespace Lessons.Architecture
             {
                  Coroutines.DontDestroyOnLoad(Coroutines.Instantiate(Resources.Load<Player>(PLAYER_PREFAB_PATH)));
             }
-
             GamePlayer = Player.instance.GetComponent<GamePlayer>();
             GamePlayer.Initialize();
 

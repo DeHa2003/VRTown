@@ -18,20 +18,31 @@ public class PlayerFadeScreenScript : MonoBehaviour
 
     }
 
-    public void StartFade(float time, Action actionToFinish)
+    //public void FadeAction(float time, Action actionToFinish)
+    //{
+    //    Coroutines.StartRoutine(StartFade_CoroutineAction(time, toColor, actionToFinish));
+    //}
+
+    public void Fade(float time, Color to, Action action)
     {
-        Coroutines.StartRoutine(StartFade_Coroutine(time, toColor, actionToFinish));
+        Coroutines.StartRoutine(StartFade_Coroutine(time, to, action));
     }
 
-
-    private IEnumerator StartFade_Coroutine(float duration, Color ToColor, Action action)
+    private IEnumerator StartFade_Coroutine(float duration, Color toColor, Action action)
     {
         Time.timeScale = 1.0f;
-        SteamVR_Fade.Start(ToColor, duration);
-        //yield return Coroutines.StartRoutine(SteamVR_Fade.Start(ToColor, duration));
+        SteamVR_Fade.Start(toColor, duration);
         yield return new WaitForSeconds(duration + 1);
         action?.Invoke();
-        //yield return new WaitForSeconds(1);
-        SteamVR_Fade.Start(startColor, duration);
     }
+
+
+    //private IEnumerator StartFade_CoroutineAction(float duration, Color toColor, Action action)
+    //{
+    //    Time.timeScale = 1.0f;
+    //    SteamVR_Fade.Start(toColor, duration);
+    //    yield return new WaitForSeconds(duration + 1);
+    //    action?.Invoke();
+    //    SteamVR_Fade.Start(startColor, duration);
+    //}
 }

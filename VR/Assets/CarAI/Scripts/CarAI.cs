@@ -1,43 +1,64 @@
 using System.Collections.Generic;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using System;
-using Random = UnityEngine.Random;
 
-public class CarAI : MonoBehaviour
+public class CarAI : MonoBehaviour, ICar
 {
     [Header("Car position")]
     [SerializeField] private Transform carPosition;
     [SerializeField] private GameObject carTarget;
 
     private Vector3 PositionToFollow = Vector3.zero;
-    private int currentWayPoint;
+
     private List<Transform> waypoints = new List<Transform>();
+
+    private float currentSpeed;
+    private int currentWayPoint;
+
     private NavMeshAgent agent;
-    private Transform posStart;
 
-    private void Awake()
+    public event Action OnCreateCarAction;
+    public event Action OnDestroyCarAction;
+
+    public void Initialize(List<Transform> waypoints)
     {
+        OnCreateCarAction?.Invoke();
         agent = GetComponent<NavMeshAgent>();
-        agent.speed = Random.Range(7, 12);
-    }
-
-    IEnumerator Start() 
-    {
-        GetPath();
+        this.waypoints = waypoints;
         currentWayPoint = 0;
-        yield return new WaitForSeconds(3);
-        carTarget.tag = "CarAI";
-        gameObject.tag = "CarAI";
     }
 
-    private void GetPath()
+    public void SetSpeed(float speed)
     {
-        Wheel.instance.StartPlay(out waypoints, out posStart);
-        gameObject.transform.position = posStart.position;
+        currentSpeed = speed;
+        agent.speed = currentSpeed;
     }
+
+    public void StopCar()
+    {
+        agent.speed = 0;
+    }
+
+    public void MoveCar()
+    {
+        agent.speed = currentSpeed;
+    }
+
+    public void Destroy()
+    {
+        OnDestroyCarAction.Invoke();
+        Destroy(this.gameObject);
+    }
+
+    //IEnumerator Start() 
+    //{
+    //    currentWayPoint = 0;
+    //    yield return new WaitForSeconds(3);
+    //    carTarget.tag = "CarAI";
+    //    gameObject.tag = "CarAI";
+    //}
 
     void FixedUpdate()
     {
@@ -55,11 +76,12 @@ public class CarAI : MonoBehaviour
         {
             if (currentWayPoint >= waypoints.Count)
             {
-
+                Destroy();
             }
             else
             {
                 PositionToFollow = waypoints[currentWayPoint].position;
+
                 if (PositionToFollow != null && carPosition!=null)
                 {
                     if (Vector3.Distance(carPosition.position, PositionToFollow) < 2f)
@@ -68,4 +90,15 @@ public class CarAI : MonoBehaviour
             }
         }
     }
+}
+
+public interface ICar
+{
+    event Action OnCreateCarAction;
+    event Action OnDestroyCarAction;
+    void Initialize(List<Transform> path);
+    void SetSpeed(float speed);
+    void MoveCar();
+    void StopCar();
+    void Destroy();
 }

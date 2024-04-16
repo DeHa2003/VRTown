@@ -4,39 +4,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Valve.VR;
+using Valve.VR.InteractionSystem;
 
 public class Teleport : MonoBehaviour
 {
-    [SerializeField] private GameObject otherTeleport;
     [SerializeField] private Transform posToTeleport;
-    [SerializeField] private Color startColor;
-    [SerializeField] private Color endColor;
-    [SerializeField] private float duration;
+    private IPlayerTransitionInteractorProvider playerTransitionInteractorProvider;
 
-    //private Transform player;
-    private PlayerInteractor playerInteractor;
-    private void Awake()
+    public void Initialize()
     {
-        playerInteractor = Game.GetInteractor<PlayerInteractor>();
-        //player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerTransitionInteractorProvider = Game.GetInterface<IPlayerTransitionInteractorProvider, TransitionInteractor>();
     }
-    private IEnumerator Teleporting()
+
+    private void Teleportation()
     {
-        SteamVR_Fade.Start(startColor, duration);
-
-        yield return new WaitForSeconds(duration);
-        gameObject.SetActive(false);
-        otherTeleport.SetActive(true);
-        //player.position = posToTeleport.position;
-
-        SteamVR_Fade.Start(endColor, duration);
+        playerTransitionInteractorProvider.TransitionToPosition_Fade(posToTeleport.position);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.transform.root.GetComponent<Player>())
         {
-            StartCoroutine(nameof(Teleporting));
+            Teleportation();
         }
     }
 }
