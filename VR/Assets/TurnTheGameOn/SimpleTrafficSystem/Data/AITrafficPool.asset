@@ -29,7 +29,7 @@ MonoBehaviour:
   actizeZone: 225
   spawnZone: 350
   hideSpawnPointsInEditMode: 0
-  showGizmos: 1
+  showGizmos: 0
   minSpawnZoneColor: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 0.45490196}
   cullHeadLightZone: {r: 1, g: 0, b: 0, a: 0.39215687}
   activeZoneColor: {r: 0, g: 0.044787005, b: 0.6117647, a: 0.26666668}

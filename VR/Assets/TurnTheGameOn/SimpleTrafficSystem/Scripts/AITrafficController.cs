@@ -39,7 +39,7 @@
         public float minSpeedToChangeLanes = 5f;
         public float changeLaneCooldown = 20f;
 
-        public List<AITrafficCar> carAIList { get; private set; } = new List<AITrafficCar>();
+        public List<AITrafficCar> carAIList = new List<AITrafficCar>();
         private List<float> changeLaneCooldownTimer = new List<float>();
         public List<AITrafficWaypointRoute> allWaypointRoutesList = new List<AITrafficWaypointRoute>();
         public List<AITrafficWaypointRoute> waypointRouteList { get; private set; } = new List<AITrafficWaypointRoute>();
@@ -1171,10 +1171,10 @@
                     Vector3 spawnPosition = availableSpawnPoints[randomSpawnPointIndex].transformCached.position;
                     Vector3 spawnOffset = new Vector3(0, -4, 0);
                     spawnPosition += spawnOffset;
-                    GameObject spawnedTrafficVehicle = Instantiate(_AITrafficPool.trafficPrefabs[j], spawnPosition, availableSpawnPoints[randomSpawnPointIndex].transformCached.rotation);
-                    spawnedTrafficVehicle.GetComponent<AITrafficCar>().RegisterCar(availableSpawnPoints[randomSpawnPointIndex].waypoint.onReachWaypointSettings.parentRoute);
-                    spawnedTrafficVehicle.transform.LookAt(availableSpawnPoints[randomSpawnPointIndex].waypoint.onReachWaypointSettings.parentRoute.waypointDataList[availableSpawnPoints[randomSpawnPointIndex].waypoint.onReachWaypointSettings.waypointIndexnumber]._transform);
-                    availableSpawnPoints.RemoveAt(randomSpawnPointIndex);
+                    //GameObject spawnedTrafficVehicle = Instantiate(_AITrafficPool.trafficPrefabs[j], spawnPosition, availableSpawnPoints[randomSpawnPointIndex].transformCached.rotation);
+                    //spawnedTrafficVehicle.GetComponent<AITrafficCar>().RegisterCar(availableSpawnPoints[randomSpawnPointIndex].waypoint.onReachWaypointSettings.parentRoute);
+                    //spawnedTrafficVehicle.transform.LookAt(availableSpawnPoints[randomSpawnPointIndex].waypoint.onReachWaypointSettings.parentRoute.waypointDataList[availableSpawnPoints[randomSpawnPointIndex].waypoint.onReachWaypointSettings.waypointIndexnumber]._transform);
+                    //availableSpawnPoints.RemoveAt(randomSpawnPointIndex);
                 }
             }
 

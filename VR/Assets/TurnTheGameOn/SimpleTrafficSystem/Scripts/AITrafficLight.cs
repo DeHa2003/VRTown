@@ -1,9 +1,13 @@
 ﻿namespace TurnTheGameOn.SimpleTrafficSystem
 {
     using UnityEngine;
+    using UnityEngine.Events;
 
     public class AITrafficLight : MonoBehaviour
     {
+        public UnityEvent OnEnableGreen;
+        public UnityEvent OnEnableRed;
+        //----------------------------//
         public MeshRenderer redMesh;
         public MeshRenderer yellowMesh;
         public MeshRenderer greenMesh;
@@ -15,6 +19,8 @@
             redMesh.enabled = true;
             yellowMesh.enabled = false;
             greenMesh.enabled = false;
+
+            OnEnableRed?.Invoke();
         }
 
         public void EnableYellowLight()
@@ -31,6 +37,8 @@
             redMesh.enabled = false;
             yellowMesh.enabled = false;
             greenMesh.enabled = true;
+
+            OnEnableGreen?.Invoke();
         }
 
         public void DisableAllLights()

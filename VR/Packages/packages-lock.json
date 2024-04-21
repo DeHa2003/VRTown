@@ -258,6 +258,13 @@
         "com.unity.xr.legacyinputhelpers": "2.1.4"
       }
     },
+    "com.zigurous.shaders.standard": {
+      "version": "https://github.com/zigurous/unity-standard-shaders.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3bf78bd27c5b1ee305d2c4172bbae5a1dc76a83d"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
