@@ -5,30 +5,30 @@ using UnityEngine;
 
 public class CarsController : Controller
 {
-    private ICarsInteractorsProvider carsInteractorProvider;
+    private ICarsInteractorProvider carsInteractorProvider;
 
     public override void InitializeController()
     {
         base.InitializeController();
 
-        carsInteractorProvider = Game.GetInterface<ICarsInteractorsProvider, CarsInteractor>();
+        carsInteractorProvider = Game.GetInterface<ICarsInteractorProvider, CarsInteractor>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            carsInteractorProvider.RandomSpawn();
+            carsInteractorProvider.SpawnRandomCar();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
-        {
-            carsInteractorProvider.StopAllCars();
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftAlt))
+        //{
+        //    carsInteractorProvider.StopAllCars();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.RightAlt))
-        {
-            carsInteractorProvider.ResumeAllCars();
-        }
+        //if (Input.GetKeyDown(KeyCode.RightAlt))
+        //{
+        //    carsInteractorProvider.ResumeAllCars();
+        //}
     }
 }

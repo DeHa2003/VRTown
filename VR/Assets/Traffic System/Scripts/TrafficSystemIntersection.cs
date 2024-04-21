@@ -29,7 +29,7 @@ public class TrafficSystemIntersection : MonoBehaviour
 	public  float                            m_redDuration      = 2.0f;
 	[Range(0.0f, 1.0f)]
 	public  bool                             m_ignoreCanFitAcrossIntersectionCheck = true;                       // If you want vehicles to stop and check that the intersection is clear, turn this on... will help prevent vehicles getting stuck in the middle of the intersection
-	public  List<PedestrianNode> m_pedestrianNodes = new List<PedestrianNode>();                                 // if nodes are added then it will block all pedestrians from walking across the road when the lights are green or yellow.
+	//public  List<PedestrianNode> m_pedestrianNodes = new List<PedestrianNode>();                                 // if nodes are added then it will block all pedestrians from walking across the road when the lights are green or yellow.
 	public  float                            m_walkDuration       = 6.0f;                                        // the time pedestrians have to walk across the road
 	public  float                            m_dontWalkPercentage = 0.40f;                                       // if there is a pedestrian node linked to the TrafficSystemTrafficLight object then it will use the percentage of teh red duration to determine when to walk.
 	public  int                              m_walkSequenceMax    = 4;                                           // the amount of light change durations must happen before the pedestrians will be allowed to walk across the road   
@@ -90,8 +90,8 @@ public class TrafficSystemIntersection : MonoBehaviour
 			{
 				DontWalk();
 				m_walkSequence++;
-				if(m_pedestrianNodes.Count <= 0)
-					m_walkSequence = 0;
+				//if(m_pedestrianNodes.Count <= 0)
+				//	m_walkSequence = 0;
 
 				if(m_lightsAGreen)
 				{
@@ -146,8 +146,8 @@ public class TrafficSystemIntersection : MonoBehaviour
 				if(m_priorityLightQueue.Count > 0 && m_walkSequence < m_walkSequenceMax)
 				{
 					m_walkSequence++;
-					if(m_pedestrianNodes.Count <= 0)
-						m_walkSequence = 0;
+					//if(m_pedestrianNodes.Count <= 0)
+					//	m_walkSequence = 0;
 
 					m_intersectionSystem = IntersectionSystem.SINGLE;
 
@@ -168,20 +168,20 @@ public class TrafficSystemIntersection : MonoBehaviour
 					yield return null;
 				}
 
-				if(m_pedestrianNodes.Count > 0 && m_walkSequence >= m_walkSequenceMax)
-				{
-//					for(int lIndex = 0; lIndex < m_lights.Count; lIndex++)
-//						m_lights[lIndex].SetStatus( TrafficSystemTrafficLight.Status.RED );
+//				if(m_pedestrianNodes.Count > 0 && m_walkSequence >= m_walkSequenceMax)
+//				{
+////					for(int lIndex = 0; lIndex < m_lights.Count; lIndex++)
+////						m_lights[lIndex].SetStatus( TrafficSystemTrafficLight.Status.RED );
 
-					m_walkSequence = 0;
+//					m_walkSequence = 0;
 
-					Walk();
-					float walkDurationPercentage = m_walkDuration * m_dontWalkPercentage;
-					yield return new WaitForSeconds(walkDurationPercentage);
+//					Walk();
+//					float walkDurationPercentage = m_walkDuration * m_dontWalkPercentage;
+//					yield return new WaitForSeconds(walkDurationPercentage);
 
-					DontWalk();
-					yield return new WaitForSeconds(m_walkDuration - walkDurationPercentage);
-				}
+//					DontWalk();
+//					yield return new WaitForSeconds(m_walkDuration - walkDurationPercentage);
+//				}
 
 				m_intersectionSystem = IntersectionSystem.DUAL;
 			}
@@ -192,8 +192,8 @@ public class TrafficSystemIntersection : MonoBehaviour
 				{
 					DontWalk();
 					m_walkSequence++;
-					if(m_pedestrianNodes.Count <= 0)
-						m_walkSequence = 0;
+					//if(m_pedestrianNodes.Count <= 0)
+					//	m_walkSequence = 0;
 
 					for(int lIndex = 0; lIndex < m_lights.Count; lIndex++)
 						m_lights[lIndex].SetStatus( TrafficSystemTrafficLight.Status.RED );
@@ -207,17 +207,17 @@ public class TrafficSystemIntersection : MonoBehaviour
 					m_lights[m_lightIndex].SetStatus( TrafficSystemTrafficLight.Status.RED );
 					yield return new WaitForSeconds(m_redDuration);
 
-					if(m_pedestrianNodes.Count > 0 && m_walkSequence >= m_walkSequenceMax)
-					{
-						m_walkSequence = 0;
+					//if(m_pedestrianNodes.Count > 0 && m_walkSequence >= m_walkSequenceMax)
+					//{
+					//	m_walkSequence = 0;
 
-						Walk();
-						float walkDurationPercentage = m_walkDuration * m_dontWalkPercentage;
-						yield return new WaitForSeconds(walkDurationPercentage);
+					//	Walk();
+					//	float walkDurationPercentage = m_walkDuration * m_dontWalkPercentage;
+					//	yield return new WaitForSeconds(walkDurationPercentage);
 						
-						DontWalk();
-						yield return new WaitForSeconds(m_walkDuration - walkDurationPercentage);
-					}
+					//	DontWalk();
+					//	yield return new WaitForSeconds(m_walkDuration - walkDurationPercentage);
+					//}
 
 					m_lightIndex++;
 					if(m_lightIndex >= m_lights.Count)
@@ -241,8 +241,8 @@ public class TrafficSystemIntersection : MonoBehaviour
 		{
 			DontWalk();
 			m_walkSequence++;
-			if(m_pedestrianNodes.Count <= 0)
-				m_walkSequence = 0;
+			//if(m_pedestrianNodes.Count <= 0)
+			//	m_walkSequence = 0;
 
 			if(m_lightsAGreen)
 			{
@@ -299,8 +299,8 @@ public class TrafficSystemIntersection : MonoBehaviour
 			if(m_priorityLightQueue.Count > 0 && m_walkSequence < m_walkSequenceMax)
 			{
 				m_walkSequence++;
-				if(m_pedestrianNodes.Count <= 0)
-					m_walkSequence = 0;
+				//if(m_pedestrianNodes.Count <= 0)
+				//	m_walkSequence = 0;
 
 				m_intersectionSystem = IntersectionSystem.SINGLE;
 				
@@ -321,17 +321,17 @@ public class TrafficSystemIntersection : MonoBehaviour
 				yield return null;
 			}
 
-			if(m_pedestrianNodes.Count > 0 && m_walkSequence >= m_walkSequenceMax)
-			{
-				m_walkSequence = 0;
+			//if(m_pedestrianNodes.Count > 0 && m_walkSequence >= m_walkSequenceMax)
+			//{
+			//	m_walkSequence = 0;
 
-				Walk();
-				float walkDurationPercentage = m_walkDuration * m_dontWalkPercentage;
-				yield return new WaitForSeconds(walkDurationPercentage);
+			//	Walk();
+			//	float walkDurationPercentage = m_walkDuration * m_dontWalkPercentage;
+			//	yield return new WaitForSeconds(walkDurationPercentage);
 				
-				DontWalk();
-				yield return new WaitForSeconds(m_walkDuration - walkDurationPercentage);
-			}
+			//	DontWalk();
+			//	yield return new WaitForSeconds(m_walkDuration - walkDurationPercentage);
+			//}
 			
 			m_intersectionSystem = IntersectionSystem.DUAL;
 		}
@@ -343,8 +343,8 @@ public class TrafficSystemIntersection : MonoBehaviour
 				DontWalk();
 
 				m_walkSequence++;
-				if(m_pedestrianNodes.Count <= 0)
-					m_walkSequence = 0;
+				//if(m_pedestrianNodes.Count <= 0)
+				//	m_walkSequence = 0;
 
 
 				for(int lIndex = 0; lIndex < m_lights.Count; lIndex++)
@@ -359,17 +359,17 @@ public class TrafficSystemIntersection : MonoBehaviour
 				m_lights[m_lightIndex].SetStatus( TrafficSystemTrafficLight.Status.RED );
 				yield return new WaitForSeconds(m_redDuration);
 
-				if(m_pedestrianNodes.Count > 0 && m_walkSequence >= m_walkSequenceMax)
-				{
-					m_walkSequence = 0;
+				//if(m_pedestrianNodes.Count > 0 && m_walkSequence >= m_walkSequenceMax)
+				//{
+				//	m_walkSequence = 0;
 
-					Walk();
-					float walkDurationPercentage = m_walkDuration * m_dontWalkPercentage;
-					yield return new WaitForSeconds(walkDurationPercentage);
+				//	Walk();
+				//	float walkDurationPercentage = m_walkDuration * m_dontWalkPercentage;
+				//	yield return new WaitForSeconds(walkDurationPercentage);
 					
-					DontWalk();
-					yield return new WaitForSeconds(m_walkDuration - walkDurationPercentage);
-				}
+				//	DontWalk();
+				//	yield return new WaitForSeconds(m_walkDuration - walkDurationPercentage);
+				//}
 
 				m_lightIndex++;
 				if(m_lightIndex >= m_lights.Count)
@@ -385,20 +385,20 @@ public class TrafficSystemIntersection : MonoBehaviour
 
 	public void DontWalk()
 	{
-		for(int wIndex = 0; wIndex < m_pedestrianNodes.Count; wIndex++)
-		{
-			if(m_pedestrianNodes[wIndex])
-				m_pedestrianNodes[wIndex].m_waitAtNode = true;
-		}
+		//for(int wIndex = 0; wIndex < m_pedestrianNodes.Count; wIndex++)
+		//{
+		//	if(m_pedestrianNodes[wIndex])
+		//		m_pedestrianNodes[wIndex].m_waitAtNode = true;
+		//}
 	}
 	
 	public void Walk()
 	{
-		for(int wIndex = 0; wIndex < m_pedestrianNodes.Count; wIndex++)
-		{
-			if(m_pedestrianNodes[wIndex])
-				m_pedestrianNodes[wIndex].m_waitAtNode = false;
-		}
+		//for(int wIndex = 0; wIndex < m_pedestrianNodes.Count; wIndex++)
+		//{
+		//	if(m_pedestrianNodes[wIndex])
+		//		m_pedestrianNodes[wIndex].m_waitAtNode = false;
+		//}
 	}
 
 	public void Refresh()

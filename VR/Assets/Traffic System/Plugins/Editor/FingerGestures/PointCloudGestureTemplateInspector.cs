@@ -97,7 +97,7 @@ public class PointCloudGestureTemplateInspector : Editor
             if( canvasRect.width > 100 )
             {
                 float handleSize = canvasRect.width / 200.0f;
-                Handles.CircleCap( 0, p1, Quaternion.identity, handleSize );
+                //Handles.CircleCap( 0, p1, Quaternion.identity, handleSize );
             }
 
             Handles.DrawLine( p1, p2 );

@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class LevelOneSceneInputData : InputData
 {
-    [SerializeField] private Wheel wheel;
-    [SerializeField] private CarAI[] cars;
+    [SerializeField] private TrafficSystemVehicleSpawner vehicleSpawner;
+    //[SerializeField] private Wheel wheel;
+    //[SerializeField] private CarAI[] cars;
 
     IPlayerEvents playerEvents;
 
@@ -19,6 +20,6 @@ public class LevelOneSceneInputData : InputData
         carsInteractorProvider_SetData = Game.GetInterface<ICarsInteractorProvider_SetData, CarsInteractor>();
 
         setDataTransitionInteractor.SetData(playerEvents);
-        carsInteractorProvider_SetData.SetData(cars, wheel);
+        carsInteractorProvider_SetData.SetData(vehicleSpawner);
     }
 }

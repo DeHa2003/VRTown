@@ -486,3 +486,263 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 632.536341 seconds.
+  path: Assets/CarsController.cs
+  artifactKey: Guid(47f903ea90eca4d4b963fe41c90b0f3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CarsController.cs using Guid(47f903ea90eca4d4b963fe41c90b0f3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a268c05a5e3409c2cb8490a1d891ad3') in 0.076758 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.780124 seconds.
+  path: Assets/StartScenePlayerController.cs
+  artifactKey: Guid(0a459986599e80e4ea5b9b007835948b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/StartScenePlayerController.cs using Guid(0a459986599e80e4ea5b9b007835948b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0e584bdbfc575560d176cd1f27a1fbd') in 0.016757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.115085 seconds.
+  path: Assets/Scripts/FinishGame
+  artifactKey: Guid(986634581452a9f4aa1f1aef3b9eb3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/FinishGame using Guid(986634581452a9f4aa1f1aef3b9eb3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e75285d36659ecb611d77531366af50c') in 0.038853 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.026198 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 2.62 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.22 ms.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in C:\Users\hao\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:271 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\hao\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:256 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4e64905d831f4883a53259ef37fb023b>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Completed reload, in  4.775 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4777ms)
+		BeginReloadAssembly (492ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (15ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (118ms)
+		EndReloadAssembly (3934ms)
+			LoadAssemblies (502ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1085ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (222ms)
+			SetupLoadedEditorAssemblies (1930ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (71ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (380ms)
+				ProcessInitializeOnLoadAttributes (1362ms)
+				ProcessInitializeOnLoadMethodAttributes (87ms)
+				AfterProcessingInitializeOnLoad (25ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 23.80 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.24 ms.
+Unloading 4936 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (1.3 MB). Loaded Objects now: 5625.
+Memory consumption went from 208.2 MB to 206.8 MB.
+Total: 8.335400 ms (FindLiveObjects: 0.555900 ms CreateObjectMapping: 0.428400 ms MarkObjects: 7.017500 ms  DeleteObjects: 0.332000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.024679 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 4.88 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 1.86 ms.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in C:\Users\hao\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:271 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\hao\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:256 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4e64905d831f4883a53259ef37fb023b>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Completed reload, in 33.934 seconds
+Domain Reload Profiling:
+	ReloadAssembly (33950ms)
+		BeginReloadAssembly (18660ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (346ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (941ms)
+		EndReloadAssembly (14920ms)
+			LoadAssemblies (22616ms)
+			RebuildTransferFunctionScriptingTraits (1ms)
+			SetupTypeCache (6150ms)
+			ReleaseScriptCaches (8ms)
+			RebuildScriptCaches (165ms)
+			SetupLoadedEditorAssemblies (2232ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (44ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (7ms)
+				BeforeProcessingInitializeOnLoad (281ms)
+				ProcessInitializeOnLoadAttributes (1840ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (9ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 26.08 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.70 ms.
+Unloading 5013 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 59 unused Assets / (1.3 MB). Loaded Objects now: 5718.
+Memory consumption went from 210.4 MB to 209.1 MB.
+Total: 9.070900 ms (FindLiveObjects: 0.558300 ms CreateObjectMapping: 0.381600 ms MarkObjects: 7.633100 ms  DeleteObjects: 0.496300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 3666.736773 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_2 lines.mat
+  artifactKey: Guid(c7dc75fffd9c6464bb7880add2b65058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_2 lines.mat using Guid(c7dc75fffd9c6464bb7880add2b65058) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7319c08516aa1ab0c82cfe28694fd68d') in 1.757933 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/difusse_4 line T intersection.mat
+  artifactKey: Guid(c016293891a73154d8e46830ef2837e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/difusse_4 line T intersection.mat using Guid(c016293891a73154d8e46830ef2837e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46dded4561406302fc0c0c1415c69d14') in 0.222243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/SeamlessConcrete.mat
+  artifactKey: Guid(4da30fb6d7f8b474388dfe1c34afba21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/SeamlessConcrete.mat using Guid(4da30fb6d7f8b474388dfe1c34afba21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '659e42cfff48d26a3e34b635fac36c53') in 0.265572 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_roundabout4lines_mobile.mat
+  artifactKey: Guid(e7e9349d834b1b84b8c45a577c8bcb02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_roundabout4lines_mobile.mat using Guid(e7e9349d834b1b84b8c45a577c8bcb02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1af920da5a4ae27633b647e7dd8d6252') in 0.181486 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_4lines_mobile.mat
+  artifactKey: Guid(b1c932a37fc84834bb2966d92d78ad8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_4lines_mobile.mat using Guid(b1c932a37fc84834bb2966d92d78ad8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88c774e51e7e27eb01df9b9c27b3bbe2') in 0.147095 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_4lines.mat
+  artifactKey: Guid(dcc32ff78e68b594d887ae7dbc32a342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_4lines.mat using Guid(dcc32ff78e68b594d887ae7dbc32a342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eddf150cacb0d8662be3c11a2b924946') in 0.112326 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/difusse_4to6 line enter_mobile.mat
+  artifactKey: Guid(950c826f1d3406c439d9c285f275637b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/difusse_4to6 line enter_mobile.mat using Guid(950c826f1d3406c439d9c285f275637b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5fd17c8358bcb7f6f14789f65f7766') in 0.135360 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_path.mat
+  artifactKey: Guid(b9b460ed4bbc6904eb2830d53a7a1ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_path.mat using Guid(b9b460ed4bbc6904eb2830d53a7a1ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '821af5a627f3759072a1defd8ddace4a') in 0.108806 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_2to4 exit.mat
+  artifactKey: Guid(3248851a34b13fb4c85fe953a8442164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_2to4 exit.mat using Guid(3248851a34b13fb4c85fe953a8442164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '031a61b9628cd71f3c20d7584c007787') in 0.042986 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/onramp.mat
+  artifactKey: Guid(149d4f6d88f8cc04d8e121dfe312d8b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/onramp.mat using Guid(149d4f6d88f8cc04d8e121dfe312d8b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71a9deefe35b527a19f19455a7c2190c') in 0.111903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_6to4line exit_mobile.mat
+  artifactKey: Guid(34e573b1da8b4634c84c696399346dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_6to4line exit_mobile.mat using Guid(34e573b1da8b4634c84c696399346dd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc66a22f0f5917df9f9b64977ada5acd') in 0.041621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/difuse_6line roundabout_mobile.mat
+  artifactKey: Guid(2204aa8bab6dde04481fe19043d7ff63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/difuse_6line roundabout_mobile.mat using Guid(2204aa8bab6dde04481fe19043d7ff63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cec0d72ff10f10015770cb57cbf16db2') in 0.034872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_6 lines corner_mobile.mat
+  artifactKey: Guid(81df6ac01b91c804aa6a34b99de2569e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_6 lines corner_mobile.mat using Guid(81df6ac01b91c804aa6a34b99de2569e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '231015b91d278792252fad19b48f0c3b') in 0.095029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_2to4 line entrance_mobile.mat
+  artifactKey: Guid(f2465c64266892447b42a363c80adf52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_2to4 line entrance_mobile.mat using Guid(f2465c64266892447b42a363c80adf52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd835a7b5a6625e7241875b6549799116') in 0.104969 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/difusse_railing.mat
+  artifactKey: Guid(ca56d51239f66224caf308417e75870e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/difusse_railing.mat using Guid(ca56d51239f66224caf308417e75870e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5b772340322acd530f8ff81ac32c589') in 0.042302 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_6 line cross intersection_mobile.mat
+  artifactKey: Guid(5f9ef8c75e1e1cb4e981145c379cc6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Models/Road Pieces/Mobile Verions/Materials/diffuse_6 line cross intersection_mobile.mat using Guid(5f9ef8c75e1e1cb4e981145c379cc6bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79cbdb731b81d7025d58584dd4d1b470') in 0.099992 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

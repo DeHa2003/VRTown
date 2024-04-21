@@ -1,0 +1,429 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.11f1 (0a5ca18544bf) revision 679073'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'ru' Physical Memory: 8044 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/hao/Documents/GitHub/VRTown/VR
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+59765
+Successfully changed project path to: C:/Users/hao/Documents/GitHub/VRTown/VR
+C:/Users/hao/Documents/GitHub/VRTown/VR
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 924.50 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 7.20 ms.
+Initialize engine version: 2021.3.11f1 (0a5ca18544bf)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/hao/Documents/GitHub/VRTown/VR/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) UHD Graphics (ID=0x9b41)
+    Vendor:   Intel
+    VRAM:     4022 MB
+    Driver:   30.0.100.9805
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56936
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.013364 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 152.07 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.37 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.089 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2090ms)
+		BeginReloadAssembly (139ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1641ms)
+			LoadAssemblies (134ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (450ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (861ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (133ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (153ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (110ms)
+				ProcessInitializeOnLoadMethodAttributes (463ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.047626 seconds.
+Android Extension - Scanning For ADB Devices 8040 ms
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 286.59 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.14 ms.
+Package Manager log level set to [2]
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in C:\Users\hao\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:271 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\hao\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:256 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4e64905d831f4883a53259ef37fb023b>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Completed reload, in  5.214 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5216ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (6ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (4668ms)
+			LoadAssemblies (566ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1360ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (539ms)
+			SetupLoadedEditorAssemblies (1910ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (26ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (287ms)
+				BeforeProcessingInitializeOnLoad (174ms)
+				ProcessInitializeOnLoadAttributes (1367ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (15ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (12ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.12 seconds
+Refreshing native plugins compatible for Editor in 40.17 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.38 ms.
+Unloading 5135 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 81 unused Assets / (1.3 MB). Loaded Objects now: 5585.
+Memory consumption went from 217.3 MB to 216.0 MB.
+Total: 82.154800 ms (FindLiveObjects: 4.274400 ms CreateObjectMapping: 23.093200 ms MarkObjects: 54.038800 ms  DeleteObjects: 0.673300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 857419.122271 seconds.
+  path: Assets/Traffic System
+  artifactKey: Guid(6d26ac4b56fbe134db4c64c5ecb455a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System using Guid(6d26ac4b56fbe134db4c64c5ecb455a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1ba7a18e98e14ce68a97cf8ee320fde') in 0.029839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.159462 seconds.
+  path: Assets/Traffic System/Scripts
+  artifactKey: Guid(15f6e371a4cf26e4c96e792ae0db5e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Scripts using Guid(15f6e371a4cf26e4c96e792ae0db5e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfaa45e94ecac77137914093536fb6be') in 0.019675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.559925 seconds.
+  path: Assets/Traffic System/Prefabs
+  artifactKey: Guid(60ff3b3a746a886499f6688d8676a0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs using Guid(60ff3b3a746a886499f6688d8676a0cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c76b1130b75a2c8874128aa041137d13') in 0.028325 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.026968 seconds.
+  path: Assets/Traffic System/Prefabs/Traffic System.prefab
+  artifactKey: Guid(ad0bf79df4687fa4ebad1d0492014d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Traffic System.prefab using Guid(ad0bf79df4687fa4ebad1d0492014d6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96fa5b14168d731063b19a1353cdc061') in 0.067804 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.018925 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.52 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.14 ms.
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in C:\Users\hao\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:271 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0007b] in C:\Users\hao\Documents\GitHub\VRTown\VR\Library\PackageCache\com.unity.xr.oculus@3.0.2\Runtime\OculusLoader.cs:256 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <9aad1b3a47484d63ba2b3985692d80e9>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x000a5] in <4e64905d831f4883a53259ef37fb023b>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.009 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2009ms)
+		BeginReloadAssembly (191ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (54ms)
+		EndReloadAssembly (1580ms)
+			LoadAssemblies (129ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (549ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (608ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (31ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (138ms)
+				ProcessInitializeOnLoadAttributes (370ms)
+				ProcessInitializeOnLoadMethodAttributes (46ms)
+				AfterProcessingInitializeOnLoad (21ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 10.40 ms, found 16 plugins.
+Preloading 1 native plugins for Editor in 0.38 ms.
+Unloading 4980 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 86 unused Assets / (1.3 MB). Loaded Objects now: 5576.
+Memory consumption went from 206.5 MB to 205.2 MB.
+Total: 5.679800 ms (FindLiveObjects: 0.483700 ms CreateObjectMapping: 0.354900 ms MarkObjects: 4.547100 ms  DeleteObjects: 0.292500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 84.577390 seconds.
+  path: Assets/Scenes/TEST_DEL/TEST.unity
+  artifactKey: Guid(8986f74f96a2a55428fde7821ce74107) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/TEST_DEL/TEST.unity using Guid(8986f74f96a2a55428fde7821ce74107) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8e4857fd4b5f1bbc6b2fe01e6c9a16e') in 0.037637 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 21.436648 seconds.
+  path: Assets/Scenes/Other/Level1_Scene.unity
+  artifactKey: Guid(379b50ec116b12840a461a9925e2aa8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Other/Level1_Scene.unity using Guid(379b50ec116b12840a461a9925e2aa8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a327f3fcda50a96370ce9550c098d728') in 0.017698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.785199 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces
+  artifactKey: Guid(724e05409b93c5c4187106005b934b49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces using Guid(724e05409b93c5c4187106005b934b49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8242ec81b03972966eb101fa2393946b') in 0.030353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.054441 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/0 Lane - Plain Road.prefab
+  artifactKey: Guid(38cacb86382edfd4689e426950982d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/0 Lane - Plain Road.prefab using Guid(38cacb86382edfd4689e426950982d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df7e8e93f4e188661991a2f0c9916d23') in 0.531508 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000371 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection + Traffic Lights (Connected).prefab
+  artifactKey: Guid(8bc3c5bd3c0fd2342a3fa718280129bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection + Traffic Lights (Connected).prefab using Guid(8bc3c5bd3c0fd2342a3fa718280129bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf71040ea9ea178597b4f922ac21390b') in 0.306305 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/1 Lane - Pink Offramp.prefab
+  artifactKey: Guid(7fde2c1cc6d2fc74aba0faff554708f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/1 Lane - Pink Offramp.prefab using Guid(7fde2c1cc6d2fc74aba0faff554708f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96716eb2759fac9f10c59d8c1d841685') in 0.111043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Turn - Pink Outer - ( Road V2 ).prefab
+  artifactKey: Guid(7fced903fd8bbca48b41ef2336d85477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Turn - Pink Outer - ( Road V2 ).prefab using Guid(7fced903fd8bbca48b41ef2336d85477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '68462e77933d3b21e2cfb92b2a98cd7d') in 0.159401 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - Straight Exit - ( Road V2 ).prefab
+  artifactKey: Guid(1813f1706ed07ab4b81ec01a5060cc20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - Straight Exit - ( Road V2 ).prefab using Guid(1813f1706ed07ab4b81ec01a5060cc20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5c1b3fd4949d05fbcca5d015beecc66') in 0.066505 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000479 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - Straight Entry - ( Road V2 ).prefab
+  artifactKey: Guid(2b6aa1f43c7c2a44791c43226dcdc2be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - Straight Entry - ( Road V2 ).prefab using Guid(2b6aa1f43c7c2a44791c43226dcdc2be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3767e48c3a37045e76c8e461605b2c9b') in 0.060876 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000103 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection + Traffic Lights (Not Connected).prefab
+  artifactKey: Guid(d6b6cf8717e736d4281bdf2cce1c1d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection + Traffic Lights (Not Connected).prefab using Guid(d6b6cf8717e736d4281bdf2cce1c1d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48287f80accd4bf597f704d6262a9957') in 0.092410 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection (Connected).prefab
+  artifactKey: Guid(e92422efa2103f64c922e2d38c3c546a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection (Connected).prefab using Guid(e92422efa2103f64c922e2d38c3c546a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1adb1dce699b9dfe19a7ff800eb20f74') in 0.119717 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection + Traffic Lights (Connected) - ( Road V2 ).prefab
+  artifactKey: Guid(5498763333f3b954cb59c024f448543b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection + Traffic Lights (Connected) - ( Road V2 ).prefab using Guid(5498763333f3b954cb59c024f448543b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d1ace32d18d79647358e964ff47c35') in 0.306628 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000107 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Straight Half - ( Road V2 ).prefab
+  artifactKey: Guid(38789bde46e4df946aae1e36f17be78b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Straight Half - ( Road V2 ).prefab using Guid(38789bde46e4df946aae1e36f17be78b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76970f0bf15912c921edd40722cae9e3') in 0.053820 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000075 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/6 Lanes - Intersection + Traffic Lights (Connected) - ( Road V2 ).prefab
+  artifactKey: Guid(3d0fa420757035c42881eaf9a326e910) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/6 Lanes - Intersection + Traffic Lights (Connected) - ( Road V2 ).prefab using Guid(3d0fa420757035c42881eaf9a326e910) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a463c2b3828d9cbc57e696847f0c4139') in 0.280924 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Intersection (Connected).prefab
+  artifactKey: Guid(73af545e13d5c944a8f3b387634eb7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Intersection (Connected).prefab using Guid(73af545e13d5c944a8f3b387634eb7ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8523a4bac9ad95dabf13bf18fc2e3c29') in 0.473781 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000107 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/1 Lane - Blue Straight.prefab
+  artifactKey: Guid(6bed42352a2df3d4a8946ea74bcd528c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/1 Lane - Blue Straight.prefab using Guid(6bed42352a2df3d4a8946ea74bcd528c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e15e3448434cc727ee5601e0ef848b1') in 0.057791 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/1 Lane - Pink Curve.prefab
+  artifactKey: Guid(9ba82882ee5969b4dbeed68b2c106413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/1 Lane - Pink Curve.prefab using Guid(9ba82882ee5969b4dbeed68b2c106413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fc3d270d041892f4166e9eeff82fb35') in 0.056450 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection (Not Connected).prefab
+  artifactKey: Guid(a73f25cf465b20c448ac7015ec505a45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - T Intersection (Not Connected).prefab using Guid(a73f25cf465b20c448ac7015ec505a45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '634618e3d401624f43805805ee4522f0') in 0.059538 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Intersection + Traffic Lights (Not Connected).prefab
+  artifactKey: Guid(437f0eb9ca71a964abef1b110075e1d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Intersection + Traffic Lights (Not Connected).prefab using Guid(437f0eb9ca71a964abef1b110075e1d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '657a55d2771a9da96a6bf0a8c5106b1e') in 0.054677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000170 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - T Intersection + Traffic Lights (Connected) - ( Road V2 ).prefab
+  artifactKey: Guid(33b0821f7f90a0948bae41a94df3614f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - T Intersection + Traffic Lights (Connected) - ( Road V2 ).prefab using Guid(33b0821f7f90a0948bae41a94df3614f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50438646032cf7c80914b3d4732f15a0') in 0.209446 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/1 Lane - Pink Straight Half.prefab
+  artifactKey: Guid(d2f40c4311d5854488bb8d35be428aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/1 Lane - Pink Straight Half.prefab using Guid(d2f40c4311d5854488bb8d35be428aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddce365f46c881558336c0c1e709b995') in 0.042934 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Roundabout - ( Road V2 ).prefab
+  artifactKey: Guid(4c41f45e048ccba49a2199f04dacd102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/2 Lanes - Roundabout - ( Road V2 ).prefab using Guid(4c41f45e048ccba49a2199f04dacd102) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '679ff2ad8dc2d0f906a8dd7cda5568c0') in 0.169005 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - Turn - Blue Outer - ( Road V2 ).prefab
+  artifactKey: Guid(38b3168d56d09bf4aa3140606de50d60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - Turn - Blue Outer - ( Road V2 ).prefab using Guid(38b3168d56d09bf4aa3140606de50d60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e02f57e56b9dc44075415011a10a31cb') in 0.285193 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000799 seconds.
+  path: Assets/Traffic System/Prefabs/Vehicles/Tools
+  artifactKey: Guid(5feb093cb399adc4981af2ee3f76f38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Vehicles/Tools using Guid(5feb093cb399adc4981af2ee3f76f38f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19494a5a3c08d2b490e15487dcfb4790') in 0.024537 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000167 seconds.
+  path: Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - Straight - ( Road V2 ).prefab
+  artifactKey: Guid(b589292c2a5cfd24696fc4f09a5f3790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Traffic System/Prefabs/Road Pieces/4 Lanes - Straight - ( Road V2 ).prefab using Guid(b589292c2a5cfd24696fc4f09a5f3790) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1413694a1b86c7dcadcfdeb28052bbab') in 0.062413 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
