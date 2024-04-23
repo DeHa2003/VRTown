@@ -35,7 +35,7 @@ public class TrafficSystemVehicle : MonoBehaviour
 	public  Vector3                     m_offsetPosVal         = Vector3.zero;           // the amount to offset the position of this object
 
 	public  bool                        m_useRoadSpeedLimits   = false;                  // enable this if you want the vehicle to use the TrafficSystem.cs m_globalSpeedLimit and individual TrafficSystemPiece.cs m_speedLimit instead of this vehicles m_velocityMax
-	public  bool                        Accelerate             { get; set; }
+	public bool                         Accelerate             { get; set; }   
 	public  float                       m_velocityMin          = 0.0f;                   // this is our target velocity while decelerating 
 	public  float                       m_velocityMax          = 5.0f;                   // this is our target velocity while accelerating
 	public  bool                        m_changeMaxVelocityOnSpeedLimitInc = true;       // set this to false if you want the vehicle to ignore the road speed so it doesn't increase the vehicles max speed initially set... meaning the car will never go beyond the initial max speed even if the road says it can go faster in a certain area.

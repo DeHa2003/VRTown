@@ -15,11 +15,11 @@ namespace Lessons.Architecture
 
         public void CreatePlayer()
         {
-            if (GamePlayer != null)
-            {
-                DestroyPlayer();
-            }
-            Debug.Log("Создание игрока");
+            //if (GamePlayer != null)
+            //{
+            //    DestroyPlayer();
+            //}
+            //Debug.Log("Создание игрока");
 
             if (Player.instance == null)
             {

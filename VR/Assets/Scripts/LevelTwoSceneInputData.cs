@@ -8,7 +8,7 @@ public class LevelTwoSceneInputData : InputData
     [SerializeField] private FootballGoal goalA;
     [SerializeField] private FootballGoal goalB;
 
-    [SerializeField] private TrafficSystemVehicleSpawner vehicleSpawner;
+    [SerializeField] private TrafficSystemVehicleSpawner[] vehicleSpawners;
 
     //[SerializeField] private CarAI[] cars;
     //[SerializeField] private Wheel wheel;
@@ -27,6 +27,6 @@ public class LevelTwoSceneInputData : InputData
 
         playerTransitionInteractorProvider_SetData.SetData(playerEvents);
         footballInteractorProvider_SetData.SetData(goalA, goalB);
-        carsInteractorProvider_SetData.SetData(vehicleSpawner);
+        carsInteractorProvider_SetData.SetData(vehicleSpawners);
     }
 }

@@ -24,8 +24,8 @@ public class TrafficSystemVehicleSpawner : MonoBehaviour, ICarSpawner
     public void CarSpawn_RandomPositionAndPrefab()
     {
         TrafficSystemVehicle vehicle = SpawnRandomVehicle(true);
-        //vehicle.gameObject.SetActive(false);
-        m_vehiclePool.Add(vehicle);
+		//vehicle.gameObject.SetActive(false);
+		m_vehiclePool.Add(vehicle);
     }
 
 	public TrafficSystemVehicle SpawnRandomVehicle(bool a_ignoreChangeOfSpawning = false )
@@ -60,44 +60,44 @@ public class TrafficSystemVehicleSpawner : MonoBehaviour, ICarSpawner
 		if(TrafficSystem.Instance)
 			TrafficSystem.Instance.RegisterVehicleSpawner( this );
 
-		//if(m_totalToSpawn <= 0)
+		//if (m_totalToSpawn <= 0)
 		//	yield break;
 
-		//for(int sIndex = 0; sIndex < m_totalToSpawn; sIndex++)
+		//for (int sIndex = 0; sIndex < m_totalToSpawn; sIndex++)
 		//{
-		//	SpawnCar();
+		//	CarSpawn_RandomPositionAndPrefab();
 		//}
 
-//		yield return new WaitForSeconds(m_onStartDelay);
+		//yield return new WaitForSeconds(m_onStartDelay);
 
 
-//		while(m_totalSpawned < m_totalToSpawn)
-//		{
-//			Collider[] colliderHit = Physics.OverlapSphere( transform.position, m_spawnCheckRadius );
+		//while (m_totalSpawned < m_totalToSpawn)
+		//{
+		//	Collider[] colliderHit = Physics.OverlapSphere(transform.position, m_spawnCheckRadius);
 
-//			bool hitObj = false; 
-//			for(int hIndex = 0; hIndex < colliderHit.Length; hIndex++)
-//			{
-//				if(colliderHit[hIndex].transform.GetComponent<TrafficSystemVehicle>())
-//					hitObj = true;
-//			}
+		//	bool hitObj = false;
+		//	for (int hIndex = 0; hIndex < colliderHit.Length; hIndex++)
+		//	{
+		//		if (colliderHit[hIndex].transform.GetComponent<TrafficSystemVehicle>())
+		//			hitObj = true;
+		//	}
 
-//			if(!hitObj)
-//			{
-//				if(m_totalSpawned < m_vehiclePool.Count)
-//				{
-//					TrafficSystemVehicle vehicle =  m_vehiclePool[m_totalSpawned];
-//					vehicle.gameObject.SetActive(true);
+		//	if (!hitObj)
+		//	{
+		//		if (m_totalSpawned < m_vehiclePool.Count)
+		//		{
+		//			TrafficSystemVehicle vehicle = m_vehiclePool[m_totalSpawned];
+		//			vehicle.gameObject.SetActive(true);
 
-////					if(TrafficSystem.Instance && vehicle)
-////						TrafficSystem.Instance.RegisterVehicle( vehicle );
-//				}
+		//			//					if(TrafficSystem.Instance && vehicle)
+		//			//						TrafficSystem.Instance.RegisterVehicle( vehicle );
+		//		}
 
-//				m_totalSpawned++;
-//			}
+		//		m_totalSpawned++;
+		//	}
 
-//			yield return new WaitForSeconds(m_spawnDelayBetweenTries);
-//		}
+		//	yield return new WaitForSeconds(m_spawnDelayBetweenTries);
+		//}
 	}
 
 	public void RespawnVehicle()

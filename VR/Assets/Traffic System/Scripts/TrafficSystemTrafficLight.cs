@@ -72,7 +72,7 @@ public class TrafficSystemTrafficLight : MonoBehaviour
 		}
 	}
 
-	public void SetStatus( Status a_status, bool a_useLightArrows = false )
+	public void SetStatus( Status a_status, bool a_useLightArrows = true )
 	{
 		m_status = a_status;
 

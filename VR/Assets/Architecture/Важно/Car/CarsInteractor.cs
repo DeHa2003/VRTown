@@ -71,15 +71,16 @@ namespace Lessons.Architecture
         //{
         //    ActiveCars.RemoveAll(Item => Item == null);
         //}
-        private ICarSpawner carSpawner;
+        private ICarSpawner[] carSpawners;
 
-        public void SetData(ICarSpawner carSpawner)
+        public void SetData(ICarSpawner[] carSpawners)
         {
-            this.carSpawner = carSpawner;
+            this.carSpawners = carSpawners;
         }
         public void SpawnRandomCar()
         {
-            carSpawner.CarSpawn_RandomPositionAndPrefab();
+            int a = Random.Range(0, carSpawners.Length);
+            carSpawners[a].CarSpawn_RandomPositionAndPrefab();
         }
     }
 }
@@ -101,5 +102,5 @@ public interface ICarsInteractorProvider : IInterface
 public interface ICarsInteractorProvider_SetData : IInterface
 {
     //void SetData(CarAI[] carAIPrefabs, IWheel wheel);
-    void SetData(ICarSpawner carSpawner);
+    void SetData(ICarSpawner[] carSpawners);
 }
