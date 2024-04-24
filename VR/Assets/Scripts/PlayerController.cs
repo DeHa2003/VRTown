@@ -70,6 +70,8 @@ public class PlayerController : Controller
 
     protected void SetState(IPlayerState playerState)
     {
+        if(playerCurrentState == playerState) return;
+
         if (playerCurrentState != null)
             playerCurrentState.ExitState();
 

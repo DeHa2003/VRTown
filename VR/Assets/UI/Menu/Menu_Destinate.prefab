@@ -6036,7 +6036,7 @@ MonoBehaviour:
   OnCloseUI:
     m_PersistentCalls:
       m_Calls: []
-  timeScale: 2
+  timeScale: 0.5
 --- !u!1 &8266295423044853573
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,20 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Obstacle : MonoBehaviour
+public abstract class Trigger : MonoBehaviour
 {
-    [SerializeField] private protected ObstacleType obstacleType;
+    [SerializeField] protected TriggerType triggerType;
 
-    private protected PlayerController playerController;
+    protected PlayerController playerController;
 
     public virtual void Initialize() 
     {
         playerController = Handler.Instance.GetController<PlayerController>();
     }
-
 }
 
-public enum ObstacleType
+public enum TriggerType
 {
-    Wheel, PedestrianCrossing 
+    Wheel, PedestrianCrossing, Finish
 }

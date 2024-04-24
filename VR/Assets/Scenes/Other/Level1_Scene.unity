@@ -699,6 +699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4921545d35d627547814f8f17fbf7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerType: 2
   material: {fileID: 2100000, guid: 510c6e0b8b5c948458c2b4bc3de5a637, type: 2}
   LookAtJoint: {fileID: 574330783}
   vectorRotate: {x: 0, y: 1, z: 0}
@@ -2651,7 +2652,7 @@ GameObject:
   - component: {fileID: 494118723}
   - component: {fileID: 494118724}
   m_Layer: 0
-  m_Name: ObstaclesController
+  m_Name: TriggersController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2684,7 +2685,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3833d401df04ac740a6efbb33c564b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacles: []
+  triggers:
+  - {fileID: 635266068}
+  - {fileID: 138071477}
 --- !u!1 &551147387
 GameObject:
   m_ObjectHideFlags: 0
@@ -3534,7 +3537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 0
+  triggerType: 0
 --- !u!1 &644678440
 GameObject:
   m_ObjectHideFlags: 0
@@ -4696,6 +4699,7 @@ MonoBehaviour:
   - {fileID: 875534379}
   - {fileID: 470242470}
   - {fileID: 1466801686}
+  - {fileID: 494118724}
 --- !u!1001 &832712274
 PrefabInstance:
   m_ObjectHideFlags: 0

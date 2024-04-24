@@ -695,7 +695,7 @@ GameObject:
   - component: {fileID: 130917030}
   - component: {fileID: 130917029}
   m_Layer: 0
-  m_Name: PointToEnd
+  m_Name: Finish
   m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,12 +709,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130917027}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -15.156, y: 0, z: 13.94}
+  m_LocalPosition: {x: -16.510906, y: 0, z: 24.134804}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2088239977}
-  m_Father: {fileID: 1004903084}
+  m_Father: {fileID: 1132124107}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &130917029
@@ -729,6 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4921545d35d627547814f8f17fbf7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerType: 2
   material: {fileID: 2100000, guid: 510c6e0b8b5c948458c2b4bc3de5a637, type: 2}
   LookAtJoint: {fileID: 219783137}
   vectorRotate: {x: 0, y: 1, z: 0}
@@ -4974,7 +4975,7 @@ Transform:
   - {fileID: 1964602162}
   - {fileID: 1973348197}
   m_Father: {fileID: 1132124107}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &665949492
 GameObject:
@@ -5556,7 +5557,7 @@ GameObject:
   - component: {fileID: 711074627}
   - component: {fileID: 711074628}
   m_Layer: 0
-  m_Name: ObstaclesController
+  m_Name: TriggersController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5589,11 +5590,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3833d401df04ac740a6efbb33c564b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacles:
+  triggers:
   - {fileID: 978187385}
   - {fileID: 2047944669}
   - {fileID: 989077347}
   - {fileID: 1637879978}
+  - {fileID: 1859338151}
+  - {fileID: 1964602163}
+  - {fileID: 1973348198}
+  - {fileID: 130917029}
 --- !u!1 &711913403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 24ecc5bb467b3fe4b9c1660c3678ef90,
@@ -8330,7 +8335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 0
+  triggerType: 0
 --- !u!1 &979592892
 GameObject:
   m_ObjectHideFlags: 0
@@ -8663,7 +8668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 0
+  triggerType: 0
 --- !u!33 &1003252290
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -8814,8 +8819,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 130917028}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9304,6 +9308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 130917028}
   - {fileID: 1304637428}
   - {fileID: 663591992}
   m_Father: {fileID: 0}
@@ -10663,7 +10668,7 @@ Transform:
   - {fileID: 989077344}
   - {fileID: 1637879975}
   m_Father: {fileID: 1132124107}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1306740974
 GameObject:
@@ -13748,7 +13753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 0
+  triggerType: 0
 --- !u!1 &1640283257
 GameObject:
   m_ObjectHideFlags: 0
@@ -15342,6 +15347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1859338150}
   - component: {fileID: 1859338147}
+  - component: {fileID: 1859338151}
   m_Layer: 0
   m_Name: Zeb1
   m_TagString: Zeb
@@ -15377,6 +15383,19 @@ Transform:
   m_Father: {fileID: 663591992}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1859338151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859338146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ab1a18a73652848a93a72425afba62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerType: 1
 --- !u!1 &1875564901
 GameObject:
   m_ObjectHideFlags: 0
@@ -16046,6 +16065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1964602162}
   - component: {fileID: 1964602159}
+  - component: {fileID: 1964602163}
   m_Layer: 0
   m_Name: Zeb2
   m_TagString: Zeb
@@ -16081,6 +16101,19 @@ Transform:
   m_Father: {fileID: 663591992}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1964602163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964602158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ab1a18a73652848a93a72425afba62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerType: 1
 --- !u!1 &1973348193
 GameObject:
   m_ObjectHideFlags: 0
@@ -16091,6 +16124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1973348197}
   - component: {fileID: 1973348194}
+  - component: {fileID: 1973348198}
   m_Layer: 0
   m_Name: Zeb3
   m_TagString: Zeb
@@ -16126,6 +16160,19 @@ Transform:
   m_Father: {fileID: 663591992}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1973348198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973348193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2ab1a18a73652848a93a72425afba62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerType: 1
 --- !u!1001 &1977730442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16931,7 +16978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleType: 0
+  triggerType: 0
 --- !u!1001 &2052134123
 PrefabInstance:
   m_ObjectHideFlags: 0

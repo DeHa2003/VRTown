@@ -17,6 +17,7 @@ public class PlayerFailedState : IPlayerState
         playerInteractorProvider.GamePlayer.SetSpeedMove(0);
 
         playerInteractorProvider.GamePlayer.SetMenuData(TypeMenu.Failed);
+        playerInteractorProvider.GamePlayer.InstantiateMenu();
     }
 
     public void UpdateState()

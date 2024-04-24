@@ -24,15 +24,15 @@ public class PlayerMenuControl : MonoBehaviour
     {
         if(currentMenu != null)
         {
-            DeleteMenuPanel();
+            DestroyMenu();
         }
         else
         {
-            InstantiateMenuPanel();
+            InstantiateMenu();
         }
     }
 
-    public void InstantiateMenuPanel()
+    public void InstantiateMenu()
     {
         currentMenu = Instantiate(currentMenuPref, posMenu.position, posMenu.rotation);
         currentMenu.Initialize();
@@ -40,7 +40,7 @@ public class PlayerMenuControl : MonoBehaviour
         currentMenu.Activate();
     }
 
-    public void DeleteMenuPanel()
+    public void DestroyMenu()
     {
         currentMenu.Deactivate();
     }

@@ -40,6 +40,16 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         menuControlScript.DiactivateMenuControl();
     }
 
+    public void InstantiateMenu()
+    {
+        menuControlScript.InstantiateMenu();
+    }
+
+    public void DestroyMenu()
+    {
+        menuControlScript.DestroyMenu();
+    }
+
     public void ActivateLaserController()
     {
         laserControllerScript.ActivateLaserController();
@@ -101,6 +111,8 @@ public interface IPlayerFadeScreen
 
 public interface IPlayerMenu
 {
+    void InstantiateMenu();
+    void DestroyMenu();
     void ActivateMenuController();
     void DeactivateMenuController();
     void SetMenuData(TypeMenu typeMenu, MenuProperties menuProperties = null);

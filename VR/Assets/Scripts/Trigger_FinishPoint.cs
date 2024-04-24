@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinishPoint : MonoBehaviour
+public class Trigger_FinishPoint : Trigger
 {
     [SerializeField] private Material material;
     [SerializeField] private GameObject LookAtJoint;
@@ -18,14 +18,13 @@ public class FinishPoint : MonoBehaviour
         time = timeTranslate;
     }
 
-    private void OnEnable()
+    private void OnTriggerEnter(Collider other)
     {
-        PlayerTrigger.OnCompletedGame += CompletedLevel;
-    }
-
-    private void OnDisable()
-    {
-        PlayerTrigger.OnCompletedGame -= CompletedLevel;
+        if (other.gameObject.GetComponent<GamePlayer>())
+        {
+            playerController.SetPlayerCompletedState();
+            gameObject.SetActive(false);
+        }
     }
 
     private Color GetRandomColor()

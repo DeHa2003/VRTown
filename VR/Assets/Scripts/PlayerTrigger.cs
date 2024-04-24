@@ -15,32 +15,37 @@ public class PlayerTrigger : MonoBehaviour
 
     private string roadViolation = "Пешеходам запрещено пересекать проезжую часть вне пешеходного перехода";
     private string zebViolation = "Пешеходам запрещено переходить по пешеходному переходу на красный сигнал пешеходного светофора";
+
+    private bool Active = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Road") || other.CompareTag("Zeb"))
+        if (Active)
         {
-            OnLoseGame?.Invoke();
-
-            ScaleColliderPanel failedPanel = Instantiate(failedGameUI, posToSpawn.position, posToSpawn.rotation);
-            failedPanel.OpenPanel();
-
-            if (other.CompareTag("Road"))
+            if (other.CompareTag("Road") || other.CompareTag("Zeb"))
             {
-                //failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(roadViolation);
-            }
-            else if(other.CompareTag("Zeb"))
-            {
-                //failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
-            }
+                OnLoseGame?.Invoke();
 
-            AudioManager_del.instance.Play(Sound.TypeAudioSource.LoseGame);
-        }
-        else if (other.CompareTag("Finish"))
-        {
-            OnCompletedGame?.Invoke();
-            ScaleColliderPanel completedPanel = Instantiate(completedGameUI, posToSpawn.position, posToSpawn.rotation);
-            completedPanel.OpenPanel();
-            AudioManager_del.instance.Play(Sound.TypeAudioSource.CompletedGame);
+                ScaleColliderPanel failedPanel = Instantiate(failedGameUI, posToSpawn.position, posToSpawn.rotation);
+                failedPanel.OpenPanel();
+
+                if (other.CompareTag("Road"))
+                {
+                    //failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(roadViolation);
+                }
+                else if (other.CompareTag("Zeb"))
+                {
+                    //failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
+                }
+
+                AudioManager_del.instance.Play(Sound.TypeAudioSource.LoseGame);
+            }
+            else if (other.CompareTag("Finish"))
+            {
+                OnCompletedGame?.Invoke();
+                ScaleColliderPanel completedPanel = Instantiate(completedGameUI, posToSpawn.position, posToSpawn.rotation);
+                completedPanel.OpenPanel();
+                AudioManager_del.instance.Play(Sound.TypeAudioSource.CompletedGame);
+            }
         }
     }
 }

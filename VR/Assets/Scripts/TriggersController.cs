@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstaclesController : Controller
+public class TriggersController : Controller
 {
-    [SerializeField] private Obstacle[] obstacles;
+    [SerializeField] private Trigger[] triggers;
     public override void InitializeController()
     {
         base.InitializeController();
-        for (int i = 0; i < obstacles.Length; i++)
+        for (int i = 0; i < triggers.Length; i++)
         {
-            obstacles[i].Initialize();
+            triggers[i].Initialize();
         }
     }
 

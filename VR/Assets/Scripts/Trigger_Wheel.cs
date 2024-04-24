@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
-public class WheelObstacle : Obstacle
+public class Trigger_Wheel : Trigger
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root.GetComponent<Player>())
+        if (other.transform.root.GetComponent<GamePlayer>())
         {
             playerController.SetPlayerFailedState();
         }

@@ -20,6 +20,7 @@ public class PlayerCompletedState : IPlayerState
         playerInteractorProvider.GamePlayer.SetSpeedMove(0);
 
         playerInteractorProvider.GamePlayer.SetMenuData(TypeMenu.Successed);
+        playerInteractorProvider.GamePlayer.InstantiateMenu();
     }
 
     public void ExitState()
