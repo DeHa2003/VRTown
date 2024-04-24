@@ -6,8 +6,8 @@ using UnityEngine.Events;
 
 public class UIObject : MonoBehaviour
 {
-    [SerializeField] private protected GameObject obj;
-    [SerializeField] private PanelsControl[] panelsControls;
+    [SerializeField] protected GameObject obj;
+    [SerializeField] protected PanelsControl[] panelsControls;
 
     public UnityEvent OnOpenUI;
     public UnityEvent OnCloseUI;
@@ -27,6 +27,6 @@ public class UIObject : MonoBehaviour
     public virtual void Deactivate() 
     {
         OnCloseUI?.Invoke();
-        obj.SetActive(false); 
+        obj.SetActive(false);
     }
 }

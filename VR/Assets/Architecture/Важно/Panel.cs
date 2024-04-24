@@ -10,8 +10,8 @@ public abstract class Panel : MonoBehaviour
 
     protected AudioInteractor audioInteractor;
     public virtual void Initialize() {  }
-    public virtual void OpenPanel() { panel.SetActive(true); }
-    public virtual void ClosePanel() { panel.SetActive(false); }
+    public virtual void OpenPanel() { panel?.SetActive(true); }
+    public virtual void ClosePanel() { panel?.SetActive(false); }
 }
 
 public abstract class ColliderPanel : Panel

@@ -5,14 +5,14 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DestinateMenu_DestinatePanel : ScaleColliderPanel
+public class DestinateMenu_MainPanel : ScaleColliderPanel
 {
     [SerializeField] protected TextMeshProUGUI destinateDescription;
     [SerializeField] protected TextMeshProUGUI typeOfViolationText;
 
-    protected GameObject PlayerControls { get; private set; }
-    protected GetTaskScene TaskManager { get; private set; }
-    protected SceneTransitionControl TransitionControl { get; private set; }
+    //protected GameObject PlayerControls { get; private set; }
+    //protected GetTaskScene TaskManager { get; private set; }
+    //protected SceneTransitionControl TransitionControl { get; private set; }
 
     private TransitionInteractor screenInteractor;
 
@@ -21,10 +21,10 @@ public class DestinateMenu_DestinatePanel : ScaleColliderPanel
         base.Initialize();
 
         screenInteractor = Game.GetInteractor<TransitionInteractor>();
-        PlayerControls = GameObject.FindGameObjectWithTag("PlayerControls");
-        TaskManager = PlayerControls.GetComponent<GetTaskScene>();
-        TransitionControl = PlayerControls.GetComponent<SceneTransitionControl>();
-        destinateDescription.text = TaskManager.GetTask();
+        //PlayerControls = GameObject.FindGameObjectWithTag("PlayerControls");
+        //TaskManager = PlayerControls.GetComponent<GetTaskScene>();
+        //TransitionControl = PlayerControls.GetComponent<SceneTransitionControl>();
+        //destinateDescription.text = TaskManager.GetTask();
     }
 
     public void SetDestinateDescription(string textDestinateDescription)

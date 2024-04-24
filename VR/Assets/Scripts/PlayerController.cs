@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : Controller
 {
     [SerializeField] protected PlayerSpawnerPosition playerSpawn;
+
     protected Dictionary<Type, IPlayerState> playerStates;
     protected IPlayerState playerCurrentState;
 
@@ -42,13 +43,14 @@ public class PlayerController : Controller
         playerStates = new Dictionary<Type, IPlayerState>();
 
         playerStates[typeof(PlayerDefaultState)] = new PlayerDefaultState();
-        playerStates[typeof(PlayerActiveLaserState)] = new PlayerActiveLaserState();
+        playerStates[typeof(PlayerCompletedState)] = new PlayerCompletedState();
+        //playerStates[typeof(PlayerActiveLaserState)] = new PlayerActiveLaserState();
         playerStates[typeof(PlayerFailedState)] = new PlayerFailedState();
     }
 
     protected virtual void SetStartState()
     {
-        SetPlayerActiveLaserState();
+        SetPlayerDefaultState();
     }
 
     public void SetPlayerFailedState()
@@ -61,9 +63,9 @@ public class PlayerController : Controller
         SetState(GetState<PlayerDefaultState>());
     }
 
-    public void SetPlayerActiveLaserState()
+    public void SetPlayerCompletedState()
     {
-        SetState(GetState<PlayerActiveLaserState>());
+        SetState(GetState<PlayerCompletedState>());
     }
 
     protected void SetState(IPlayerState playerState)

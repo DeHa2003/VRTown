@@ -26,11 +26,11 @@ public class PlayerTrigger : MonoBehaviour
 
             if (other.CompareTag("Road"))
             {
-                failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(roadViolation);
+                //failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(roadViolation);
             }
             else if(other.CompareTag("Zeb"))
             {
-                failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
+                //failedPanel.GetComponentInChildren<PanelFailed>().SetTypeOfViolation(zebViolation);
             }
 
             AudioManager_del.instance.Play(Sound.TypeAudioSource.LoseGame);

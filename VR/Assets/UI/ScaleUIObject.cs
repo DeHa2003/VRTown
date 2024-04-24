@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class ScaleUIObject : UIObject
+public class ScaleUIObject : UIObject
 {
-    [SerializeField] private float timeScale;
+    [SerializeField] protected float timeScale;
 
-    private Vector3 defaultScale;
-    private Tween tweenScale;
-    private bool isOpen = false;
+    protected Vector3 defaultScale;
+    protected Tween tweenScale;
+    protected bool isOpen = false;
 
     public override void Initialize()
     {

@@ -11,14 +11,14 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
     [SerializeField] private PlayerFeetScript feetScript;
     [SerializeField] private PlayerLaserController laserControllerScript;
     [SerializeField] private PlayerMenuControl menuControlScript;
-    [SerializeField] private PlayerVibrationHandDevice handDeviceScript;
+    [SerializeField] private PlayerVibrationHandDevice vibrationDeviceScript;
     [SerializeField] private PlayerFadeScreenScript playerFadeScreenScript;
 
     public void Initialize()
     {
         moveScript.Initialize();
         feetScript.Initialize();
-        handDeviceScript.Initialize();
+        vibrationDeviceScript.Initialize();
         playerFadeScreenScript.Initialize();
         laserControllerScript.Initialize(handButtons);
         menuControlScript.Initialize(handButtons);
@@ -30,9 +30,9 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         menuControlScript.ActivateMenuControl();
     }
 
-    public void SetMenuPrefab(TypeMenu typeMenu)
+    public void SetMenuData(TypeMenu typeMenu, MenuProperties menuProperties = null)
     {
-        menuControlScript.SetMenuPrefab(typeMenu);
+        menuControlScript.SetMenuData(typeMenu, menuProperties);
     }
 
     public void DeactivateMenuController()
@@ -62,7 +62,7 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
 
     public void Vibrate(float duration, float frequency, float amplitude, SteamVR_Input_Sources source)
     {
-        handDeviceScript.Pulse(duration, frequency, amplitude, source);
+        vibrationDeviceScript.Pulse(duration, frequency, amplitude, source);
     }
 
     public void Fade(float duration, Color color , Action actionToFinish = null)
@@ -87,7 +87,6 @@ public interface IPlayerLaser
 {
     void ActivateLaserController();
     void DeactivateLaserController();
-    void SetMenuPrefab(TypeMenu typeMenu);
 }
 
 public interface IPlayerVibrationHand
@@ -104,5 +103,5 @@ public interface IPlayerMenu
 {
     void ActivateMenuController();
     void DeactivateMenuController();
-    void SetMenuPrefab(TypeMenu typeMenu);
+    void SetMenuData(TypeMenu typeMenu, MenuProperties menuProperties = null);
 }

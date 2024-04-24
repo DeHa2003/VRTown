@@ -2,18 +2,13 @@ using Lessons.Architecture;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PanelFailed : ScaleColliderPanel
+public class DestinateFailedMenu_MainPanel : ScaleColliderPanel
 {
     //[SerializeField] protected TextMeshProUGUI destinateDescription;
     //[SerializeField] protected TextMeshProUGUI typeOfViolationText;
-
-    //protected GameObject PlayerControls { get; private set; }
-    //protected GetTaskScene TaskManager { get; private set; }
-    //protected SceneTransitionControl TransitionControl { get; private set; }
 
     private TransitionInteractor screenInteractor;
 
@@ -22,10 +17,6 @@ public class PanelFailed : ScaleColliderPanel
         base.Initialize();
 
         screenInteractor = Game.GetInteractor<TransitionInteractor>();
-        //PlayerControls = GameObject.FindGameObjectWithTag("PlayerControls");
-        //TaskManager = PlayerControls.GetComponent<GetTaskScene>();
-        //TransitionControl = PlayerControls.GetComponent<SceneTransitionControl>();
-        //destinateDescription.text = TaskManager.GetTask();
     }
 
     //public void SetDestinateDescription(string textDestinateDescription)

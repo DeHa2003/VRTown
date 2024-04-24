@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class TrafficSystemTrafficLight : MonoBehaviour 
 {
+	public UnityEvent OnActivateRed;
+	public UnityEvent OnActivateYellow;
+	public UnityEvent OnActivateGreen;
+
 	public enum Status
 	{
 		GREEN  = 0,
@@ -96,6 +101,8 @@ public class TrafficSystemTrafficLight : MonoBehaviour
 						m_lightGreenArrow.gameObject .SetActive(true);
 				}
 
+				OnActivateGreen?.Invoke();
+
 //				m_lightRed.material   .SetColor( "_Color", Color.black );
 //				m_lightYellow.material.SetColor( "_Color", Color.black );
 //				m_lightGreen.material .SetColor( "_Color", Color.green );
@@ -146,6 +153,8 @@ public class TrafficSystemTrafficLight : MonoBehaviour
 						m_lightGreenArrow.gameObject .SetActive(false);
 				}
 
+				OnActivateYellow?.Invoke();
+
 //				m_lightRed.material   .SetColor( "_Color", Color.black );
 //				m_lightYellow.material.SetColor( "_Color", Color.yellow );
 //				m_lightGreen.material .SetColor( "_Color", Color.black );
@@ -166,6 +175,8 @@ public class TrafficSystemTrafficLight : MonoBehaviour
 					if(m_lightGreenArrow)
 						m_lightGreenArrow.gameObject .SetActive(false);
 				}
+
+				OnActivateRed?.Invoke();
 
 //				m_lightRed.material   .SetColor( "_Color", Color.red );
 //				m_lightYellow.material.SetColor( "_Color", Color.black );

@@ -47,6 +47,7 @@ namespace Lessons.Architecture
 
 public interface IPlayerInteractorProvider : IInterface
 {
+    GamePlayer GamePlayer { get; }
     void CreatePlayer();
     void DestroyPlayer();
 }

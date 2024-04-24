@@ -253,7 +253,7 @@ MonoBehaviour:
   - {fileID: 400004}
   - {fileID: 400010}
   m_wheelAxis: 0
-  m_wheelRotMultiplier: 1.8
+  m_wheelRotMultiplier: 1
   m_vehicleCheckDist: 5
   m_vehicleCheckRadius: 0.72
   m_vehicleCheckDistRay: 14

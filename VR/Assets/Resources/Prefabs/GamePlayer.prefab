@@ -1375,8 +1375,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85961895fa6a4884a979ac4446e73436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuPrefDefault: {fileID: 1880542052417297232, guid: e5f8b59af1df7194daa7073aa2373fdf,
+    type: 3}
+  menuPrefFailed: {fileID: 2605657594605436874, guid: 4a88268361dfc0f49973891c26c78a3f,
+    type: 3}
+  menuPrefSuccess: {fileID: -2142953979943971203, guid: 4f07a74718bfcca49ae1b988b1777cb3,
+    type: 3}
   posMenu: {fileID: 1485919736481026029}
-  time: 0.1
 --- !u!1 &1485919736108493659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,7 +1995,7 @@ MonoBehaviour:
   feetScript: {fileID: 1485919736108479063}
   laserControllerScript: {fileID: 5817077522309753951}
   menuControlScript: {fileID: 3299964580454575275}
-  handDeviceScript: {fileID: 1035588875200021741}
+  vibrationDeviceScript: {fileID: 1035588875200021741}
   playerFadeScreenScript: {fileID: 1485919736108479066}
 --- !u!1 &1485919736108505551
 GameObject:

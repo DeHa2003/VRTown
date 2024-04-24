@@ -1,23 +1,24 @@
 using Lessons.Architecture;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDefaultState : IPlayerState
+public class PlayerInHouseState : IPlayerState
 {
     private IPlayerInteractorProvider playerInteractorProvider;
-
-    public PlayerDefaultState()
+    public PlayerInHouseState()
     {
         playerInteractorProvider = Game.GetInterface<IPlayerInteractorProvider, PlayerInteractor>();
     }
-
     public void EnterState()
     {
-        Debug.Log("Активация состояния - Обычный");
+        Debug.Log("Активация состояния - В доме");
 
-        playerInteractorProvider.GamePlayer.ActivateMenuController();
         playerInteractorProvider.GamePlayer.ActivateLaserController();
+        playerInteractorProvider.GamePlayer.ActivateMenuController();
+        playerInteractorProvider.GamePlayer.SetSpeedMove(0);
 
-        playerInteractorProvider.GamePlayer.SetMenuData(TypeMenu.Default);
+        playerInteractorProvider.GamePlayer.SetMenuData(TypeMenu.Failed);
     }
 
     public void UpdateState()
@@ -27,9 +28,9 @@ public class PlayerDefaultState : IPlayerState
 
     public void ExitState()
     {
-        Debug.Log("Деактивация состояния - Обычный");
-
+        Debug.Log("Деактивация состояния - В доме");
         playerInteractorProvider.GamePlayer.DeactivateLaserController();
         playerInteractorProvider.GamePlayer.DeactivateMenuController();
+        playerInteractorProvider.GamePlayer.SetDefaultSpeedMove();
     }
 }
