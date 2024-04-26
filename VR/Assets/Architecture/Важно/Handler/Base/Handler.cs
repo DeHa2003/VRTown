@@ -50,7 +50,6 @@ public abstract class Handler : MonoBehaviour
 
     public T GetController<T>() where T : Controller
     {
-        //return (T)controllersMap[typeof(T)];
         return controllersMap.Values.OfType<T>().FirstOrDefault();
     }
 }

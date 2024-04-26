@@ -1753,13 +1753,13 @@ MonoBehaviour:
   - {fileID: 1485919736113988859}
   - {fileID: 1485919736114158675}
   headCollider: {fileID: 1485919736111985609}
-  rigSteamVR: {fileID: 0}
-  rig2DFallback: {fileID: 0}
+  rigSteamVR: {fileID: 1485919736108502433}
+  rig2DFallback: {fileID: 1485919736108509397}
   audioListener: {fileID: 1485919736108400903}
   headsetOnHead:
     actionPath: /actions/default/in/HeadsetOnHead
     needsReinit: 0
-  allowToggleTo2D: 0
+  allowToggleTo2D: 1
 --- !u!143 &1485919736108479064
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1861,7 +1861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3197163c15c0684eadac6895771497d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isNoneVR: 1
+  isNoneVR: 0
   UPPER_BUTTON:
     actionPath: /actions/default/in/Menu
     needsReinit: 0

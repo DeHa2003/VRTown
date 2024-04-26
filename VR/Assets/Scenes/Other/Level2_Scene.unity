@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.480674, g: 0.47022998, b: 0.43660367, a: 1}
+  m_IndirectSpecularColor: {r: 0.41705614, g: 0.41582033, b: 0.4059497, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 570fe53465551fb4383ecb3f4e650190,
+  m_LightingDataAsset: {fileID: 112000000, guid: 0a6ecab3600a34a4997f380af111757b,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: b6669259285decf4eb22559247322812,
     type: 2}
@@ -279,7 +279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &59197617
 Transform:
   m_ObjectHideFlags: 0
@@ -694,7 +694,7 @@ GameObject:
   - component: {fileID: 130917028}
   - component: {fileID: 130917030}
   - component: {fileID: 130917029}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Finish
   m_TagString: Finish
   m_Icon: {fileID: 0}
@@ -6000,8 +6000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ddfb35d6538a848b77c45ec30f6da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footballGoalCommandA: {fileID: 427950057}
-  footballGoalCommandB: {fileID: 1588488996}
   scoreVisualize: {fileID: 2128938786}
 --- !u!1 &739610197
 GameObject:
@@ -7054,6 +7052,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalA: {fileID: 427950057}
   goalB: {fileID: 1588488996}
+  ball: {fileID: 8150543990535663201}
+  posSpawnBall: {fileID: 1200905318}
   vehicleSpawners:
   - {fileID: 2111014705}
   - {fileID: 1487054423}
@@ -8288,7 +8288,7 @@ GameObject:
   - component: {fileID: 978187383}
   - component: {fileID: 978187384}
   - component: {fileID: 978187385}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wheel1
   m_TagString: Road
   m_Icon: {fileID: 0}
@@ -8621,7 +8621,7 @@ GameObject:
   - component: {fileID: 989077344}
   - component: {fileID: 989077346}
   - component: {fileID: 989077347}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wheel3
   m_TagString: Road
   m_Icon: {fileID: 0}
@@ -8918,6 +8918,7 @@ Transform:
   - {fileID: 1939109087}
   - {fileID: 979592893}
   - {fileID: 2128938782}
+  - {fileID: 1200905318}
   m_Father: {fileID: 774820156}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -9288,7 +9289,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1132124107}
-  - component: {fileID: 1132124108}
   m_Layer: 0
   m_Name: Triggers
   m_TagString: Untagged
@@ -9314,18 +9314,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1132124108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132124106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42d2116b4192cf449926c075d84e1e7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1149788965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9658,6 +9646,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.270983, y: 8.357073, z: 11.235052}
   m_Center: {x: 0.11844415, y: 4.1785803, z: 0.10619146}
+--- !u!1 &1200905317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200905318}
+  m_Layer: 0
+  m_Name: POS_SPAWN_BALL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1200905318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200905317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.54, y: 1.645, z: -0.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1006119522}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1202070987
 GameObject:
   m_ObjectHideFlags: 0
@@ -13706,7 +13725,7 @@ GameObject:
   - component: {fileID: 1637879975}
   - component: {fileID: 1637879977}
   - component: {fileID: 1637879978}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wheel4
   m_TagString: Road
   m_Icon: {fileID: 0}
@@ -15348,7 +15367,7 @@ GameObject:
   - component: {fileID: 1859338150}
   - component: {fileID: 1859338147}
   - component: {fileID: 1859338151}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zeb1
   m_TagString: Zeb
   m_Icon: {fileID: 0}
@@ -15621,7 +15640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionObjects:
-  - {fileID: 8150543990535663199}
+  - {fileID: 8150543990535663201}
 --- !u!4 &1883665598
 Transform:
   m_ObjectHideFlags: 0
@@ -16066,7 +16085,7 @@ GameObject:
   - component: {fileID: 1964602162}
   - component: {fileID: 1964602159}
   - component: {fileID: 1964602163}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zeb2
   m_TagString: Zeb
   m_Icon: {fileID: 0}
@@ -16125,7 +16144,7 @@ GameObject:
   - component: {fileID: 1973348197}
   - component: {fileID: 1973348194}
   - component: {fileID: 1973348198}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Zeb3
   m_TagString: Zeb
   m_Icon: {fileID: 0}
@@ -16931,7 +16950,7 @@ GameObject:
   - component: {fileID: 2047944667}
   - component: {fileID: 2047944668}
   - component: {fileID: 2047944669}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wheel2
   m_TagString: Road
   m_Icon: {fileID: 0}
@@ -18253,8 +18272,8 @@ GameObject:
   - component: {fileID: 7302730700585186981}
   - component: {fileID: 8150543990535663200}
   - component: {fileID: 8150543990535663197}
-  - component: {fileID: 8150543990535663199}
   - component: {fileID: 8150543990535663198}
+  - component: {fileID: 8150543990535663201}
   m_Layer: 8
   m_Name: SoccerV1
   m_TagString: VR Item
@@ -18679,19 +18698,6 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 61e817a33bd7d744bbd70c44b057fc72, type: 3}
   dependenceVolume: 5.2
---- !u!114 &8150543990535663199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5306605124673405159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b36dd951d0337c4884eef2e5adb382b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionObjectAudio: {fileID: 8150543990535663198}
 --- !u!82 &8150543990535663200
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18703,7 +18709,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -18788,6 +18794,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8150543990535663201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306605124673405159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9805fefefcb929a4593f82e8ca9f217b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionObjectAudio: {fileID: 8150543990535663198}
 --- !u!65 &8958060711440380179
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class FootballGoal : MonoBehaviour, IFootballGoal
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("VR Item"))
+        if (other.gameObject.GetComponent<InteractionObject>())
         {
             OnObjectTriggered?.Invoke();
         }

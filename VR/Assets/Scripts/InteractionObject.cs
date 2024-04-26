@@ -5,7 +5,7 @@ using UnityEngine;
 public class InteractionObject : MonoBehaviour
 {
     [SerializeField] private InteractionObjectAudioVelocity interactionObjectAudio;
-    public void Initialize()
+    public virtual void Initialize()
     {
         interactionObjectAudio.Initialize();
     }

@@ -9,7 +9,9 @@ public class Trigger_Wheel : Trigger
     {
         if (other.transform.root.GetComponent<GamePlayer>())
         {
-            playerController.SetPlayerFailedState();
+            Debug.Log(this.name);
+            if (playerController != null)
+               playerController.SetPlayerFailedState();
         }
     }
 }

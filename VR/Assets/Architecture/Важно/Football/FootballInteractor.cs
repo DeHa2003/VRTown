@@ -16,11 +16,16 @@ namespace Lessons.Architecture
 
         private IFootballGoal goalA;
         private IFootballGoal goalB;
+        private Transform posSpawn;
+        private FootballBall footballBall;
 
-        public void SetData(IFootballGoal goalA, IFootballGoal goalB)
+
+        public void SetData(IFootballGoal goalA, IFootballGoal goalB, FootballBall ball, Transform posSpawnBall)
         {
             this.goalA = goalA;
             this.goalB = goalB;
+            this.posSpawn = posSpawnBall;
+            this.footballBall = ball;
         }
 
         public void ActivateGame()
@@ -35,18 +40,26 @@ namespace Lessons.Architecture
             goalB.RemoveAction(AddScoreCommandB);
         }
 
+        public void SpawnFootballBall()
+        {
+            footballBall.transform.position = posSpawn.position;
+            footballBall.DeactivateImpulse();
+        }
+
         private void AddScoreCommandA()
         {
             ScoreCommandA += 1;
+            SpawnFootballBall();
             OnChangedScoreCommandA?.Invoke(ScoreCommandA);
-            Debug.Log("Комманда A забила!!!");
+            Debug.Log("Команда A забила!!!");
         }
 
         private void AddScoreCommandB()
         {
             ScoreCommandB += 1;
+            SpawnFootballBall();
             OnChangedScoreCommandB?.Invoke(ScoreCommandB);
-            Debug.Log("Комманда B забила!!!");
+            Debug.Log("Команда B забила!!!");
         }
     }
 }
@@ -55,6 +68,7 @@ public interface IFootballInteractorProvider : IInterface
 {
     void ActivateGame();
     void DeactivateGame();
+    void SpawnFootballBall();
 }
 
 public interface IFootballInteractorProvider_Data : IInterface
@@ -68,7 +82,7 @@ public interface IFootballInteractorProvider_Data : IInterface
 
 public interface IFootballInteractorProvider_SetData : IInterface
 {
-    void SetData(IFootballGoal goalA, IFootballGoal goalB);
+    void SetData(IFootballGoal goalA, IFootballGoal goalB, FootballBall ball, Transform posSpawnBall);
 }
 
 public interface IFootballGoal

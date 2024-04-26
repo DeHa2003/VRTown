@@ -44,7 +44,6 @@ public class PlayerController : Controller
 
         playerStates[typeof(PlayerDefaultState)] = new PlayerDefaultState();
         playerStates[typeof(PlayerCompletedState)] = new PlayerCompletedState();
-        //playerStates[typeof(PlayerActiveLaserState)] = new PlayerActiveLaserState();
         playerStates[typeof(PlayerFailedState)] = new PlayerFailedState();
     }
 
