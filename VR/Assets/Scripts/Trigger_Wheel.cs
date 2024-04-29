@@ -7,11 +7,14 @@ public class Trigger_Wheel : Trigger
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root.GetComponent<GamePlayer>())
+        if (other.GetComponent<GamePlayer>() || other.GetComponent<Camera>())
         {
-            Debug.Log(this.name);
-            if (playerController != null)
-               playerController.SetPlayerFailedState();
+            if (isActive)
+            {
+                Debug.Log(this.name);
+                if (playerController != null)
+                    playerController.SetPlayerFailedState();
+            }
         }
     }
 }

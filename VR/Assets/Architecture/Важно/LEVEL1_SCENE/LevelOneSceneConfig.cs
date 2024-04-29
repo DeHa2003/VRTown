@@ -14,6 +14,7 @@ public class LevelOneSceneConfig : SceneConfig
         CreateInteractor<PlayerInteractor>(interactorsMap);
         CreateInteractor<TransitionInteractor>(interactorsMap);
         CreateInteractor<CarsInteractor>(interactorsMap);
+        CreateInteractor<DroneInteractor>(interactorsMap);
 
         //CreateInteractor<SettingsInteractor>(interactorsMap);
         //CreateInteractor<AudioInteractor>(interactorsMap);

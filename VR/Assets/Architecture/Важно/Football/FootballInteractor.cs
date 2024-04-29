@@ -49,17 +49,19 @@ namespace Lessons.Architecture
         private void AddScoreCommandA()
         {
             ScoreCommandA += 1;
-            SpawnFootballBall();
             OnChangedScoreCommandA?.Invoke(ScoreCommandA);
             Debug.Log("Команда A забила!!!");
+
+            SpawnFootballBall();
         }
 
         private void AddScoreCommandB()
         {
             ScoreCommandB += 1;
-            SpawnFootballBall();
             OnChangedScoreCommandB?.Invoke(ScoreCommandB);
             Debug.Log("Команда B забила!!!");
+
+            SpawnFootballBall();
         }
     }
 }

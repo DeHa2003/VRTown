@@ -45,6 +45,7 @@ public class PlayerController : Controller
         playerStates[typeof(PlayerDefaultState)] = new PlayerDefaultState();
         playerStates[typeof(PlayerCompletedState)] = new PlayerCompletedState();
         playerStates[typeof(PlayerFailedState)] = new PlayerFailedState();
+        //playerStates[]
     }
 
     protected virtual void SetStartState()
@@ -81,6 +82,12 @@ public class PlayerController : Controller
     protected IPlayerState GetState<T>() where T : IPlayerState
     {
         return playerStates[typeof(T)];
+    }
+
+    private void Update()
+    {
+        if(playerCurrentState != null)
+           playerCurrentState.UpdateState();
     }
 }
 

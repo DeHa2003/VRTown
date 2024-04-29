@@ -280,7 +280,7 @@ MonoBehaviour:
   m_stuckDestroyTimerMax: 5
   m_killOnEmptyPath: 1
   m_trafficLightDetection: 3
-  m_audioSource: {fileID: 0}
+  m_audioSource: {fileID: 8200000}
   m_audioClipEngine: {fileID: 8300000, guid: 56fb2518ee58e8a4b98e576e8f0d0fa1, type: 3}
   m_audioClipHorn: {fileID: 8300000, guid: 69f3e7252edaeef4aba3be39ce9f87f8, type: 3}
   m_playHornOnCrash: 1
@@ -312,10 +312,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 56fb2518ee58e8a4b98e576e8f0d0fa1, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -357,7 +357,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.6
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -70,6 +70,16 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         moveScript.SetDefaultSpeedMove();
     }
 
+    public Vector2 GetDataLeftTouchpad()
+    {
+        return handButtons.GetLeftTouchpadData();
+    }
+
+    public Vector2 GetDataRightTouchpad()
+    {
+        return handButtons.GetLeftTouchpadData();
+    }
+
     public void Vibrate(float duration, float frequency, float amplitude, SteamVR_Input_Sources source)
     {
         vibrationDeviceScript.Pulse(duration, frequency, amplitude, source);
@@ -91,6 +101,8 @@ public interface IPlayerMove
     void SetSpeedMove(int speed);
     void SetDefaultSpeedMove();
     void TeleportToPosition(Vector3 vector);
+    Vector2 GetDataLeftTouchpad();
+    Vector2 GetDataRightTouchpad();
 }
 
 public interface IPlayerLaser

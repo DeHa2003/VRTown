@@ -37,11 +37,21 @@ public abstract class Handler : MonoBehaviour
             controllers[i].InitializeController();
             controllersMap.Add(controllers[i].GetType(), controllers[i]);
         }
+
+        for (int i = 0; i < controllers.Length; i++)
+        {
+            controllers[i].ActivateController();
+        }
         Game.OnGameInitializedEvent -= OnGameInitialized;
     }
 
     protected void OnDestroy()
     {
+        for (int i = 0; i < controllers.Length; i++)
+        {
+            controllers[i].DeactivateController();
+        }
+
         for (int i = 0; i < controllers.Length; i++)
         {
             controllers[i].OnDestroyController();

@@ -1759,7 +1759,7 @@ MonoBehaviour:
   headsetOnHead:
     actionPath: /actions/default/in/HeadsetOnHead
     needsReinit: 0
-  allowToggleTo2D: 1
+  allowToggleTo2D: 0
 --- !u!143 &1485919736108479064
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1864,6 +1864,12 @@ MonoBehaviour:
   isNoneVR: 0
   UPPER_BUTTON:
     actionPath: /actions/default/in/Menu
+    needsReinit: 0
+  touchpad_Left:
+    actionPath: /actions/default/in/TouchPad
+    needsReinit: 0
+  touchpad_Right:
+    actionPath: /actions/default/in/TouchPad
     needsReinit: 0
 --- !u!114 &5817077522309753951
 MonoBehaviour:

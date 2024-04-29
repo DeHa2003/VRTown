@@ -34,6 +34,11 @@ public class PlayerMenuControl : MonoBehaviour
 
     public void InstantiateMenu()
     {
+        if(currentMenu != null)
+        {
+            currentMenu.Deactivate();
+            currentMenu = null;
+        }
         currentMenu = Instantiate(currentMenuPref, posMenu.position, posMenu.rotation);
         currentMenu.Initialize();
         currentMenu.SetData(menuProperties);

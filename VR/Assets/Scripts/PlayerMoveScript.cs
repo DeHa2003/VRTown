@@ -50,6 +50,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void Update()
     {
+        if(characterController == null) { return; }
         Vector3 vector = Player.instance.hmdTransform.TransformDirection(new Vector3(touchpad.axis.x, 0, touchpad.axis.y));
         characterController.Move(Vector3.ProjectOnPlane(Time.deltaTime * speed * vector, Vector3.up) - new Vector3(0, gravity *1.1f, 0) * Time.deltaTime);
 

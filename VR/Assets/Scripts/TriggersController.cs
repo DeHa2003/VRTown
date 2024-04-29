@@ -17,11 +17,21 @@ public class TriggersController : Controller
     public override void ActivateController()
     {
         base.ActivateController();
+
+        for (int i = 0; i < triggers.Length; i++)
+        {
+            triggers[i].Activate();
+        }
     }
 
     public override void DeactivateController()
     {
         base.DeactivateController();
+
+        for(int i = 0;i < triggers.Length; i++)
+        {
+            triggers[i].Deactivate();
+        }
     }
 
     public override void OnDestroyController()
