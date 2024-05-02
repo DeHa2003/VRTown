@@ -16,8 +16,10 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] private SteamVR_Action_Boolean jump;
 
     private Vector3 vectorToJump;
-    private CharacterController characterController;
     private float defaultSpeed;
+    private CharacterController characterController;
+
+    private bool isActive = true;
 
     public void Initialize()
     {
@@ -50,14 +52,18 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void Update()
     {
-        if(characterController == null) { return; }
-        Vector3 vector = Player.instance.hmdTransform.TransformDirection(new Vector3(touchpad.axis.x, 0, touchpad.axis.y));
-        characterController.Move(Vector3.ProjectOnPlane(Time.deltaTime * speed * vector, Vector3.up) - new Vector3(0, gravity *1.1f, 0) * Time.deltaTime);
-
-        if(jump.GetStateDown(SteamVR_Input_Sources.Any) && characterController.isGrounded)
+        if (isActive)
         {
-            Jumping();
+            if (characterController == null) { return; }
+            Vector3 vector = Player.instance.hmdTransform.TransformDirection(new Vector3(touchpad.axis.x, 0, touchpad.axis.y));
+            characterController.Move(Vector3.ProjectOnPlane(Time.deltaTime * speed * vector, Vector3.up) - new Vector3(0, gravity * 1.1f, 0) * Time.deltaTime);
+
+            if (jump.GetStateDown(SteamVR_Input_Sources.LeftHand) && characterController.isGrounded)
+            {
+                Jumping();
+            }
         }
+        
 
     }
 
@@ -65,5 +71,10 @@ public class PlayerMoveScript : MonoBehaviour
     {
         vectorToJump.y = Mathf.Sqrt(jumpHeight * -3f * jumpGravity);
         characterController.Move(vectorToJump * Time.deltaTime * 100);
+    }
+
+    public void CheckActivateMove(bool isActive)
+    {
+        this.isActive = isActive;
     }
 }

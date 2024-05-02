@@ -45,7 +45,6 @@ public class PlayerController : Controller
         playerStates[typeof(PlayerDefaultState)] = new PlayerDefaultState();
         playerStates[typeof(PlayerCompletedState)] = new PlayerCompletedState();
         playerStates[typeof(PlayerFailedState)] = new PlayerFailedState();
-        //playerStates[]
     }
 
     protected virtual void SetStartState()

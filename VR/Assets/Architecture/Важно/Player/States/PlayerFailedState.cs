@@ -14,7 +14,8 @@ public class PlayerFailedState : IPlayerState
 
         playerInteractorProvider.GamePlayer.ActivateLaserController();
         playerInteractorProvider.GamePlayer.ActivateMenuController();
-        playerInteractorProvider.GamePlayer.SetSpeedMove(0);
+        playerInteractorProvider.GamePlayer.DeactivateMoveController();
+        //playerInteractorProvider.GamePlayer.SetSpeedMove(0);
 
         playerInteractorProvider.GamePlayer.SetMenuData(TypeMenu.Failed);
         playerInteractorProvider.GamePlayer.InstantiateMenu();
@@ -30,6 +31,7 @@ public class PlayerFailedState : IPlayerState
         Debug.Log("Деактивация состояния - Проигрыш");
         playerInteractorProvider.GamePlayer.DeactivateLaserController();
         playerInteractorProvider.GamePlayer.DeactivateMenuController();
-        playerInteractorProvider.GamePlayer.SetDefaultSpeedMove();
+        playerInteractorProvider.GamePlayer.ActivateMoveController();
+        //playerInteractorProvider.GamePlayer.SetDefaultSpeedMove();
     }
 }

@@ -15,9 +15,11 @@ public class PlayerFeetScript : MonoBehaviour
     [SerializeField] private float streetWalkPitch;
     [SerializeField] private float threeWalkPitch;
 
+    private bool isActive = false;
+
     public void Initialize()
     {
-
+        isActive = true;
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -64,5 +66,10 @@ public class PlayerFeetScript : MonoBehaviour
             sourceFeet.pitch = characterController.velocity.magnitude / dependencePitch;
             //Debug.Log("Двигаемся");
         }
+    }
+
+    public void CheckActivateMove()
+    {
+
     }
 }

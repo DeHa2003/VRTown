@@ -6,7 +6,9 @@ using Valve.VR;
 
 public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibrationHand, IPlayerFadeScreen, IPlayerMenu
 {
-    [SerializeField] private HandButtons handButtons;
+    [SerializeField] public HandButtons handButtons;
+
+    [SerializeField] private PlayerCamera playerCamera;
     [SerializeField] private PlayerMoveScript moveScript;
     [SerializeField] private PlayerFeetScript feetScript;
     [SerializeField] private PlayerLaserController laserControllerScript;
@@ -20,14 +22,31 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         feetScript.Initialize();
         vibrationDeviceScript.Initialize();
         playerFadeScreenScript.Initialize();
-        laserControllerScript.Initialize(handButtons);
-        menuControlScript.Initialize(handButtons);
+        laserControllerScript.Initialize();
+        menuControlScript.Initialize();
 
+    }
+
+    public void ActivateCamera()
+    {
+        playerCamera.ActivateCamera();
+    }
+
+    public void DeactivateCamera()
+    {
+        playerCamera.DeactivateCamera();
+    }
+
+    public void CheckCameraActivate()
+    {
+        playerCamera.CheckCamera();
     }
 
     public void ActivateMenuController()
     {
-        menuControlScript.ActivateMenuControl();
+        //menuControlScript.ActivateMenuControl();
+        handButtons.AddActionToUpperButton_RightHand(menuControlScript.CheckMenuPanel);
+
     }
 
     public void SetMenuData(TypeMenu typeMenu, MenuProperties menuProperties = null)
@@ -37,7 +56,8 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
 
     public void DeactivateMenuController()
     {
-        menuControlScript.DiactivateMenuControl();
+        //menuControlScript.DiactivateMenuControl();
+        handButtons.RemoveActionToUpperButton_RightHand(menuControlScript.CheckMenuPanel);
     }
 
     public void InstantiateMenu()
@@ -52,12 +72,24 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
 
     public void ActivateLaserController()
     {
-        laserControllerScript.ActivateLaserController();
+        //laserControllerScript.ActivateLaserController();
+        handButtons.AddActionToUpperButton_LeftHand(laserControllerScript.CheckLaserPointer);
     }
 
     public void DeactivateLaserController()
     {
-        laserControllerScript.DeactivateLaserController();
+        //laserControllerScript.DeactivateLaserController();
+        handButtons.RemoveActionToUpperButton_LeftHand(laserControllerScript.CheckLaserPointer);
+    }
+
+    public void ActivateMoveController()
+    {
+        moveScript.CheckActivateMove(true);
+    }
+
+    public void DeactivateMoveController()
+    {
+        moveScript.CheckActivateMove(false);
     }
 
     public void SetSpeedMove(int speed)
@@ -70,6 +102,18 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         moveScript.SetDefaultSpeedMove();
     }
 
+
+
+    public float GetDataLeftSqueeze()
+    {
+        return handButtons.GetLeftSqueezeData();
+    }
+
+    public float GetDataRightSqueeze()
+    {
+        return handButtons.GetRightSqueezeData();
+    }
+
     public Vector2 GetDataLeftTouchpad()
     {
         return handButtons.GetLeftTouchpadData();
@@ -77,7 +121,7 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
 
     public Vector2 GetDataRightTouchpad()
     {
-        return handButtons.GetLeftTouchpadData();
+        return handButtons.GetRightTouchpadData();
     }
 
     public void Vibrate(float duration, float frequency, float amplitude, SteamVR_Input_Sources source)
@@ -94,6 +138,53 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
     {
         moveScript.TeleportToPosition(vector);
     }
+
+    #region Events
+
+    public void AddActionToUpperButton_LeftHand(Action action)
+    {
+        handButtons.AddActionToUpperButton_LeftHand(action);
+    }
+
+    public void RemoveActionToUpperButton_LeftHand(Action action)
+    {
+        handButtons.RemoveActionToUpperButton_LeftHand(action);
+    }
+
+
+    public void AddActionToUpperButton_RightHand(Action action)
+    {
+        handButtons.AddActionToUpperButton_RightHand(action);
+    }
+
+    public void RemoveActionToUpperButton_RightHand(Action action)
+    {
+        handButtons.RemoveActionToUpperButton_RightHand(action);
+    }
+
+
+    public void AddActionToTriggerButton_LeftHand(Action action)
+    {
+        handButtons.AddActionToTriggerButton_LeftHand(action);
+    }
+
+    public void RemoveActionToTriggerButton_LeftHand(Action action)
+    {
+        handButtons.RemoveActionToTriggerButton_LeftHand(action);
+    }
+
+
+    public void AddActionToTriggerButton_RightHand(Action action)
+    {
+        handButtons.AddActionToTriggerButton_RightHand(action);
+    }
+
+    public void RemoveActionToTriggerButton_RightHand(Action action)
+    {
+        handButtons.RemoveActionToTriggerButton_RightHand(action);
+    }
+
+    #endregion
 }
 
 public interface IPlayerMove
@@ -101,8 +192,6 @@ public interface IPlayerMove
     void SetSpeedMove(int speed);
     void SetDefaultSpeedMove();
     void TeleportToPosition(Vector3 vector);
-    Vector2 GetDataLeftTouchpad();
-    Vector2 GetDataRightTouchpad();
 }
 
 public interface IPlayerLaser

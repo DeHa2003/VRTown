@@ -1702,6 +1702,7 @@ GameObject:
   - component: {fileID: 5817077522309753951}
   - component: {fileID: 1228821809875192703}
   - component: {fileID: 5710407866542319363}
+  - component: {fileID: 8711545361589833213}
   m_Layer: 3
   m_Name: GamePlayer
   m_TagString: Player
@@ -1792,10 +1793,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.7
   jumpHeight: 0.1
-  jumpGravity: -9.8
+  jumpGravity: -9.31
   gravity: 7
   touchpad:
-    actionPath: /actions/default/in/TouchPad
+    actionPath: /actions/default/in/LeftTouchpad
     needsReinit: 0
   jump:
     actionPath: /actions/default/in/Jump
@@ -1862,14 +1863,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isNoneVR: 0
+  squeeze:
+    actionPath: /actions/default/in/Squeeze
+    needsReinit: 0
   UPPER_BUTTON:
     actionPath: /actions/default/in/Menu
     needsReinit: 0
+  trigger:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
   touchpad_Left:
-    actionPath: /actions/default/in/TouchPad
+    actionPath: /actions/default/in/LeftTouchpad
     needsReinit: 0
   touchpad_Right:
-    actionPath: /actions/default/in/TouchPad
+    actionPath: /actions/default/in/RightTouchpad
     needsReinit: 0
 --- !u!114 &5817077522309753951
 MonoBehaviour:
@@ -1997,12 +2004,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handButtons: {fileID: 1592223296996353799}
+  playerCamera: {fileID: 8711545361589833213}
   moveScript: {fileID: 1485919736108479067}
   feetScript: {fileID: 1485919736108479063}
   laserControllerScript: {fileID: 5817077522309753951}
   menuControlScript: {fileID: 3299964580454575275}
   vibrationDeviceScript: {fileID: 1035588875200021741}
   playerFadeScreenScript: {fileID: 1485919736108479066}
+--- !u!114 &8711545361589833213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485919736108504583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8ca37448a756e4e968fca05bc79b75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camera: {fileID: 1485919736106732901}
 --- !u!1 &1485919736108505551
 GameObject:
   m_ObjectHideFlags: 0

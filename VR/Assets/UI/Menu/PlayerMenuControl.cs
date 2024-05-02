@@ -8,19 +8,19 @@ public class PlayerMenuControl : MonoBehaviour
     [SerializeField] private Menu menuPrefSuccess;
     [SerializeField] private Transform posMenu;
 
-    private HandButtons handButtons;
+    //private HandButtons handButtons;
     private Menu currentMenuPref;
     private Menu currentMenu = null;
 
     private MenuProperties menuProperties;
     private TypeMenu typeMenu;
 
-    public void Initialize(HandButtons handButtons)
+    public void Initialize()
     {
-        this.handButtons = handButtons;
+        //this.handButtons = handButtons;
     }
 
-    private void CheckMenuPanel()
+    public void CheckMenuPanel()
     {
         if(currentMenu != null)
         {
@@ -71,15 +71,15 @@ public class PlayerMenuControl : MonoBehaviour
         }
     }
 
-    public void ActivateMenuControl()
-    {
-        handButtons.AddActionToRightHand(CheckMenuPanel);
-    }
+    //public void ActivateMenuControl()
+    //{
+    //    handButtons.AddActionToUpperButton_RightHand(CheckMenuPanel);
+    //}
 
-    public void DiactivateMenuControl()
-    {
-        handButtons.RemoveActionToRightHand(CheckMenuPanel);
-    }
+    //public void DiactivateMenuControl()
+    //{
+    //    handButtons.RemoveActionToUpperButton_RightHand(CheckMenuPanel);
+    //}
 }
 
 public enum TypeMenu

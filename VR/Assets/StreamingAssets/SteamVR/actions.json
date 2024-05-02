@@ -50,7 +50,7 @@
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/TouchPad",
+      "name": "/actions/default/in/LeftTouchpad",
       "type": "vector2"
     },
     {
@@ -60,6 +60,10 @@
     {
       "name": "/actions/default/in/Jump",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/RightTouchpad",
+      "type": "vector2"
     },
     {
       "name": "/actions/default/out/Haptic",

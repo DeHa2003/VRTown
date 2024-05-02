@@ -105,11 +105,11 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Vector2 TouchPad
+        public virtual SteamVR_Action_Vector2 LeftTouchpad
         {
             get
             {
-                return SteamVR_Actions.default_TouchPad;
+                return SteamVR_Actions.default_LeftTouchpad;
             }
         }
         
@@ -126,6 +126,14 @@ namespace Valve.VR
             get
             {
                 return SteamVR_Actions.default_Jump;
+            }
+        }
+        
+        public virtual SteamVR_Action_Vector2 RightTouchpad
+        {
+            get
+            {
+                return SteamVR_Actions.default_RightTouchpad;
             }
         }
         

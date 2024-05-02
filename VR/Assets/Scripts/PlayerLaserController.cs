@@ -7,13 +7,10 @@ public class PlayerLaserController : MonoBehaviour
     [SerializeField] private AudioClip audioClip;
     [SerializeField] private AudioSource audioSource;
 
-    private HandButtons handButtons;
-
     private bool isActiveLaser = false;
 
-    public void Initialize(HandButtons handButtons)
+    public void Initialize()
     {
-        this.handButtons = handButtons;
         audioSource.clip = audioClip;
     }
 
@@ -43,7 +40,7 @@ public class PlayerLaserController : MonoBehaviour
         }
     }
 
-    private void CheckLaserPointer()
+    public void CheckLaserPointer()
     {
         audioSource.Play();
 
@@ -55,16 +52,6 @@ public class PlayerLaserController : MonoBehaviour
         {
             AddLaserPointer();
         }
-    }
-
-    public void ActivateLaserController() 
-    {
-        handButtons.AddActionToLeftHand(CheckLaserPointer);
-    }
-
-    public void DeactivateLaserController() 
-    {
-        handButtons.RemoveActionToLeftHand(CheckLaserPointer);
     }
 
 }

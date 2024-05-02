@@ -17,7 +17,8 @@ public class PlayerCompletedState : IPlayerState
 
         playerInteractorProvider.GamePlayer.ActivateLaserController();
         playerInteractorProvider.GamePlayer.ActivateMenuController();
-        playerInteractorProvider.GamePlayer.SetSpeedMove(0);
+        playerInteractorProvider.GamePlayer.DeactivateMoveController();
+        //playerInteractorProvider.GamePlayer.SetSpeedMove(0);
 
         playerInteractorProvider.GamePlayer.SetMenuData(TypeMenu.Successed);
         playerInteractorProvider.GamePlayer.InstantiateMenu();
@@ -29,7 +30,8 @@ public class PlayerCompletedState : IPlayerState
 
         playerInteractorProvider.GamePlayer.DeactivateLaserController();
         playerInteractorProvider.GamePlayer.DeactivateMenuController();
-        playerInteractorProvider.GamePlayer.SetDefaultSpeedMove();
+        playerInteractorProvider.GamePlayer.ActivateMoveController();
+        //playerInteractorProvider.GamePlayer.SetDefaultSpeedMove();
     }
 
     public void UpdateState()

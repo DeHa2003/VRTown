@@ -1878,8 +1878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f903ea90eca4d4b963fe41c90b0f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeSpawn: 6
-  maxTimeSpawn: 10
+  minTimeSpawn: 7
+  maxTimeSpawn: 11
 --- !u!1 &297385238
 GameObject:
   m_ObjectHideFlags: 0
