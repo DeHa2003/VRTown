@@ -27,6 +27,8 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
 
     }
 
+    #region Camera methods
+
     public void ActivateCamera()
     {
         playerCamera.ActivateCamera();
@@ -42,23 +44,23 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         playerCamera.CheckCamera();
     }
 
-    public void ActivateMenuController()
+    public void Fade(float duration, Color color, Action actionToFinish = null)
     {
-        //menuControlScript.ActivateMenuControl();
-        handButtons.AddActionToUpperButton_RightHand(menuControlScript.CheckMenuPanel);
-
+        playerFadeScreenScript.Fade(duration, color, actionToFinish);
     }
 
-    public void SetMenuData(TypeMenu typeMenu, MenuProperties menuProperties = null)
+    #endregion
+
+    #region Vibrate methods
+
+    public void Vibrate(float duration, float frequency, float amplitude, SteamVR_Input_Sources source)
     {
-        menuControlScript.SetMenuData(typeMenu, menuProperties);
+        vibrationDeviceScript.Pulse(duration, frequency, amplitude, source);
     }
 
-    public void DeactivateMenuController()
-    {
-        //menuControlScript.DiactivateMenuControl();
-        handButtons.RemoveActionToUpperButton_RightHand(menuControlScript.CheckMenuPanel);
-    }
+    #endregion
+
+    #region Menu methods
 
     public void InstantiateMenu()
     {
@@ -70,27 +72,38 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         menuControlScript.DestroyMenu();
     }
 
-    public void ActivateLaserController()
+    public void SetMenuTarget(string nameTarget)
     {
-        //laserControllerScript.ActivateLaserController();
-        handButtons.AddActionToUpperButton_LeftHand(laserControllerScript.CheckLaserPointer);
+        menuControlScript.SetCurrentTarget(nameTarget);
     }
 
-    public void DeactivateLaserController()
+    public void SetMenuCompleted()
     {
-        //laserControllerScript.DeactivateLaserController();
-        handButtons.RemoveActionToUpperButton_LeftHand(laserControllerScript.CheckLaserPointer);
+        menuControlScript.SetMenuData(TypeMenu.Successed);
     }
 
-    public void ActivateMoveController()
+    public void SetMenuDefault()
     {
-        moveScript.CheckActivateMove(true);
+        menuControlScript.SetMenuData(TypeMenu.Default);
     }
 
-    public void DeactivateMoveController()
+    public void SetMenuFailed_Wheel()
     {
-        moveScript.CheckActivateMove(false);
+        MenuProperties menuProperties = new MenuProperties();
+        menuProperties.SetReasonFailure("Пешеходам запрещено пересекать проезжую часть не на пешеходном переходе");
+        menuControlScript.SetMenuData(TypeMenu.Failed, menuProperties);
     }
+
+    public void SetMenuFailed_PedestrianCrossing()
+    {
+        MenuProperties menuProperties = new MenuProperties();
+        menuProperties.SetReasonFailure("Пешеход может перейти по переходу только на зелёный сигнал пешеходного светофора");
+        menuControlScript.SetMenuData(TypeMenu.Failed, menuProperties);
+    }
+
+    #endregion
+
+    #region Move Methods
 
     public void SetSpeedMove(int speed)
     {
@@ -102,44 +115,14 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
         moveScript.SetDefaultSpeedMove();
     }
 
-
-
-    public float GetDataLeftSqueeze()
-    {
-        return handButtons.GetLeftSqueezeData();
-    }
-
-    public float GetDataRightSqueeze()
-    {
-        return handButtons.GetRightSqueezeData();
-    }
-
-    public Vector2 GetDataLeftTouchpad()
-    {
-        return handButtons.GetLeftTouchpadData();
-    }
-
-    public Vector2 GetDataRightTouchpad()
-    {
-        return handButtons.GetRightTouchpadData();
-    }
-
-    public void Vibrate(float duration, float frequency, float amplitude, SteamVR_Input_Sources source)
-    {
-        vibrationDeviceScript.Pulse(duration, frequency, amplitude, source);
-    }
-
-    public void Fade(float duration, Color color , Action actionToFinish = null)
-    {
-        playerFadeScreenScript.Fade(duration, color, actionToFinish);
-    }
-
     public void TeleportToPosition(Vector3 vector)
     {
         moveScript.TeleportToPosition(vector);
     }
 
-    #region Events
+    #endregion
+
+    #region Add Events
 
     public void AddActionToUpperButton_LeftHand(Action action)
     {
@@ -185,6 +168,67 @@ public class GamePlayer : MonoBehaviour, IPlayerMove, IPlayerLaser, IPlayerVibra
     }
 
     #endregion
+
+    #region Activation Controllers
+
+    //MOVE CONTROLLER
+    public void ActivateMoveController()
+    {
+        moveScript.CheckActivateMove(true);
+    }
+
+    public void DeactivateMoveController()
+    {
+        moveScript.CheckActivateMove(false);
+    }
+
+    //MENU CONTROLLER
+    public void ActivateMenuController()
+    {
+        handButtons.AddActionToUpperButton_RightHand(menuControlScript.CheckMenuPanel);
+    }
+
+    public void DeactivateMenuController()
+    {
+        handButtons.RemoveActionToUpperButton_RightHand(menuControlScript.CheckMenuPanel);
+    }
+
+    //LASER CONTROLLER
+    public void ActivateLaserController()
+    {
+        handButtons.AddActionToUpperButton_LeftHand(laserControllerScript.CheckLaserPointer);
+    }
+
+    public void DeactivateLaserController()
+    {
+        handButtons.RemoveActionToUpperButton_LeftHand(laserControllerScript.CheckLaserPointer);
+    }
+
+    #endregion
+
+    #region Output Data
+
+    public float GetDataLeftSqueeze()
+    {
+        return handButtons.GetLeftSqueezeData();
+    }
+
+    public float GetDataRightSqueeze()
+    {
+        return handButtons.GetRightSqueezeData();
+    }
+
+    public Vector2 GetDataLeftTouchpad()
+    {
+        return handButtons.GetLeftTouchpadData();
+    }
+
+    public Vector2 GetDataRightTouchpad()
+    {
+        return handButtons.GetRightTouchpadData();
+    }
+
+    #endregion
 }
 
 public interface IPlayerMove
@@ -216,5 +260,8 @@ public interface IPlayerMenu
     void DestroyMenu();
     void ActivateMenuController();
     void DeactivateMenuController();
-    void SetMenuData(TypeMenu typeMenu, MenuProperties menuProperties = null);
+    void SetMenuCompleted();
+    void SetMenuFailed_Wheel();
+    void SetMenuFailed_PedestrianCrossing();
+    void SetMenuDefault();
 }

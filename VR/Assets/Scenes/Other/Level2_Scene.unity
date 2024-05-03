@@ -729,7 +729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4921545d35d627547814f8f17fbf7dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 2
   material: {fileID: 2100000, guid: 510c6e0b8b5c948458c2b4bc3de5a637, type: 2}
   LookAtJoint: {fileID: 219783137}
   vectorRotate: {x: 0, y: 1, z: 0}
@@ -7050,6 +7049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37fb89a0f94b6064582578b3748fd61e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetName: "\u041F\u0438\u0446\u0446\u0435\u0440\u0438\u044F"
   goalA: {fileID: 427950057}
   goalB: {fileID: 1588488996}
   ball: {fileID: 8150543990535663201}
@@ -8335,7 +8335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
 --- !u!1 &979592892
 GameObject:
   m_ObjectHideFlags: 0
@@ -8668,7 +8667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
 --- !u!33 &1003252290
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13772,7 +13770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
 --- !u!1 &1640283257
 GameObject:
   m_ObjectHideFlags: 0
@@ -15414,7 +15411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ab1a18a73652848a93a72425afba62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 1
 --- !u!1 &1875564901
 GameObject:
   m_ObjectHideFlags: 0
@@ -16132,7 +16128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ab1a18a73652848a93a72425afba62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 1
 --- !u!1 &1973348193
 GameObject:
   m_ObjectHideFlags: 0
@@ -16191,7 +16186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2ab1a18a73652848a93a72425afba62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 1
 --- !u!1001 &1977730442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16997,7 +16991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b49f526eee84dd443b6a4ff81a70e21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
 --- !u!1001 &2052134123
 PrefabInstance:
   m_ObjectHideFlags: 0

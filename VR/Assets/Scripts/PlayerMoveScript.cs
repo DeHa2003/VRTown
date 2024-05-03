@@ -19,7 +19,7 @@ public class PlayerMoveScript : MonoBehaviour
     private float defaultSpeed;
     private CharacterController characterController;
 
-    private bool isActive = true;
+    private bool isActive = false;
 
     public void Initialize()
     {

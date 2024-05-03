@@ -45,6 +45,15 @@ public class Drone_Move : MonoBehaviour
         gravitationValue = gravitation;
     }
 
+    public void TeleportToPosition(Vector3 vector)
+    {
+        controller.enabled = false;
+
+        transform.position = vector;
+
+        controller.enabled = true;
+    }
+
     public void Rotate(Vector2 vector)
     {
         //float rotateAmount = vector.y * rotateSpeed * Time.deltaTime;

@@ -8,9 +8,12 @@ namespace Lessons.Architecture
     {
         public Drone Drone { get; private set; }
 
-        public void SetData(Drone drone)
+        private Transform posSpawnDrone;
+
+        public void SetData(Drone drone, Transform posSpawn)
         {
             this.Drone = drone;
+            this.posSpawnDrone = posSpawn;
         }
 
         public void ActivateDrone()
@@ -20,6 +23,7 @@ namespace Lessons.Architecture
 
         public void DeactivateDrone() 
         {
+            Drone.TeleportToPosition(posSpawnDrone.position);
             Drone.Deactivate();
         }
     }

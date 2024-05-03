@@ -1804,6 +1804,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   timeScale: 0.5
+  textTarget: {fileID: 2994177470151608208}
+  textTypeOfViolation: {fileID: 2710225180120233966}
 --- !u!1 &2994177470798564109
 GameObject:
   m_ObjectHideFlags: 0

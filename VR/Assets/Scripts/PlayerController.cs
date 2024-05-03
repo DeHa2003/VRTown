@@ -44,7 +44,8 @@ public class PlayerController : Controller
 
         playerStates[typeof(PlayerDefaultState)] = new PlayerDefaultState();
         playerStates[typeof(PlayerCompletedState)] = new PlayerCompletedState();
-        playerStates[typeof(PlayerFailedState)] = new PlayerFailedState();
+        playerStates[typeof(PlayerFailedState_Wheel)] = new PlayerFailedState_Wheel();
+        playerStates[typeof(PlayerFailedState_PedestrianCross)] = new PlayerFailedState_PedestrianCross();
     }
 
     protected virtual void SetStartState()
@@ -52,9 +53,14 @@ public class PlayerController : Controller
         SetPlayerDefaultState();
     }
 
-    public void SetPlayerFailedState()
+    public void SetPlayerFailedState_PedestrianCross()
     {
-        SetState(GetState<PlayerFailedState>());
+        SetState(GetState<PlayerFailedState_PedestrianCross>());
+    }
+
+    public void SetPlayerFailedState_Wheel()
+    {
+        SetState(GetState<PlayerFailedState_Wheel>());
     }
 
     public void SetPlayerDefaultState()

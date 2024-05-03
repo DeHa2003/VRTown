@@ -6,7 +6,7 @@ public class Trigger_PedestrianCross : Trigger
     {
         if (other.transform.root.GetComponent<GamePlayer>())
         {
-            playerController.SetPlayerFailedState();
+            playerController.SetPlayerFailedState_PedestrianCross();
         }
     }
 }

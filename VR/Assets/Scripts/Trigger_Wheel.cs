@@ -13,7 +13,7 @@ public class Trigger_Wheel : Trigger
             {
                 Debug.Log(this.name);
                 if (playerController != null)
-                    playerController.SetPlayerFailedState();
+                    playerController.SetPlayerFailedState_Wheel();
             }
         }
     }

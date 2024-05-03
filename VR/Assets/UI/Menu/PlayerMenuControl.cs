@@ -15,6 +15,9 @@ public class PlayerMenuControl : MonoBehaviour
     private MenuProperties menuProperties;
     private TypeMenu typeMenu;
 
+    private MenuProperties currentMenuProperties;
+    private string currentTarget;
+
     public void Initialize()
     {
         //this.handButtons = handButtons;
@@ -41,13 +44,18 @@ public class PlayerMenuControl : MonoBehaviour
         }
         currentMenu = Instantiate(currentMenuPref, posMenu.position, posMenu.rotation);
         currentMenu.Initialize();
-        currentMenu.SetData(menuProperties);
+        currentMenu.SetData(currentTarget, menuProperties);
         currentMenu.Activate();
     }
 
     public void DestroyMenu()
     {
         currentMenu.Deactivate();
+    }
+
+    public void SetCurrentTarget(string target)
+    {
+        this.currentTarget = target;
     }
 
     public void SetMenuData(TypeMenu typeMenu, MenuProperties menuProperties = null)
@@ -89,10 +97,10 @@ public enum TypeMenu
 
 public class MenuProperties
 {
-    public string description { get; private set; }
+    public string ReasonFailure { get; private set; }
 
-    public void SetData(string descroption = null)
+    public void SetReasonFailure(string reason = null)
     {
-        this.description = descroption;
+        this.ReasonFailure = reason;
     }
 }

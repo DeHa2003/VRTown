@@ -22,7 +22,8 @@ public abstract class Menu : ScaleUIObject
         }
         isOpen = false;
     }
-    public virtual void SetData(MenuProperties menuProperties)
+
+    public virtual void SetData(string nameTarget, MenuProperties menuProperties)
     {
 
     }

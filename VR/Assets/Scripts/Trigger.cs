@@ -5,8 +5,6 @@ using UnityEngine;
 
 public abstract class Trigger : MonoBehaviour
 {
-    [SerializeField] protected TriggerType triggerType;
-
     protected PlayerController playerController;
     protected bool isActive = false;
 

@@ -13,7 +13,7 @@ public class LevelOneScenePlayerController : PlayerController
         playerStates[typeof(PlayerDefaultState)] = new PlayerDefaultState();
         playerStates[typeof(PlayerCompletedState)] = new PlayerCompletedState();
         playerStates[typeof(PlayerDroneControlState)] = new PlayerDroneControlState();
-        playerStates[typeof(PlayerFailedState)] = new PlayerFailedState();
+        playerStates[typeof(PlayerFailedState_Wheel)] = new PlayerFailedState_Wheel();
     }
 
     public void SetPlayerDroneState()

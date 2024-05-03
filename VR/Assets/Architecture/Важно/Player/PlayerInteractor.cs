@@ -4,7 +4,7 @@ using Valve.VR.InteractionSystem;
 
 namespace Lessons.Architecture
 {
-    public class PlayerInteractor : Interactor, IPlayerInteractorProvider , IPlayerEvents
+    public class PlayerInteractor : Interactor, IPlayerInteractorProvider , IPlayerEvents, IPlayerInteractorProvider_SetData
     {
         public GamePlayer GamePlayer { get; private set; }
 
@@ -12,6 +12,7 @@ namespace Lessons.Architecture
         public event Action OnDestroyPlayer;
 
         private const string PLAYER_PREFAB_PATH = "Prefabs/GamePlayer";
+        private string target;
 
         public void CreatePlayer()
         {
@@ -27,6 +28,7 @@ namespace Lessons.Architecture
             }
             GamePlayer = Player.instance.GetComponent<GamePlayer>();
             GamePlayer.Initialize();
+            GamePlayer.SetMenuTarget(target);
 
             OnCreatePlayer?.Invoke(GamePlayer);
         }
@@ -42,6 +44,11 @@ namespace Lessons.Architecture
             Coroutines.Destroy(GamePlayer.gameObject);
             OnDestroyPlayer?.Invoke();
         }
+
+        public void SetData(string nameTarget)
+        {
+            this.target = nameTarget;
+        }
     }
 }
 
@@ -56,4 +63,9 @@ public interface IPlayerEvents : IInterface
 {
     event Action<GamePlayer> OnCreatePlayer;
     event Action OnDestroyPlayer;
+}
+
+public interface IPlayerInteractorProvider_SetData
+{
+    void SetData(string nameTarget);
 }

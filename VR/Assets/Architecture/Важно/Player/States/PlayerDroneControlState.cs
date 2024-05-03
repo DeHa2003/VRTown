@@ -21,9 +21,7 @@ public class PlayerDroneControlState : IPlayerState
     {
         Debug.Log("Активация состояния - Запуск дрона");
 
-        playerInteractorProvider.GamePlayer.DeactivateLaserController();
-        playerInteractorProvider.GamePlayer.DeactivateMenuController();
-        playerInteractorProvider.GamePlayer.DeactivateMoveController();
+        playerInteractorProvider.GamePlayer.ActivateLaserController();
 
         droneInteractor.ActivateDrone();
         //playerInteractorProvider.GamePlayer.AddActionToUpperButton_LeftHand(playerInteractorProvider.GamePlayer.CheckCameraActivate);
@@ -54,12 +52,10 @@ public class PlayerDroneControlState : IPlayerState
     {
         Debug.Log("Деактивация состояния - Запуск дрона");
 
-        playerInteractorProvider.GamePlayer.ActivateLaserController();
-        playerInteractorProvider.GamePlayer.ActivateMenuController();
-        playerInteractorProvider.GamePlayer.ActivateMoveController();
 
         //playerInteractorProvider.GamePlayer.RemoveActionToUpperButton_LeftHand(playerInteractorProvider.GamePlayer.CheckCameraActivate);
 
+        playerInteractorProvider.GamePlayer.DeactivateLaserController();
         droneInteractor.DeactivateDrone();
     }
 }

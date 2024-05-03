@@ -37,6 +37,11 @@ public class Drone : MonoBehaviour
         moveScript.MoveUp(value);
     }
 
+    public void TeleportToPosition(Vector3 position)
+    {
+        moveScript.TeleportToPosition(position);
+    }
+
     public void MoveDown(float value)
     {
         moveScript.MoveDown(value);

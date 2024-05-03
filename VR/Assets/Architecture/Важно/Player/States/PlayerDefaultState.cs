@@ -14,10 +14,12 @@ public class PlayerDefaultState : IPlayerState
     {
         Debug.Log("Активация состояния - Обычный");
 
+        playerInteractorProvider.GamePlayer.SetSpeedMove(5);
+        playerInteractorProvider.GamePlayer.ActivateMoveController();
         playerInteractorProvider.GamePlayer.ActivateMenuController();
         playerInteractorProvider.GamePlayer.ActivateLaserController();
 
-        playerInteractorProvider.GamePlayer.SetMenuData(TypeMenu.Default);
+        playerInteractorProvider.GamePlayer.SetMenuDefault();
     }
 
     public void UpdateState()
@@ -31,5 +33,6 @@ public class PlayerDefaultState : IPlayerState
 
         playerInteractorProvider.GamePlayer.DeactivateLaserController();
         playerInteractorProvider.GamePlayer.DeactivateMenuController();
+        playerInteractorProvider.GamePlayer.DeactivateMoveController();
     }
 }
