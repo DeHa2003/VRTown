@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelOneScenePlayerController : PlayerController
+public class GameScenePlayerController : PlayerController
 {
     protected override void InitializeStates()
     {

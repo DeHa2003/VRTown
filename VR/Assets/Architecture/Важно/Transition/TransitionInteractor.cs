@@ -18,6 +18,8 @@ namespace Lessons.Architecture
         private Color startColor = new Color(0, 0, 0, 0);
         private Color toColor = Color.black;
 
+        private bool isTransition = false;
+
         public void SetData(IPlayerEvents playerEvents)
         {
             this.playerEvents = playerEvents;

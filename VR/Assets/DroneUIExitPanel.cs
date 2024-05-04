@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DroneUIExitPanel : ColliderPanel
 {
-    public LevelOneScenePlayerController levelOneScenePlayerController;
+    public GameScenePlayerController levelOneScenePlayerController;
 
     public override void Initialize()
     {

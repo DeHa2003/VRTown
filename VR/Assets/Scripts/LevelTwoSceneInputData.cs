@@ -6,6 +6,8 @@ using UnityEngine;
 public class LevelTwoSceneInputData : InputData
 {
     [SerializeField] private string targetName;
+    [SerializeField] private Drone drone;
+    [SerializeField] private Transform posSpawn;
     [SerializeField] private FootballGoal goalA;
     [SerializeField] private FootballGoal goalB;
     [SerializeField] private FootballBall ball;
@@ -21,6 +23,7 @@ public class LevelTwoSceneInputData : InputData
     private IPlayerTransitionInteractorProvider_SetData playerTransitionInteractorProvider_SetData;
     private IFootballInteractorProvider_SetData footballInteractorProvider_SetData;
     private ICarsInteractorProvider_SetData carsInteractorProvider_SetData;
+    private DroneInteractor droneInteractor;
     public override void Initialize()
     {
         playerEvents = Game.GetInterface<IPlayerEvents, PlayerInteractor>();
@@ -35,5 +38,10 @@ public class LevelTwoSceneInputData : InputData
 
         playerInteractorProvider_SetData = Game.GetInterface<IPlayerInteractorProvider_SetData, PlayerInteractor>();
         playerInteractorProvider_SetData.SetData(targetName);
+
+        droneInteractor = Game.GetInteractor<DroneInteractor>();
+        droneInteractor.SetData(drone, posSpawn);
+
+
     }
 }

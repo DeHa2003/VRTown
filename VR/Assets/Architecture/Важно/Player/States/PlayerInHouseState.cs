@@ -14,8 +14,9 @@ public class PlayerInHouseState : IPlayerState
     {
         Debug.Log("Активация состояния - В доме");
 
+        playerInteractorProvider.GamePlayer.SetSpeedMove(2);
+        playerInteractorProvider.GamePlayer.ActivateMoveController();
         playerInteractorProvider.GamePlayer.ActivateLaserController();
-        playerInteractorProvider.GamePlayer.DeactivateMenuController();
     }
 
     public void UpdateState()
@@ -26,6 +27,8 @@ public class PlayerInHouseState : IPlayerState
     public void ExitState()
     {
         Debug.Log("Деактивация состояния - В доме");
+
+        playerInteractorProvider.GamePlayer.DeactivateMoveController();
         playerInteractorProvider.GamePlayer.DeactivateLaserController();
     }
 }

@@ -26,6 +26,18 @@ public class Teleport : MonoBehaviour
         if (other.transform.root.GetComponent<Player>())
         {
             Teleportation();
+            Deactivate();
+            Invoke(nameof(Activate), 3);
         }
+    }
+
+    public void Activate()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 }

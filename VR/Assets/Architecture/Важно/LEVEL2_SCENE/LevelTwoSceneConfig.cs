@@ -17,6 +17,7 @@ public class LevelTwoSceneConfig : SceneConfig
         CreateInteractor<TransitionInteractor>(interactorsMap);
         CreateInteractor<FootballInteractor>(interactorsMap);
         CreateInteractor<CarsInteractor>(interactorsMap);
+        CreateInteractor<DroneInteractor>(interactorsMap);
 
         //CreateInteractor<SettingsInteractor>(interactorsMap);
         //CreateInteractor<AudioInteractor>(interactorsMap);

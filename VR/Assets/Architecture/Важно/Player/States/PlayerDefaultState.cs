@@ -14,7 +14,7 @@ public class PlayerDefaultState : IPlayerState
     {
         Debug.Log("Активация состояния - Обычный");
 
-        playerInteractorProvider.GamePlayer.SetSpeedMove(5);
+        playerInteractorProvider.GamePlayer.SetSpeedMove(3);
         playerInteractorProvider.GamePlayer.ActivateMoveController();
         playerInteractorProvider.GamePlayer.ActivateMenuController();
         playerInteractorProvider.GamePlayer.ActivateLaserController();
