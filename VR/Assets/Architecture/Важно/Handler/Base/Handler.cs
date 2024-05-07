@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public abstract class Handler : MonoBehaviour
 {
-    [SerializeField] protected InputData inputData;
+    [SerializeField] protected InputData[] inputData;
     [SerializeField] protected UIObject[] uIObjects;
     [SerializeField] protected Controller[] controllers;
 
@@ -24,8 +24,10 @@ public abstract class Handler : MonoBehaviour
 
     private protected virtual void OnGameInitialized()
     {
-        if(inputData != null)
-           inputData.Initialize();
+        for (int i = 0; i < inputData.Length; i++)
+        {
+            inputData[i].Initialize();
+        }
 
         for (int i = 0; i < uIObjects.Length; i++)
         {

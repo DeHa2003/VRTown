@@ -1,6 +1,4 @@
 using Lessons.Architecture;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelTwoSceneInputData : InputData
@@ -14,9 +12,6 @@ public class LevelTwoSceneInputData : InputData
     [SerializeField] private Transform posSpawnBall;
 
     [SerializeField] private TrafficSystemVehicleSpawner[] vehicleSpawners;
-
-    //[SerializeField] private CarAI[] cars;
-    //[SerializeField] private Wheel wheel;
 
     private IPlayerEvents playerEvents;
     private IPlayerInteractorProvider_SetData playerInteractorProvider_SetData;
