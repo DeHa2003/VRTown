@@ -8147,7 +8147,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 864763423}
-  - component: {fileID: 864763424}
   m_Layer: 0
   m_Name: INPUT_DATA
   m_TagString: Untagged
@@ -8174,29 +8173,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &864763424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 864763422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37fb89a0f94b6064582578b3748fd61e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetName: "\u041F\u0438\u0446\u0446\u0435\u0440\u0438\u044F"
-  drone: {fileID: 202048349}
-  posSpawn: {fileID: 537295426}
-  goalA: {fileID: 427950057}
-  goalB: {fileID: 1588488996}
-  ball: {fileID: 8150543990535663201}
-  posSpawnBall: {fileID: 1200905318}
-  vehicleSpawners:
-  - {fileID: 2111014705}
-  - {fileID: 1487054423}
-  - {fileID: 567554073}
 --- !u!1001 &873913284
 PrefabInstance:
   m_ObjectHideFlags: 0

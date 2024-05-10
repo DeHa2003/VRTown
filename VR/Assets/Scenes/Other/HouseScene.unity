@@ -2216,7 +2216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1752dcfec1160d4ea6af563af686759, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputData: {fileID: 694831367}
+  inputData:
+  - {fileID: 694831367}
   uIObjects:
   - {fileID: 1320325922}
   - {fileID: 1042043936}
