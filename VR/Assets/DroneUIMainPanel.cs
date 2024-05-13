@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DroneUIMainPanel : ColliderPanel
 {
-    public GameScenePlayerController controller;
+    public GameScenePlayerControllerWithDrone controller;
     public override void Initialize()
     {
         base.Initialize();
