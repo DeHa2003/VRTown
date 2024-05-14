@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
-public class PlayerSpawnerPosition : MonoBehaviour
+public class PlayerPosition : MonoBehaviour
 {
-    public Transform PosPlayerSpawn => transform;
+    public Transform GetPlayerTransform => transform;
 
     [SerializeField] private bool isVisiblePos;
     [SerializeField][Range(0f, 5f)] private float sizeGizmos;
@@ -16,7 +16,7 @@ public class PlayerSpawnerPosition : MonoBehaviour
         if (isVisiblePos)
         {
             Gizmos.color = color;
-            Gizmos.DrawSphere(PosPlayerSpawn.position, sizeGizmos);
+            Gizmos.DrawSphere(GetPlayerTransform.position, sizeGizmos);
         }
     }
 }

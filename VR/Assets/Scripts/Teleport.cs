@@ -8,7 +8,7 @@ using Valve.VR.InteractionSystem;
 
 public class Teleport : MonoBehaviour
 {
-    [SerializeField] private Transform posToTeleport;
+    [SerializeField] private PlayerPosition posToTeleport;
     private IPlayerTransitionInteractorProvider playerTransitionInteractorProvider;
 
     public void Initialize()
@@ -18,7 +18,7 @@ public class Teleport : MonoBehaviour
 
     private void Teleportation()
     {
-        playerTransitionInteractorProvider.TransitionToPosition_Fade(posToTeleport.position);
+        playerTransitionInteractorProvider.TransitionToPosition_Fade(posToTeleport.GetPlayerTransform.position);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,5 +39,14 @@ public class Teleport : MonoBehaviour
     public void Deactivate()
     {
         gameObject.SetActive(false);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if(posToTeleport != null)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(transform.position, posToTeleport.GetPlayerTransform.position);
+        }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerController : Controller
 {
-    [SerializeField] protected PlayerSpawnerPosition playerSpawn;
+    [SerializeField] protected PlayerPosition playerSpawn;
 
     protected Dictionary<Type, IPlayerState> playerStates;
     protected IPlayerState playerCurrentState;
@@ -29,7 +29,7 @@ public class PlayerController : Controller
     {
         playerInteractor.CreatePlayer();
         playerTransitionInteractorProvider.FadeScreen(0.5f, new Color(0, 0, 0, 0));
-        playerTransitionInteractorProvider.TransitionToPosition(playerSpawn.PosPlayerSpawn.position);
+        playerTransitionInteractorProvider.TransitionToPosition(playerSpawn.GetPlayerTransform.position);
     }
 
     public override void OnDestroyController()
