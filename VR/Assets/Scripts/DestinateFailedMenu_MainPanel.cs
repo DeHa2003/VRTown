@@ -36,6 +36,6 @@ public class DestinateFailedMenu_MainPanel : ScaleColliderPanel
 
     public void GoToHome()
     {
-        screenInteractor.TransitionToScene_Fade(1);
+        screenInteractor.TransitionToScene_Fade(0);
     }
 }

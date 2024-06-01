@@ -34,7 +34,7 @@ public class DestinateMenu_MainPanel : ScaleColliderPanel
 
     public void SetTypeOfViolation(string typeViolation)
     {
-        typeOfViolationText.text = typeViolation;
+        //typeOfViolationText.text = typeViolation;
     }
 
     public void Restart()
@@ -44,6 +44,6 @@ public class DestinateMenu_MainPanel : ScaleColliderPanel
 
     public void GoToHome()
     {
-        screenInteractor.TransitionToScene_Fade(1);
+        screenInteractor.TransitionToScene_Fade(0);
     }
 }

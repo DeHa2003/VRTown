@@ -13,6 +13,7 @@ public class GameScenePlayerControllerWithDrone : GameScenePlayerController
         playerStates[typeof(PlayerCompletedState)] = new PlayerCompletedState();
         playerStates[typeof(PlayerDroneControlState)] = new PlayerDroneControlState();
         playerStates[typeof(PlayerFailedState_Wheel)] = new PlayerFailedState_Wheel();
+        playerStates[typeof(PlayerFailedState_PedestrianCross)] = new PlayerFailedState_PedestrianCross();
     }
 
     public void SetPlayerDroneState()

@@ -2765,8 +2765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startColor: {r: 0, g: 0, b: 0, a: 1}
-  endColor: {r: 0, g: 0, b: 0, a: 0}
-  duration: 1
+  toColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!114 &2257007602984714371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2794,8 +2793,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3197163c15c0684eadac6895771497d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu:
-    actionPath: /actions/default/in/Menu
+  isNoneVR: 0
+  squeeze:
+    actionPath: 
+    needsReinit: 0
+  UPPER_BUTTON:
+    actionPath: 
+    needsReinit: 0
+  trigger:
+    actionPath: 
+    needsReinit: 0
+  touchpad_Left:
+    actionPath: 
+    needsReinit: 0
+  touchpad_Right:
+    actionPath: 
     needsReinit: 0
 --- !u!114 &4735481969709213745
 MonoBehaviour:
@@ -2812,8 +2824,8 @@ MonoBehaviour:
   hands:
   - {fileID: 401571110536643749}
   - {fileID: 401571110536660119}
-  audioClip: {fileID: 8300000, guid: a97f7cefb5bf7b04ea516e9b449e691f, type: 3}
-  audio: {fileID: 1564167953}
+  audioClip: {fileID: 8300000, guid: 01a7014298275d344a82cf803af5eb8e, type: 3}
+  audioSource: {fileID: 1564167953}
 --- !u!82 &1564167953
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3368,10 +3380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85961895fa6a4884a979ac4446e73436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPref: {fileID: 8266295423039231052, guid: e5f8b59af1df7194daa7073aa2373fdf,
-    type: 3}
+  menuPrefDefault: {fileID: 0}
+  menuPrefFailed: {fileID: 0}
+  menuPrefSuccess: {fileID: 0}
   posMenu: {fileID: 401571110364629891}
-  time: 0.1
 --- !u!1 &401571110536834869
 GameObject:
   m_ObjectHideFlags: 0

@@ -5815,6 +5815,50 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5595455639373722204, guid: 5d9ca5aa46ee2e243b4f9ce5acd497f7,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 2160664803288553501, guid: 96d0a83444d5b564aa7eb3343a16918c,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2418686699187562843, guid: be21fe866edeca54db63332aec8fda35,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 2418686699187562843, guid: da4f310cfb77c2d4f85e61d7f343f4b8,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 4997285658652370379, guid: 6b88fa624d005d34fb557817f9c8dcc3,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 913903750665120444, guid: 57ee4974d7806044b8a60466ced255f9,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 6666028232649733226, guid: fd5d9b57c41b29d4eaf78124aba936c0,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 913903750665120444, guid: 57ee4974d7806044b8a60466ced255f9,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
       propertyPath: m_respawnVehicleOnVehicleDestroy
       value: 0
       objectReference: {fileID: 0}
@@ -6385,6 +6429,50 @@ PrefabInstance:
       propertyPath: m_startNode.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5595455639373722204, guid: 5d9ca5aa46ee2e243b4f9ce5acd497f7,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 2160664803288553501, guid: 96d0a83444d5b564aa7eb3343a16918c,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2418686699187562843, guid: be21fe866edeca54db63332aec8fda35,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 2418686699187562843, guid: da4f310cfb77c2d4f85e61d7f343f4b8,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 4997285658652370379, guid: 6b88fa624d005d34fb557817f9c8dcc3,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 913903750665120444, guid: 57ee4974d7806044b8a60466ced255f9,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 6666028232649733226, guid: fd5d9b57c41b29d4eaf78124aba936c0,
+        type: 3}
+    - target: {fileID: 11400000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
+      propertyPath: m_vehiclePrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 913903750665120444, guid: 57ee4974d7806044b8a60466ced255f9,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb77d1ae8779a554ea12af93c02d3f44, type: 3}
 --- !u!1 &1032700536
@@ -8957,8 +9045,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f903ea90eca4d4b963fe41c90b0f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minTimeSpawn: 6
-  maxTimeSpawn: 14
+  minTimeSpawn: 3
+  maxTimeSpawn: 6
 --- !u!1 &1472298805
 GameObject:
   m_ObjectHideFlags: 0
@@ -9199,6 +9287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posToTeleport: {fileID: 1573330758}
+  isVisibleLine: 0
 --- !u!135 &1476832808
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9585,6 +9674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   posToTeleport: {fileID: 648056554}
+  isVisibleLine: 0
 --- !u!1001 &1527507036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12966,7 +13056,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -13062,7 +13152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

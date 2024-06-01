@@ -19,6 +19,6 @@ public class DestinateCompletedPanel_MainPanel : ScaleColliderPanel
 
     public void GoToHome()
     {
-        screenInteractor.TransitionToScene_Fade(1);
+        screenInteractor.TransitionToScene_Fade(0);
     }
 }

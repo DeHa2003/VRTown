@@ -9,6 +9,7 @@ using Valve.VR.InteractionSystem;
 public class Teleport : MonoBehaviour
 {
     [SerializeField] private PlayerPosition posToTeleport;
+    [SerializeField] private bool isVisibleLine = false;
     private IPlayerTransitionInteractorProvider playerTransitionInteractorProvider;
 
     public void Initialize()
@@ -45,8 +46,11 @@ public class Teleport : MonoBehaviour
     {
         if(posToTeleport != null)
         {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawLine(transform.position, posToTeleport.GetPlayerTransform.position);
+            if (isVisibleLine)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawLine(transform.position, posToTeleport.GetPlayerTransform.position);
+            }
         }
     }
 }

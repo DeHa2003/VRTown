@@ -4,9 +4,14 @@ public class Trigger_PedestrianCross : Trigger
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root.GetComponent<GamePlayer>())
+        if (other.GetComponent<GamePlayer>() || other.GetComponent<Camera>())
         {
-            playerController.SetPlayerFailedState_PedestrianCross();
+            if (isActive)
+            {
+                Debug.Log(this.name);
+                if (playerController != null)
+                    playerController.SetPlayerFailedState_PedestrianCross();
+            }
         }
     }
 }

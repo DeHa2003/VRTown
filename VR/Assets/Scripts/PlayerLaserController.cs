@@ -42,6 +42,7 @@ public class PlayerLaserController : MonoBehaviour
 
     public void CheckLaserPointer()
     {
+        audioSource.clip = audioClip;
         audioSource.Play();
 
         if (isActiveLaser)
